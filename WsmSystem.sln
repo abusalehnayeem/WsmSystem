@@ -3,9 +3,41 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{453C94EC-1DF6-4797-95F1-0A6F2DFFF25E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiGateways", "ApiGateways", "{9D85D13A-680F-4558-A11A-87E50BE1CDAF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildingBlocks", "BuildingBlocks", "{34F7E814-6BE7-4ED6-854E-AE7A25B5F2DF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{F17D35DC-2A9C-4129-AA12-9363E84D056F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EventBus", "EventBus", "{6A0644A7-FCA3-492E-B0D4-3E997138E226}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventBus", "EventBus\EventBus.csproj", "{DF5CFFC1-9D59-4240-9FD2-821B216B2D72}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Envoy", "Envoy", "{D688BC35-B2C3-4356-8DF8-57F68CADB946}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DF5CFFC1-9D59-4240-9FD2-821B216B2D72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF5CFFC1-9D59-4240-9FD2-821B216B2D72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF5CFFC1-9D59-4240-9FD2-821B216B2D72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF5CFFC1-9D59-4240-9FD2-821B216B2D72}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9D85D13A-680F-4558-A11A-87E50BE1CDAF} = {453C94EC-1DF6-4797-95F1-0A6F2DFFF25E}
+		{34F7E814-6BE7-4ED6-854E-AE7A25B5F2DF} = {453C94EC-1DF6-4797-95F1-0A6F2DFFF25E}
+		{F17D35DC-2A9C-4129-AA12-9363E84D056F} = {453C94EC-1DF6-4797-95F1-0A6F2DFFF25E}
+		{6A0644A7-FCA3-492E-B0D4-3E997138E226} = {34F7E814-6BE7-4ED6-854E-AE7A25B5F2DF}
+		{DF5CFFC1-9D59-4240-9FD2-821B216B2D72} = {6A0644A7-FCA3-492E-B0D4-3E997138E226}
+		{D688BC35-B2C3-4356-8DF8-57F68CADB946} = {9D85D13A-680F-4558-A11A-87E50BE1CDAF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E6B9B681-E497-4B90-A877-1F5972999BB6}
