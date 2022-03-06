@@ -2,7 +2,7 @@
 
 namespace WebHost.Customization.Services
 {
-    public static class WebHostSwaggerServiceConfiguration
+    public static class SwaggerServiceConfigurationExtensions
     {
         private static string GetDocumentName(this IConfiguration configuration) => configuration["Swagger:Document:Name"];
 
