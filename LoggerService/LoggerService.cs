@@ -6,7 +6,7 @@ namespace LoggerService
     {
         public void LogInformation(LoggerLevel eventLevel, string information, Exception? ex = null, params object[] values)
         {
-            //return Serilog.Log.Write(eventLevel, JsonConvert.SerializeObject(message));
+            throw new NotImplementedException();
         }
     }
 }

@@ -8,6 +8,6 @@ namespace LoggerService
 {
     public interface ILoggerService
     {
-        void LogInformation(LoggerLevel eventLevel, string information, Exception ex = null, params object[] values);
+        void LogInformation(LoggerLevel eventLevel, string information, Exception? ex = null, params object[] values);
     }
 }
