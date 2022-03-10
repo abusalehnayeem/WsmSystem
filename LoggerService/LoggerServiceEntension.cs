@@ -10,7 +10,7 @@ namespace LoggerService
         {
             var logger = new LoggerConfiguration()
                             .MinimumLevel.Information()
-                            .MinimumLevel.Override("Microsoft", LogEventLevel.Warning)
+                            .MinimumLevel.Override("Microsoft", LogEventLevel.Information)
                             .Enrich.FromLogContext()
                             .WriteTo.Console()
                             .CreateLogger();
