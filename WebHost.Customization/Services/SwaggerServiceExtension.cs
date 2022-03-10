@@ -2,13 +2,13 @@
 
 namespace WebHost.Customization.Services
 {
-    public static class SwaggerServiceConfigurationExtensions
+    public static class SwaggerServiceExtension
     {
-        private static string GetDocumentName(this IConfiguration configuration) => configuration["Swagger:Document:Name"];
+        private static string GetDocumentName(this IConfiguration configuration) => configuration["Swagger:Document:Name"] ?? "default name";
 
-        private static string GetDocumentTitle(this IConfiguration configuration) => configuration["Swagger:Document:Title"];
+        private static string GetDocumentTitle(this IConfiguration configuration) => configuration["Swagger:Document:Title"] ?? "default name";
 
-        private static string GetDocumentVersion(this IConfiguration configuration) => configuration["Swagger:Document:Version"];
+        private static string GetDocumentVersion(this IConfiguration configuration) => configuration["Swagger:Document:Version"] ?? "default name";
 
         public static IServiceCollection SwaggerServiceConfiguration(this IServiceCollection services,
             IConfiguration configuration)
