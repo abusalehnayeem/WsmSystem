@@ -1,0 +1,32 @@
+/* Navigation Bar */
+.navbar {
+  min-height: 40px;
+  min-height: 4.0rem;
+  font-size: 14px;
+  font-size: 1.4rem;
+  border-bottom: 1px solid transparent;
+  border-bottom: .1rem solid transparent;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.navbar-brand {
+  height: 40px;
+  height: 4.0rem;
+  padding: 0 15px;
+  padding: 0 1.5rem;
+  padding-top: .55rem;
+  padding-bottom: .55rem;
+  font-size: 1.25em;
+}
+.nav-item > .nav-link {
+  cursor: pointer;
+}
+
+.nav-item > .nav-link.active {
+  cursor: default;
+}
+
+.nav-item > .nav-link.disabled,
+.nav-item > .nav-link:disabled {
+  cursor: default;
+}
