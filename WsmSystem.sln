@@ -19,6 +19,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DbProject", "DbProject", "{33B25EBA-2888-4309-8C78-61F4D1EAA509}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "WsmSystem.Erp.DbProject", "WsmSystem.Erp.DbProject\WsmSystem.Erp.DbProject.sqlproj", "{7100888A-4B35-4CDA-A29D-93C537BA23F0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,12 @@ Global
 		{EBBCFEFC-D693-4386-9A7E-16E31276FD03}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EBBCFEFC-D693-4386-9A7E-16E31276FD03}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EBBCFEFC-D693-4386-9A7E-16E31276FD03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7100888A-4B35-4CDA-A29D-93C537BA23F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7100888A-4B35-4CDA-A29D-93C537BA23F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7100888A-4B35-4CDA-A29D-93C537BA23F0}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{7100888A-4B35-4CDA-A29D-93C537BA23F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7100888A-4B35-4CDA-A29D-93C537BA23F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7100888A-4B35-4CDA-A29D-93C537BA23F0}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -45,6 +53,7 @@ Global
 		{DA5F3B00-EFE9-4502-9F32-4A57E02A76B9} = {453C94EC-1DF6-4797-95F1-0A6F2DFFF25E}
 		{61076F1A-F37F-48AC-B67F-01938A9E149B} = {453C94EC-1DF6-4797-95F1-0A6F2DFFF25E}
 		{33B25EBA-2888-4309-8C78-61F4D1EAA509} = {453C94EC-1DF6-4797-95F1-0A6F2DFFF25E}
+		{7100888A-4B35-4CDA-A29D-93C537BA23F0} = {33B25EBA-2888-4309-8C78-61F4D1EAA509}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E6B9B681-E497-4B90-A877-1F5972999BB6}

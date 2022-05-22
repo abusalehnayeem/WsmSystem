@@ -1,0 +1,28 @@
+﻿CREATE TABLE [fico].[GeneralLedgerMaster] (
+    [IdClient]              INT             NOT NULL,
+    [GLAccountNo]           NUMERIC (12)    NOT NULL,
+    [GLAccountName]         NVARCHAR (120)  NOT NULL,
+    [GLPrefix]              NVARCHAR (4)    NOT NULL,
+    [TotalingAccountNo]     NVARCHAR (12)   NULL,
+    [GLType]                NVARCHAR (1)    NOT NULL,
+    [GLAccountType]         NVARCHAR (1)    NOT NULL,
+    [GLLevel]               INT             NOT NULL,
+    [IdCurrency]            NVARCHAR (3)    NOT NULL,
+    [Postable]              BIT             NOT NULL,
+    [PreviousGLCode]        NVARCHAR (20)   NULL,
+    [StatementCycle]        NVARCHAR (1)    NOT NULL,
+    [OpeningDate]           DATETIME2 (7)   NOT NULL,
+    [CurrentBalanceLcy]     NUMERIC (24, 6) NOT NULL,
+    [CurrentBalanceCcy]     NUMERIC (24, 6) NOT NULL,
+    [BalanceLcy]            NUMERIC (24, 6) NOT NULL,
+    [BalanceCcy]            NUMERIC (24, 6) NOT NULL,
+    [LastTransactionDate]   DATETIME2 (7)   NOT NULL,
+    [MakeBy]                NVARCHAR (50)   NOT NULL,
+    [MakeDate]              DATETIME2 (7)   NOT NULL,
+    [ApprovedBy]            NVARCHAR (50)   NULL,
+    [ApprovedDate]          DATETIME2 (7)   NULL,
+    [RejectionRemarks]      NVARCHAR (500)  NULL,
+    [IdAuthorizationStatus] NVARCHAR (1)    NOT NULL,
+    [IdAccountStatus]       NVARCHAR (1)    NOT NULL
+);
+

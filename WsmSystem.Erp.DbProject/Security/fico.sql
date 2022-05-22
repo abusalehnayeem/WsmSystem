@@ -1,0 +1,3 @@
+﻿CREATE SCHEMA [fico]
+    AUTHORIZATION [dbo];
+
