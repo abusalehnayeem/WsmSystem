@@ -377,8 +377,8 @@
     <property name="GroupDescription" type="String" p1:nullable="True" p1:ValidateMaxLength="500" p1:ValidateRequired="false" p1:Guid="431d5a36-defa-439e-895e-c80ea1d31d62">
       <column name="GroupDescription" not-null="False" length="500" sql-type="nvarchar" p1:unicode="True" />
     </property>
-    <property name="IsActive" type="Boolean" p1:ValidateRequired="true" p1:Guid="21ab35b6-0ad4-40cd-a15c-9a409704d524">
-      <column name="IsActive" not-null="True" sql-type="bit" p1:unicode="False" />
+    <property name="IsActive" type="Boolean" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="21ab35b6-0ad4-40cd-a15c-9a409704d524">
+      <column name="IsActive" default="1" not-null="True" sql-type="bit" p1:unicode="False" />
     </property>
     <property name="LastAction" type="String" p1:ValidateMaxLength="3" p1:ValidateRequired="true" p1:Guid="3fc5ccb4-9cce-4273-a426-67a63f09d957">
       <column name="LastAction" not-null="True" length="3" sql-type="nvarchar" p1:unicode="True" />
@@ -386,8 +386,8 @@
     <property name="MakeBy" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="a5537043-ad7d-4c7a-9d35-a4bb928e03a3">
       <column name="MakeBy" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
     </property>
-    <property name="MakeDate" type="DateTime" p1:ValidateRequired="true" p1:Guid="23fa2aed-d5ea-4cd0-8d76-a8d14dab7131">
-      <column name="MakeDate" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    <property name="MakeDate" type="DateTime" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="23fa2aed-d5ea-4cd0-8d76-a8d14dab7131">
+      <column name="MakeDate" default="getdate()" not-null="True" sql-type="datetime2" p1:unicode="False" />
     </property>
     <property name="UpdateBy" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="a4c6c7ec-e5b3-4052-9988-60f901f711fc">
       <column name="UpdateBy" not-null="False" length="50" sql-type="varchar" p1:unicode="False" />

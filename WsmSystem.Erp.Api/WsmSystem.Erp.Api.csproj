@@ -14,4 +14,10 @@
     <Folder Include="Controllers\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\WsmSystem.Erp.Contract\WsmSystem.Erp.Contract.csproj" />
+    <ProjectReference Include="..\WsmSystem.Erp.Domain\WsmSystem.Erp.Domain.csproj" />
+    <ProjectReference Include="..\WsmSystem.Erp.Persistence\WsmSystem.Erp.Persistence.csproj" />
+  </ItemGroup>
+
 </Project>

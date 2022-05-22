@@ -70,6 +70,9 @@
         <ed:Property Name="FilePerClass" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <boolean>true</boolean>
         </ed:Property>
+        <ed:Property Name="GenerateClass" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <boolean>false</boolean>
+        </ed:Property>
         <ed:Property Name="ModelNameAsFilesPrefix" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <boolean>true</boolean>
         </ed:Property>
@@ -77,6 +80,9 @@
           <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
         </ed:Property>
         <ed:Property Name="PropertyChangeNotifiers" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <boolean>false</boolean>
+        </ed:Property>
+        <ed:Property Name="PropertyChangeMethods" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <boolean>false</boolean>
         </ed:Property>
         <ed:Property Name="ImplementEquals" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -135,12 +141,6 @@
           <boolean>false</boolean>
         </ed:Property>
         <ed:Property Name="GenerateDataContracts" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <boolean>false</boolean>
-        </ed:Property>
-        <ed:Property Name="GenerateClass" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <boolean>false</boolean>
-        </ed:Property>
-        <ed:Property Name="PropertyChangeMethods" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <boolean>false</boolean>
         </ed:Property>
       </Template>
