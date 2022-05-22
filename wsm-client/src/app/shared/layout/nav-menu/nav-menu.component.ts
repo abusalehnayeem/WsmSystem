@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-nav-menu',
+  selector: 'shared-layout-nav-menu',
   templateUrl: './nav-menu.component.html'
 })
-export class AppNavMenuComponent implements OnInit {
+export class SharedLayoutNavMenuComponent implements OnInit {
 
   constructor() { }
 

@@ -1,4 +1,11 @@
-<app-nav-menu id='navigation' role='navigation'></app-nav-menu>
 <div class='container-fluid' role='main'>
-  <router-outlet></router-outlet>
+  <div class="row">
+    <shared-layout-nav-menu id='navigation' role='navigation'></shared-layout-nav-menu>
+    <div class="col-md-3">
+      <shared-layout-sidebar id='sidebar' role='sidebar'></shared-layout-sidebar>
+    </div>
+    <div class="col-md-9">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
 </div>
