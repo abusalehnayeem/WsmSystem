@@ -18,10 +18,9 @@ namespace WsmSystem.Erp.Contract
         IDbContextTransaction CurrentTransaction { get; }
         public DatabaseFacade Database { get; }
         bool HasActiveTransaction { get; }
-        //Task<IDbContextTransaction> BeginTransactionAsync(CancellationToken cancellationToken = default);
-        //Task<IDbContextTransaction> BeginTransactionAsync(IsolationLevel isolationLevel = IsolationLevel.ReadCommitted, CancellationToken cancellationToken = default);
-        //Task CommitTransactionAsync(IDbContextTransaction transaction, CancellationToken cancellationToken = default);
-        //Task RollbackTransactionAsync(CancellationToken cancellationToken = default);
+        Task<IDbContextTransaction> BeginTransactionAsync(CancellationToken cancellationToken = default);
+        Task CommitTransactionAsync(IDbContextTransaction transaction, CancellationToken cancellationToken = default);
+        Task RollbackTransactionAsync(CancellationToken cancellationToken = default);
 
         EntityEntry Entry(object entity);
         EntityEntry Attach(object entity);
