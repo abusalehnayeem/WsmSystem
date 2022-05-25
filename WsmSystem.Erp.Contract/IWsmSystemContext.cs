@@ -13,8 +13,6 @@ namespace WsmSystem.Erp.Contract
 
         Task<int> SaveChangesAsync(bool acceptAllChangesOnSuccess = false,
             CancellationToken cancellationToken = default);
-
-        IDbContextTransaction CurrentTransaction { get; }
         public DatabaseFacade Database { get; }
         bool HasActiveTransaction { get; }
         Task<IDbContextTransaction> BeginTransactionAsync(CancellationToken cancellationToken = default);

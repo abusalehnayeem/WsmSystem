@@ -8,15 +8,16 @@ using WsmSystem.Erp.Persistence.EntityConfigurations.V1.Securities;
 
 namespace WsmSystem.Erp.Persistence.AppContext
 {
-    public partial class WsmSystemContext: IWsmSystemContext
+    public partial class WsmSystemContext : IWsmSystemContext
     {
         #region private variable
 
-        private readonly ICurrentUserService _currentUserService;
+        private readonly ICurrentUserService _currentUserService = null!;
+        private IDbContextTransaction _currentTransaction = null!;
 
         #endregion
-        public IDbContextTransaction CurrentTransaction { get; private set; }
-        public bool HasActiveTransaction => CurrentTransaction != null;
+        public IDbContextTransaction GetCurrentTransaction() => _currentTransaction;
+        public bool HasActiveTransaction => _currentTransaction != null;
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -78,18 +79,18 @@ namespace WsmSystem.Erp.Persistence.AppContext
 
         public async Task<IDbContextTransaction> BeginTransactionAsync(CancellationToken cancellationToken = default)
         {
-            if (CurrentTransaction != null)
+            if (_currentTransaction != null)
             {
-                CurrentTransaction.Dispose();
+                _currentTransaction.Dispose();
             }
-            return CurrentTransaction = await Database.BeginTransactionAsync(IsolationLevel.ReadCommitted, cancellationToken);
+            return _currentTransaction = await Database.BeginTransactionAsync(IsolationLevel.ReadCommitted, cancellationToken);
         }
 
         public Task CommitTransactionAsync(IDbContextTransaction transaction, CancellationToken cancellationToken = default)
         {
             if (transaction == null)
                 throw new ArgumentNullException(nameof(transaction));
-            if (transaction != CurrentTransaction)
+            if (transaction != _currentTransaction)
                 throw new InvalidOperationException($"Transaction {transaction.TransactionId} is not current");
             return InternalCommitTransactionAsync(transaction, cancellationToken);
         }
@@ -106,9 +107,9 @@ namespace WsmSystem.Erp.Persistence.AppContext
             }
             finally
             {
-                if (CurrentTransaction != null)
+                if (_currentTransaction != null)
                 {
-                    CurrentTransaction.Dispose();
+                    _currentTransaction.Dispose();
                 }
             }
         }
@@ -117,16 +118,16 @@ namespace WsmSystem.Erp.Persistence.AppContext
         {
             try
             {
-                if (CurrentTransaction != null)
+                if (_currentTransaction != null)
                 {
-                    await CurrentTransaction.RollbackAsync(cancellationToken);
+                    await _currentTransaction.RollbackAsync(cancellationToken);
                 }
             }
             finally
             {
-                if (CurrentTransaction != null)
+                if (_currentTransaction != null)
                 {
-                    CurrentTransaction.Dispose();
+                    _currentTransaction.Dispose();
                 }
             }
         }

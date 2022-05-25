@@ -22,8 +22,6 @@ namespace WsmSystem.Erp.Domain.Entities.V1.Securities
 
         public virtual string AccessRight { get; set; }
 
-        public virtual bool IsActive { get; set; }
-
         public virtual string LastAction { get; set; }
 
         public virtual Screen Screen { get; set; }
