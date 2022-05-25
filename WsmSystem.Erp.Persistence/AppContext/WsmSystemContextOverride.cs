@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 using WsmSystem.Erp.Contract;
 using WsmSystem.Erp.Domain.Common;
+using WsmSystem.Erp.Domain.Entities.V1.Securities;
 using WsmSystem.Erp.Persistence.EntityConfigurations.V1.Securities;
 
 namespace WsmSystem.Erp.Persistence.AppContext

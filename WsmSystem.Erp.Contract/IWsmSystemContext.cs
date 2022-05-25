@@ -2,7 +2,6 @@
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage;
-using System.Data;
 using WsmSystem.Erp.Domain.Entities.V1.Securities;
 
 namespace WsmSystem.Erp.Contract
@@ -28,22 +27,22 @@ namespace WsmSystem.Erp.Contract
 
         #endregion
         #region Securities
-        DbSet<AppClient> AppClients { get; set; }
-        DbSet<ClientInfo> ClientInfos { get; set; }
-        DbSet<HttpRequestType> HttpRequestTypes { get; set; }
-        DbSet<Module> Modules { get; set; }
-        DbSet<RoleWiseScreenPermission> RoleWiseScreenPermissions { get; set; }
-        DbSet<Screen> Screens { get; set; }
-        DbSet<SecurityPolicy> SecurityPolicies { get; set; }
-        DbSet<SubModule> SubModules { get; set; }
-        DbSet<SubModuleSection> SubModuleSections { get; set; }
-        DbSet<UserGroupLink> UserGroupLinks { get; set; }
-        DbSet<UserGroupRoleLink> UserGroupRoleLinks { get; set; }
-        DbSet<UserGroup> UserGroups { get; set; }
-        DbSet<UserInfo> UserInfos { get; set; }
-        DbSet<UserResource> UserResources { get; set; }
-        DbSet<UserRoleResourceLink> UserRoleResourceLinks { get; set; }
-        DbSet<UserRole> UserRoles { get; set; }
+        DbSet<AppClient> AppClients { get; }
+        DbSet<ClientInfo> ClientInfos { get; }
+        DbSet<HttpRequestType> HttpRequestTypes { get; }
+        DbSet<Module> Modules { get; }
+        DbSet<RoleWiseScreenPermission> RoleWiseScreenPermissions { get; }
+        DbSet<Screen> Screens { get; }
+        DbSet<SecurityPolicy> SecurityPolicies { get; }
+        DbSet<SubModule> SubModules { get; }
+        DbSet<SubModuleSection> SubModuleSections { get; }
+        DbSet<UserGroupLink> UserGroupLinks { get; }
+        DbSet<UserGroupRoleLink> UserGroupRoleLinks { get; }
+        DbSet<UserGroup> UserGroups { get; }
+        DbSet<UserInfo> UserInfos { get; }
+        DbSet<UserResource> UserResources { get; }
+        DbSet<UserRoleResourceLink> UserRoleResourceLinks { get; }
+        DbSet<UserRole> UserRoles { get; }
         #endregion
     }
 }
