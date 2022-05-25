@@ -12,13 +12,8 @@ using WsmSystem.Erp.Domain.Common;
 
 namespace WsmSystem.Erp.Domain.Entities.V1.Securities
 {
-    public class RoleWiseScreenPermission : AuditableEntity
+    public class RoleWiseScreenPermission : BaseEntity
     {
-
-        public RoleWiseScreenPermission()
-        {
-        }
-
         public virtual int IdRole { get; set; }
 
         public virtual int IdClient { get; set; }

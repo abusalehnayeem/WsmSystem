@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Storage;
 using WsmSystem.Erp.Contract;
 
 namespace WsmSystem.Erp.Persistence.AppContext
@@ -13,9 +12,6 @@ namespace WsmSystem.Erp.Persistence.AppContext
         }
 
         public WsmSystemContext(DbContextOptions<WsmSystemContext> options, ICurrentUserService currentUserService) :
-            base(options)
-        {
-            _currentUserService = currentUserService;
-        }
+            base(options) => _currentUserService = currentUserService;
     }
 }

@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using WsmSystem.Erp.Contract;
 using WsmSystem.Erp.Domain.Entities.V1.Securities;
 
 namespace WsmSystem.Erp.Persistence.AppContext
@@ -7,12 +6,6 @@ namespace WsmSystem.Erp.Persistence.AppContext
 
     public partial class WsmSystemContext
     {
-        #region private variable
-
-        private readonly ICurrentUserService _currentUserService;
-
-        #endregion
-
         #region Securities
         public virtual DbSet<AppClient> AppClients { get; set; }
 

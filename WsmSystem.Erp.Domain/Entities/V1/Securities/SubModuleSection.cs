@@ -12,9 +12,21 @@ using WsmSystem.Erp.Domain.Common;
 
 namespace WsmSystem.Erp.Domain.Entities.V1.Securities
 {
-    public class SubModuleSection : AuditableEntity
+    public class SubModuleSection : BaseEntity
     {
-        public SubModuleSection() => Screens = new List<Screen>();
+        public SubModuleSection(int idClient, int id, int idModule, int idSubModule, string sectionName, string iconName, bool isActive, string lastAction, IList<Screen> screens, SubModule subModule)
+        {
+            IdClient = idClient;
+            Id = id;
+            IdModule = idModule;
+            IdSubModule = idSubModule;
+            SectionName = sectionName ?? throw new ArgumentNullException(nameof(sectionName));
+            IconName = iconName ?? throw new ArgumentNullException(nameof(iconName));
+            IsActive = isActive;
+            LastAction = lastAction ?? throw new ArgumentNullException(nameof(lastAction));
+            Screens = screens ?? throw new ArgumentNullException(nameof(screens));
+            SubModule = subModule ?? throw new ArgumentNullException(nameof(subModule));
+        }
 
         public virtual int IdClient { get; set; }
 

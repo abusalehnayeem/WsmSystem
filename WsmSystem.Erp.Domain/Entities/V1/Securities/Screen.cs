@@ -12,9 +12,27 @@ using WsmSystem.Erp.Domain.Common;
 
 namespace WsmSystem.Erp.Domain.Entities.V1.Securities
 {
-    public class Screen : AuditableEntity
+    public class Screen : BaseEntity
     {
-        public Screen() => RoleWiseScreenPermissions = new List<RoleWiseScreenPermission>();
+        public Screen(int idClient, int screenCode, string screenName, int idModule, int idSubModule, int idSubModuleSection, short? ordinal, string screenUri, string screenDescription, bool isRequiredForApproval, bool isFinancialScreen, string iconName, bool isActive, string lastAction, IList<RoleWiseScreenPermission> roleWiseScreenPermissions, SubModuleSection subModuleSection)
+        {
+            IdClient = idClient;
+            ScreenCode = screenCode;
+            ScreenName = screenName ?? throw new ArgumentNullException(nameof(screenName));
+            IdModule = idModule;
+            IdSubModule = idSubModule;
+            IdSubModuleSection = idSubModuleSection;
+            Ordinal = ordinal;
+            ScreenUri = screenUri ?? throw new ArgumentNullException(nameof(screenUri));
+            ScreenDescription = screenDescription ?? throw new ArgumentNullException(nameof(screenDescription));
+            IsRequiredForApproval = isRequiredForApproval;
+            IsFinancialScreen = isFinancialScreen;
+            IconName = iconName ?? throw new ArgumentNullException(nameof(iconName));
+            IsActive = isActive;
+            LastAction = lastAction ?? throw new ArgumentNullException(nameof(lastAction));
+            RoleWiseScreenPermissions = roleWiseScreenPermissions ?? throw new ArgumentNullException(nameof(roleWiseScreenPermissions));
+            SubModuleSection = subModuleSection ?? throw new ArgumentNullException(nameof(subModuleSection));
+        }
 
         public virtual int IdClient { get; set; }
 

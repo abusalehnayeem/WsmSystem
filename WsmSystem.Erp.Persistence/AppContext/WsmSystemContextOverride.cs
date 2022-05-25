@@ -9,6 +9,11 @@ namespace WsmSystem.Erp.Persistence.AppContext
 {
     public partial class WsmSystemContext: IWsmSystemContext
     {
+        #region private variable
+
+        private readonly ICurrentUserService _currentUserService;
+
+        #endregion
         public IDbContextTransaction CurrentTransaction { get; private set; }
         public bool HasActiveTransaction => CurrentTransaction != null;
 
@@ -46,17 +51,24 @@ namespace WsmSystem.Erp.Persistence.AppContext
         #region Core Operation Implementation
         public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
-            foreach (var entry in ChangeTracker.Entries<AuditableEntity>())
+            foreach (var entry in ChangeTracker.Entries<BaseEntity>())
             {
                 switch (entry.State)
                 {
                     case EntityState.Added:
-                        entry.Entity.MakeBy = _currentUserService.IdUser;
+                        entry.Entity.MakeBy = _currentUserService.IdUser ?? string.Empty;
                         entry.Entity.MakeDate = DateTime.Now;
+                        entry.Entity.IsActive = true;
                         break;
                     case EntityState.Modified:
-                        entry.Entity.UpdateBy = _currentUserService.IdUser;
+                        entry.Entity.UpdateBy = _currentUserService.IdUser ?? string.Empty;
                         entry.Entity.UpdateDate = DateTime.Now;
+                        entry.Entity.IsActive = true;
+                        break;
+                    case EntityState.Deleted:
+                        entry.Entity.UpdateBy = _currentUserService.IdUser ?? string.Empty;
+                        entry.Entity.UpdateDate = DateTime.Now;
+                        entry.Entity.IsActive = false;
                         break;
                 }
             }

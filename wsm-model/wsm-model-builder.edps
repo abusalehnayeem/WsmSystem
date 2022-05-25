@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <EntityDeveloper Version="6.12.1419.0">
-  <ModelSettings xmlns:ed="http://devart.com/schemas/EntityDeveloper/1.0" ConnectionStringInAppConfig="False" TargetFramework="Net60" DetectTPTInheritance="True" EntityFrameworkCoreVersion="Version6" DetectFunctionBasedColumnDefault="True">
+  <ModelSettings xmlns:ed="http://devart.com/schemas/EntityDeveloper/1.0" ConnectionStringInAppConfig="False" TargetFramework="Net60" DetectTPTInheritance="True" UseNullParameterValues="True" EntityFrameworkCoreVersion="Version6" StoreGeneratedAsReadOnlyProperty="True" DetectFunctionBasedColumnDefault="True">
     <Connection ConnectionString="Data Source=127.0.0.1\sqlexpress;Initial Catalog=WsmSystem;Integrated Security=False;Persist Security Info=True;User ID=sa;Password=Sa@123456" Provider="System.Data.SqlClient" />
     <Generation>
       <GeneratedFiles>
@@ -107,13 +107,13 @@
           <DefaultValueBehavior>Literal</DefaultValueBehavior>
         </ed:Property>
         <ed:Property Name="CollectionPropertyType" Type="EntityDeveloper.EntityFrameworkCore.EFCoreCollectionPropertyType, EntityDeveloper.Orm.EntityFrameworkCore, Version=6.12.1419.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
-          <EFCoreCollectionPropertyType>Default</EFCoreCollectionPropertyType>
+          <EFCoreCollectionPropertyType>IList</EFCoreCollectionPropertyType>
         </ed:Property>
         <ed:Property Name="CollectionInitializationType" Type="EntityDeveloper.EntityFrameworkCore.EFCoreCollectionInitializationType, EntityDeveloper.Orm.EntityFrameworkCore, Version=6.12.1419.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
-          <EFCoreCollectionInitializationType>Default</EFCoreCollectionInitializationType>
+          <EFCoreCollectionInitializationType>List</EFCoreCollectionInitializationType>
         </ed:Property>
         <ed:Property Name="NullableReferenceTypes" Type="EntityDeveloper.ReferenceTypeNullability, EntityDeveloper.Orm.Common, Version=6.12.1419.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
-          <ReferenceTypeNullability>Default</ReferenceTypeNullability>
+          <ReferenceTypeNullability>Enable</ReferenceTypeNullability>
         </ed:Property>
         <ed:Property Name="SelfContainedEntityConfiguration" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <boolean>false</boolean>
@@ -126,7 +126,7 @@
           </OutputInfo>
         </ed:Property>
         <ed:Property Name="SerializationLibrary" Type="EntityDeveloper.SerializationLibrary, EntityDeveloper.Orm.Common, Version=6.12.1419.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
-          <SerializationLibrary>None</SerializationLibrary>
+          <SerializationLibrary>SystemTextJson</SerializationLibrary>
         </ed:Property>
         <ed:Property Name="SerializeOriginalColumnNames" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <boolean>false</boolean>

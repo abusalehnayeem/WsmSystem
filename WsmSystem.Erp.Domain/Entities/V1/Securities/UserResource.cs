@@ -12,7 +12,7 @@ using WsmSystem.Erp.Domain.Common;
 
 namespace WsmSystem.Erp.Domain.Entities.V1.Securities
 {
-    public class UserResource : AuditableEntity
+    public class UserResource : BaseEntity
     {
         public UserResource() => UserRoleResourceLinks = new List<UserRoleResourceLink>();
 

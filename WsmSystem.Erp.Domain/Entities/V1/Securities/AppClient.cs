@@ -12,24 +12,25 @@ using WsmSystem.Erp.Domain.Common;
 
 namespace WsmSystem.Erp.Domain.Entities.V1.Securities
 {
-    public class AppClient : AuditableEntity
+    public class AppClient : BaseEntity
     {
-        public AppClient() => ClientInfos = new List<ClientInfo>();
+        public AppClient(string appClientName, string lastAction)
+        {
+            AppClientName = appClientName ?? throw new ArgumentNullException(nameof(appClientName));
+            LastAction = lastAction ?? throw new ArgumentNullException(nameof(lastAction));
+        }
 
-        public virtual int Id { get; set; }
+        public virtual int Id { get; private set; }
 
-        public virtual string AppClientName { get; set; }
+        public virtual string AppClientName { get; private set; }
 
-        public virtual string ApplicationKey { get; set; }
+        public virtual string? ApplicationKey { get; private set; }
 
-        public virtual DateTime? ExpireDate { get; set; }
+        public virtual DateTime? ExpireDate { get; private set; }
 
-        public virtual bool IsActive { get; set; }
+        public virtual string LastAction { get; private set; }
 
-        public virtual string LastAction { get; set; }
-
-        public virtual IList<ClientInfo> ClientInfos { get; set; }
-
+        public virtual IList<ClientInfo> ClientInfos { get; private set; } = new List<ClientInfo>();
     }
 
 }

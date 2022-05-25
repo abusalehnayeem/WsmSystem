@@ -12,7 +12,7 @@ using WsmSystem.Erp.Domain.Common;
 
 namespace WsmSystem.Erp.Domain.Entities.V1.Securities
 {
-    public class UserInfo : AuditableEntity
+    public class UserInfo : BaseEntity
     {
         public UserInfo() => UserGroupLinks = new List<UserGroupLink>();
 

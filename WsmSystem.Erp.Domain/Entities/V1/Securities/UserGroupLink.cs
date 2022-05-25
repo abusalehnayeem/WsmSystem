@@ -12,11 +12,18 @@ using WsmSystem.Erp.Domain.Common;
 
 namespace WsmSystem.Erp.Domain.Entities.V1.Securities
 {
-    public class UserGroupLink : AuditableEntity
+    public class UserGroupLink : BaseEntity
     {
-        public UserGroupLink()
+        public UserGroupLink(int idClient, int id, int idUser, int idUserGroup, bool isActive, string lastAction, UserInfo userInfo, UserGroup userGroup)
         {
-
+            IdClient = idClient;
+            Id = id;
+            IdUser = idUser;
+            IdUserGroup = idUserGroup;
+            IsActive = isActive;
+            LastAction = lastAction ?? throw new ArgumentNullException(nameof(lastAction));
+            UserInfo = userInfo ?? throw new ArgumentNullException(nameof(userInfo));
+            UserGroup = userGroup ?? throw new ArgumentNullException(nameof(userGroup));
         }
 
         public virtual int IdClient { get; set; }

@@ -12,12 +12,24 @@ using WsmSystem.Erp.Domain.Common;
 
 namespace WsmSystem.Erp.Domain.Entities.V1.Securities
 {
-    public class SecurityPolicy : AuditableEntity
+    public class SecurityPolicy : BaseEntity
     {
-        public SecurityPolicy()
+        public SecurityPolicy(int id, int idClient, int maximumWrongLoginTry, int minimumPasswordLength, int? passwordAttemptWindow, int? userOnlineTimeWindow, bool isAlphaNumericPasswordRequired, bool? isPasswordSaltRequired, bool isPasswordStrengthRequired, bool isUniqueEmailRequired, bool isActive, string lastAction)
         {
-
+            Id = id;
+            IdClient = idClient;
+            MaximumWrongLoginTry = maximumWrongLoginTry;
+            MinimumPasswordLength = minimumPasswordLength;
+            PasswordAttemptWindow = passwordAttemptWindow;
+            UserOnlineTimeWindow = userOnlineTimeWindow;
+            IsAlphaNumericPasswordRequired = isAlphaNumericPasswordRequired;
+            IsPasswordSaltRequired = isPasswordSaltRequired;
+            IsPasswordStrengthRequired = isPasswordStrengthRequired;
+            IsUniqueEmailRequired = isUniqueEmailRequired;
+            IsActive = isActive;
+            LastAction = lastAction ?? throw new ArgumentNullException(nameof(lastAction));
         }
+
         public virtual int Id { get; set; }
 
         public virtual int IdClient { get; set; }

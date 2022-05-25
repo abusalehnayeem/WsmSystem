@@ -4,11 +4,12 @@ namespace WsmSystem.Erp.Api.Services
 {
     public class CurrentUserService : ICurrentUserService
     {
+        private readonly IHttpContextAccessor _httpContextAccessor;
         public CurrentUserService(IHttpContextAccessor httpContextAccessor)
         {
-            IdUser = httpContextAccessor.HttpContext?.User?.Claims?.Where(c => c.Type == "preferred_username").FirstOrDefault()?.Value;
+            _httpContextAccessor = httpContextAccessor;
         }
 
-        public string IdUser { get; }
+        public string IdUser => _httpContextAccessor?.HttpContext?.User?.Claims?.FirstOrDefault(c => c.Type == "preferred_username")?.Value ?? string.Empty;
     }
 }

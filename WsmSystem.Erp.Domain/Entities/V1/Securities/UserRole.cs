@@ -12,7 +12,7 @@ using WsmSystem.Erp.Domain.Common;
 
 namespace WsmSystem.Erp.Domain.Entities.V1.Securities
 {
-    public class UserRole : AuditableEntity
+    public class UserRole : BaseEntity
     {
         public UserRole()
         {
