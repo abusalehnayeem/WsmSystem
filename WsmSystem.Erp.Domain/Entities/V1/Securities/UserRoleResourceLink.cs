@@ -8,16 +8,21 @@
 // the code is regenerated.
 //------------------------------------------------------------------------------
 
-using WsmSystem.Erp.Domain.Common;
-
 namespace WsmSystem.Erp.Domain.Entities.V1.Securities
 {
     public class UserRoleResourceLink : BaseEntity
     {
-        public UserRoleResourceLink()
+        public UserRoleResourceLink(int idClient, int id, int idUserResource, int idUserRole, string lastAction, UserResource userResource, UserRole userRole)
         {
-
+            IdClient = idClient;
+            Id = id;
+            IdUserResource = idUserResource;
+            IdUserRole = idUserRole;
+            LastAction = lastAction ?? throw new ArgumentNullException(nameof(lastAction));
+            UserResource = userResource ?? throw new ArgumentNullException(nameof(userResource));
+            UserRole = userRole ?? throw new ArgumentNullException(nameof(userRole));
         }
+
         public virtual int IdClient { get; set; }
 
         public virtual int Id { get; set; }
@@ -25,8 +30,6 @@ namespace WsmSystem.Erp.Domain.Entities.V1.Securities
         public virtual int IdUserResource { get; set; }
 
         public virtual int IdUserRole { get; set; }
-
-        public virtual bool IsActive { get; set; }
 
         public virtual string LastAction { get; set; }
 

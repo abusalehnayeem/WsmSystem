@@ -8,16 +8,18 @@
 // the code is regenerated.
 //------------------------------------------------------------------------------
 
-using WsmSystem.Erp.Domain.Common;
-
 namespace WsmSystem.Erp.Domain.Entities.V1.Securities
 {
     public class AppClient : BaseEntity
     {
-        public AppClient(string appClientName, string lastAction)
+        public AppClient(int id, string appClientName, string? applicationKey, DateTime? expireDate, string lastAction, IList<ClientInfo> clientInfos)
         {
+            Id = id;
             AppClientName = appClientName ?? throw new ArgumentNullException(nameof(appClientName));
+            ApplicationKey = applicationKey;
+            ExpireDate = expireDate;
             LastAction = lastAction ?? throw new ArgumentNullException(nameof(lastAction));
+            ClientInfos = clientInfos ?? throw new ArgumentNullException(nameof(clientInfos));
         }
 
         public virtual int Id { get; private set; }

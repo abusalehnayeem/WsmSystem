@@ -8,21 +8,18 @@
 // the code is regenerated.
 //------------------------------------------------------------------------------
 
-using WsmSystem.Erp.Domain.Common;
-
 namespace WsmSystem.Erp.Domain.Entities.V1.Securities
 {
     public class SubModule : BaseEntity
     {
-        public SubModule(int idClient, int id, int idModule, string subModuleName, string iconName, short? ordinal, bool isActive, string lastAction, Module module, IList<SubModuleSection> subModuleSections)
+        public SubModule(int idClient, int id, int idModule, string subModuleName, string? iconName, short? ordinal, string lastAction, Module module, IList<SubModuleSection> subModuleSections)
         {
             IdClient = idClient;
             Id = id;
             IdModule = idModule;
             SubModuleName = subModuleName ?? throw new ArgumentNullException(nameof(subModuleName));
-            IconName = iconName ?? throw new ArgumentNullException(nameof(iconName));
+            IconName = iconName;
             Ordinal = ordinal;
-            IsActive = isActive;
             LastAction = lastAction ?? throw new ArgumentNullException(nameof(lastAction));
             Module = module ?? throw new ArgumentNullException(nameof(module));
             SubModuleSections = subModuleSections ?? throw new ArgumentNullException(nameof(subModuleSections));
@@ -36,17 +33,15 @@ namespace WsmSystem.Erp.Domain.Entities.V1.Securities
 
         public virtual string SubModuleName { get; set; }
 
-        public virtual string IconName { get; set; }
+        public virtual string? IconName { get; set; }
 
         public virtual short? Ordinal { get; set; }
-
-        public virtual bool IsActive { get; set; }
 
         public virtual string LastAction { get; set; }
 
         public virtual Module Module { get; set; }
 
-        public virtual IList<SubModuleSection> SubModuleSections { get; set; }
+        public virtual IList<SubModuleSection> SubModuleSections { get; set; } = new List<SubModuleSection>();
 
     }
 

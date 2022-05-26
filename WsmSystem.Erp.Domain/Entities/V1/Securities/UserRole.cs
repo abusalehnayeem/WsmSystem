@@ -8,19 +8,21 @@
 // the code is regenerated.
 //------------------------------------------------------------------------------
 
-using WsmSystem.Erp.Domain.Common;
-
 namespace WsmSystem.Erp.Domain.Entities.V1.Securities
 {
     public class UserRole : BaseEntity
     {
-        public UserRole()
+        public UserRole(int idClient, int id, string roleName, string? roleDescription, string lastAction, IList<RoleWiseScreenPermission> roleWiseScreenPermissions, IList<UserGroupRoleLink> userGroupRoleLinks, IList<UserInfo> userInfos, IList<UserRoleResourceLink> userRoleResourceLinks)
         {
-            RoleWiseScreenPermissions = new List<RoleWiseScreenPermission>();
-            UserGroupRoleLinks = new List<UserGroupRoleLink>();
-            UserInfos = new List<UserInfo>();
-            UserRoleResourceLinks = new List<UserRoleResourceLink>();
-
+            IdClient = idClient;
+            Id = id;
+            RoleName = roleName ?? throw new ArgumentNullException(nameof(roleName));
+            RoleDescription = roleDescription;
+            LastAction = lastAction ?? throw new ArgumentNullException(nameof(lastAction));
+            RoleWiseScreenPermissions = roleWiseScreenPermissions ?? throw new ArgumentNullException(nameof(roleWiseScreenPermissions));
+            UserGroupRoleLinks = userGroupRoleLinks ?? throw new ArgumentNullException(nameof(userGroupRoleLinks));
+            UserInfos = userInfos ?? throw new ArgumentNullException(nameof(userInfos));
+            UserRoleResourceLinks = userRoleResourceLinks ?? throw new ArgumentNullException(nameof(userRoleResourceLinks));
         }
 
         public virtual int IdClient { get; set; }
@@ -29,19 +31,17 @@ namespace WsmSystem.Erp.Domain.Entities.V1.Securities
 
         public virtual string RoleName { get; set; }
 
-        public virtual string RoleDescription { get; set; }
-
-        public virtual bool IsActive { get; set; }
+        public virtual string? RoleDescription { get; set; }
 
         public virtual string LastAction { get; set; }
 
-        public virtual IList<RoleWiseScreenPermission> RoleWiseScreenPermissions { get; set; }
+        public virtual IList<RoleWiseScreenPermission> RoleWiseScreenPermissions { get; set; } = new List<RoleWiseScreenPermission>();
 
-        public virtual IList<UserGroupRoleLink> UserGroupRoleLinks { get; set; }
+        public virtual IList<UserGroupRoleLink> UserGroupRoleLinks { get; set; } = new List<UserGroupRoleLink>();
 
-        public virtual IList<UserInfo> UserInfos { get; set; }
+        public virtual IList<UserInfo> UserInfos { get; set; } = new List<UserInfo>();
 
-        public virtual IList<UserRoleResourceLink> UserRoleResourceLinks { get; set; }
+        public virtual IList<UserRoleResourceLink> UserRoleResourceLinks { get; set; } = new List<UserRoleResourceLink>();
 
     }
 

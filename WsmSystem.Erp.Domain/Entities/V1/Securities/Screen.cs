@@ -8,13 +8,11 @@
 // the code is regenerated.
 //------------------------------------------------------------------------------
 
-using WsmSystem.Erp.Domain.Common;
-
 namespace WsmSystem.Erp.Domain.Entities.V1.Securities
 {
     public class Screen : BaseEntity
     {
-        public Screen(int idClient, int screenCode, string screenName, int idModule, int idSubModule, int idSubModuleSection, short? ordinal, string screenUri, string screenDescription, bool isRequiredForApproval, bool isFinancialScreen, string iconName, bool isActive, string lastAction, IList<RoleWiseScreenPermission> roleWiseScreenPermissions, SubModuleSection subModuleSection)
+        public Screen(int idClient, int screenCode, string screenName, int idModule, int idSubModule, int idSubModuleSection, short? ordinal, string screenUri, string? screenDescription, bool isRequiredForApproval, bool isFinancialScreen, string? iconName, string lastAction, IList<RoleWiseScreenPermission> roleWiseScreenPermissions, SubModuleSection subModuleSection)
         {
             IdClient = idClient;
             ScreenCode = screenCode;
@@ -24,11 +22,10 @@ namespace WsmSystem.Erp.Domain.Entities.V1.Securities
             IdSubModuleSection = idSubModuleSection;
             Ordinal = ordinal;
             ScreenUri = screenUri ?? throw new ArgumentNullException(nameof(screenUri));
-            ScreenDescription = screenDescription ?? throw new ArgumentNullException(nameof(screenDescription));
+            ScreenDescription = screenDescription;
             IsRequiredForApproval = isRequiredForApproval;
             IsFinancialScreen = isFinancialScreen;
-            IconName = iconName ?? throw new ArgumentNullException(nameof(iconName));
-            IsActive = isActive;
+            IconName = iconName;
             LastAction = lastAction ?? throw new ArgumentNullException(nameof(lastAction));
             RoleWiseScreenPermissions = roleWiseScreenPermissions ?? throw new ArgumentNullException(nameof(roleWiseScreenPermissions));
             SubModuleSection = subModuleSection ?? throw new ArgumentNullException(nameof(subModuleSection));
@@ -50,22 +47,19 @@ namespace WsmSystem.Erp.Domain.Entities.V1.Securities
 
         public virtual string ScreenUri { get; set; }
 
-        public virtual string ScreenDescription { get; set; }
+        public virtual string? ScreenDescription { get; set; }
 
         public virtual bool IsRequiredForApproval { get; set; }
 
         public virtual bool IsFinancialScreen { get; set; }
 
-        public virtual string IconName { get; set; }
-
-        public virtual bool IsActive { get; set; }
+        public virtual string? IconName { get; set; }
 
         public virtual string LastAction { get; set; }
 
-        public virtual IList<RoleWiseScreenPermission> RoleWiseScreenPermissions { get; set; }
+        public virtual IList<RoleWiseScreenPermission> RoleWiseScreenPermissions { get; set; } = new List<RoleWiseScreenPermission>();
 
         public virtual SubModuleSection SubModuleSection { get; set; }
-
     }
 
 }

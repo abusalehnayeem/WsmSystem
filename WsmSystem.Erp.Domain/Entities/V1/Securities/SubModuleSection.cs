@@ -8,21 +8,18 @@
 // the code is regenerated.
 //------------------------------------------------------------------------------
 
-using WsmSystem.Erp.Domain.Common;
-
 namespace WsmSystem.Erp.Domain.Entities.V1.Securities
 {
     public class SubModuleSection : BaseEntity
     {
-        public SubModuleSection(int idClient, int id, int idModule, int idSubModule, string sectionName, string iconName, bool isActive, string lastAction, IList<Screen> screens, SubModule subModule)
+        public SubModuleSection(int idClient, int id, int idModule, int idSubModule, string? sectionName, string? iconName, string lastAction, IList<Screen> screens, SubModule subModule)
         {
             IdClient = idClient;
             Id = id;
             IdModule = idModule;
             IdSubModule = idSubModule;
-            SectionName = sectionName ?? throw new ArgumentNullException(nameof(sectionName));
-            IconName = iconName ?? throw new ArgumentNullException(nameof(iconName));
-            IsActive = isActive;
+            SectionName = sectionName;
+            IconName = iconName;
             LastAction = lastAction ?? throw new ArgumentNullException(nameof(lastAction));
             Screens = screens ?? throw new ArgumentNullException(nameof(screens));
             SubModule = subModule ?? throw new ArgumentNullException(nameof(subModule));
@@ -36,18 +33,14 @@ namespace WsmSystem.Erp.Domain.Entities.V1.Securities
 
         public virtual int IdSubModule { get; set; }
 
-        public virtual string SectionName { get; set; }
+        public virtual string? SectionName { get; set; }
 
-        public virtual string IconName { get; set; }
-
-        public virtual bool IsActive { get; set; }
+        public virtual string? IconName { get; set; }
 
         public virtual string LastAction { get; set; }
 
-        public virtual IList<Screen> Screens { get; set; }
+        public virtual IList<Screen> Screens { get; set; } = new List<Screen>();
 
         public virtual SubModule SubModule { get; set; }
-
     }
-
 }

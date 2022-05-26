@@ -8,8 +8,6 @@
 // the code is regenerated.
 //------------------------------------------------------------------------------
 
-using WsmSystem.Erp.Domain.Common;
-
 namespace WsmSystem.Erp.Domain.Entities.V1.Securities
 {
     public class SecurityPolicy : BaseEntity
@@ -49,9 +47,6 @@ namespace WsmSystem.Erp.Domain.Entities.V1.Securities
         public virtual bool IsPasswordStrengthRequired { get; set; }
 
         public virtual bool IsUniqueEmailRequired { get; set; }
-
-        public virtual bool IsActive { get; set; }
-
         public virtual string LastAction { get; set; }
     }
 

@@ -8,33 +8,45 @@
 // the code is regenerated.
 //------------------------------------------------------------------------------
 
-using WsmSystem.Erp.Domain.Common;
-
 namespace WsmSystem.Erp.Domain.Entities.V1.Securities
 {
     public class UserInfo : BaseEntity
     {
-        public UserInfo() => UserGroupLinks = new List<UserGroupLink>();
+        public UserInfo(int idClient, int id, string? accessLevel, string userName, string? userFullName, string userPassword, string? passwordSalt, int? idRole, string? userEmail, bool isLockedOut, bool? changePassword, string lastAction, IList<UserGroupLink> userGroupLinks, UserRole userRole)
+        {
+            IdClient = idClient;
+            Id = id;
+            AccessLevel = accessLevel;
+            UserName = userName ?? throw new ArgumentNullException(nameof(userName));
+            UserFullName = userFullName;
+            UserPassword = userPassword ?? throw new ArgumentNullException(nameof(userPassword));
+            PasswordSalt = passwordSalt;
+            IdRole = idRole;
+            UserEmail = userEmail;
+            IsLockedOut = isLockedOut;
+            ChangePassword = changePassword;
+            LastAction = lastAction ?? throw new ArgumentNullException(nameof(lastAction));
+            UserGroupLinks = userGroupLinks ?? throw new ArgumentNullException(nameof(userGroupLinks));
+            UserRole = userRole ?? throw new ArgumentNullException(nameof(userRole));
+        }
 
         public virtual int IdClient { get; set; }
 
         public virtual int Id { get; set; }
 
-        public virtual string AccessLevel { get; set; }
+        public virtual string? AccessLevel { get; set; }
 
         public virtual string UserName { get; set; }
 
-        public virtual string UserFullName { get; set; }
+        public virtual string? UserFullName { get; set; }
 
         public virtual string UserPassword { get; set; }
 
-        public virtual string PasswordSalt { get; set; }
+        public virtual string? PasswordSalt { get; set; }
 
         public virtual int? IdRole { get; set; }
 
-        public virtual bool IsActive { get; set; }
-
-        public virtual string UserEmail { get; set; }
+        public virtual string? UserEmail { get; set; }
 
         public virtual bool IsLockedOut { get; set; }
 
@@ -42,7 +54,7 @@ namespace WsmSystem.Erp.Domain.Entities.V1.Securities
 
         public virtual string LastAction { get; set; }
 
-        public virtual IList<UserGroupLink> UserGroupLinks { get; set; }
+        public virtual IList<UserGroupLink> UserGroupLinks { get; set; } = new List<UserGroupLink>();
 
         public virtual UserRole UserRole { get; set; }
 

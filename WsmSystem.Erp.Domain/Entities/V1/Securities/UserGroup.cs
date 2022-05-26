@@ -8,19 +8,16 @@
 // the code is regenerated.
 //------------------------------------------------------------------------------
 
-using WsmSystem.Erp.Domain.Common;
-
 namespace WsmSystem.Erp.Domain.Entities.V1.Securities
 {
     public class UserGroup : BaseEntity
     {
-        public UserGroup(int idClient, int id, string groupName, string groupDescription, bool isActive, string lastAction, IList<UserGroupLink> userGroupLinks, IList<UserGroupRoleLink> userGroupRoleLinks)
+        public UserGroup(int idClient, int id, string groupName, string? groupDescription, string lastAction, IList<UserGroupLink> userGroupLinks, IList<UserGroupRoleLink> userGroupRoleLinks)
         {
             IdClient = idClient;
             Id = id;
             GroupName = groupName ?? throw new ArgumentNullException(nameof(groupName));
-            GroupDescription = groupDescription ?? throw new ArgumentNullException(nameof(groupDescription));
-            IsActive = isActive;
+            GroupDescription = groupDescription;
             LastAction = lastAction ?? throw new ArgumentNullException(nameof(lastAction));
             UserGroupLinks = userGroupLinks ?? throw new ArgumentNullException(nameof(userGroupLinks));
             UserGroupRoleLinks = userGroupRoleLinks ?? throw new ArgumentNullException(nameof(userGroupRoleLinks));
@@ -32,16 +29,13 @@ namespace WsmSystem.Erp.Domain.Entities.V1.Securities
 
         public virtual string GroupName { get; set; }
 
-        public virtual string GroupDescription { get; set; }
-
-        public virtual bool IsActive { get; set; }
+        public virtual string? GroupDescription { get; set; }
 
         public virtual string LastAction { get; set; }
 
-        public virtual IList<UserGroupLink> UserGroupLinks { get; set; }
+        public virtual IList<UserGroupLink> UserGroupLinks { get; set; } = new List<UserGroupLink>();
 
-        public virtual IList<UserGroupRoleLink> UserGroupRoleLinks { get; set; }
-
+        public virtual IList<UserGroupRoleLink> UserGroupRoleLinks { get; set; } = new List<UserGroupRoleLink>();
     }
 
 }

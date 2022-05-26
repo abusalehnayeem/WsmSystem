@@ -8,13 +8,20 @@
 // the code is regenerated.
 //------------------------------------------------------------------------------
 
-using WsmSystem.Erp.Domain.Common;
-
 namespace WsmSystem.Erp.Domain.Entities.V1.Securities
 {
     public class UserResource : BaseEntity
     {
-        public UserResource() => UserRoleResourceLinks = new List<UserRoleResourceLink>();
+        public UserResource(int idClient, int id, string apiUrl, int idHttpMethod, string lastAction, HttpRequestType httpRequestType, IList<UserRoleResourceLink> userRoleResourceLinks)
+        {
+            IdClient = idClient;
+            Id = id;
+            ApiUrl = apiUrl ?? throw new ArgumentNullException(nameof(apiUrl));
+            IdHttpMethod = idHttpMethod;
+            LastAction = lastAction ?? throw new ArgumentNullException(nameof(lastAction));
+            HttpRequestType = httpRequestType ?? throw new ArgumentNullException(nameof(httpRequestType));
+            UserRoleResourceLinks = userRoleResourceLinks ?? throw new ArgumentNullException(nameof(userRoleResourceLinks));
+        }
 
         public virtual int IdClient { get; set; }
 
@@ -24,13 +31,11 @@ namespace WsmSystem.Erp.Domain.Entities.V1.Securities
 
         public virtual int IdHttpMethod { get; set; }
 
-        public virtual bool IsActive { get; set; }
-
         public virtual string LastAction { get; set; }
 
         public virtual HttpRequestType HttpRequestType { get; set; }
 
-        public virtual IList<UserRoleResourceLink> UserRoleResourceLinks { get; set; }
+        public virtual IList<UserRoleResourceLink> UserRoleResourceLinks { get; set; } = new List<UserRoleResourceLink>();
 
     }
 
