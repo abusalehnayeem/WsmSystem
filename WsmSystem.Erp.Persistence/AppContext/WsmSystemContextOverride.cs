@@ -61,16 +61,19 @@ namespace WsmSystem.Erp.Persistence.AppContext
                         entry.Entity.MakeBy = _currentUserService.IdUser ?? string.Empty;
                         entry.Entity.MakeDate = DateTime.Now;
                         entry.Entity.IsActive = true;
+                        entry.Entity.LastAction = "ADD";
                         break;
                     case EntityState.Modified:
                         entry.Entity.UpdateBy = _currentUserService.IdUser ?? string.Empty;
                         entry.Entity.UpdateDate = DateTime.Now;
                         entry.Entity.IsActive = true;
+                        entry.Entity.LastAction = "EDT";
                         break;
                     case EntityState.Deleted:
                         entry.Entity.UpdateBy = _currentUserService.IdUser ?? string.Empty;
                         entry.Entity.UpdateDate = DateTime.Now;
                         entry.Entity.IsActive = false;
+                        entry.Entity.LastAction = "DEL";
                         break;
                 }
             }

@@ -12,7 +12,7 @@ namespace WsmSystem.Erp.Domain.Entities.V1.Securities
 {
     public class UserInfo : BaseEntity
     {
-        public UserInfo(int idClient, int id, string? accessLevel, string userName, string? userFullName, string userPassword, string? passwordSalt, int? idRole, string? userEmail, bool isLockedOut, bool? changePassword, string lastAction, IList<UserGroupLink> userGroupLinks, UserRole userRole)
+        public UserInfo(int idClient, int id, string? accessLevel, string userName, string? userFullName, string userPassword, string? passwordSalt, int? idRole, string? userEmail, bool isLockedOut, bool? changePassword, IList<UserGroupLink> userGroupLinks, UserRole userRole)
         {
             IdClient = idClient;
             Id = id;
@@ -25,7 +25,6 @@ namespace WsmSystem.Erp.Domain.Entities.V1.Securities
             UserEmail = userEmail;
             IsLockedOut = isLockedOut;
             ChangePassword = changePassword;
-            LastAction = lastAction ?? throw new ArgumentNullException(nameof(lastAction));
             UserGroupLinks = userGroupLinks ?? throw new ArgumentNullException(nameof(userGroupLinks));
             UserRole = userRole ?? throw new ArgumentNullException(nameof(userRole));
         }
@@ -51,8 +50,6 @@ namespace WsmSystem.Erp.Domain.Entities.V1.Securities
         public virtual bool IsLockedOut { get; set; }
 
         public virtual bool? ChangePassword { get; set; }
-
-        public virtual string LastAction { get; set; }
 
         public virtual IList<UserGroupLink> UserGroupLinks { get; set; } = new List<UserGroupLink>();
 

@@ -12,7 +12,7 @@ namespace WsmSystem.Erp.Domain.Entities.V1.Securities
 {
     public class SecurityPolicy : BaseEntity
     {
-        public SecurityPolicy(int id, int idClient, int maximumWrongLoginTry, int minimumPasswordLength, int? passwordAttemptWindow, int? userOnlineTimeWindow, bool isAlphaNumericPasswordRequired, bool? isPasswordSaltRequired, bool isPasswordStrengthRequired, bool isUniqueEmailRequired, bool isActive, string lastAction)
+        public SecurityPolicy(int id, int idClient, int maximumWrongLoginTry, int minimumPasswordLength, int? passwordAttemptWindow, int? userOnlineTimeWindow, bool isAlphaNumericPasswordRequired, bool? isPasswordSaltRequired, bool isPasswordStrengthRequired, bool isUniqueEmailRequired, bool isActive)
         {
             Id = id;
             IdClient = idClient;
@@ -25,7 +25,6 @@ namespace WsmSystem.Erp.Domain.Entities.V1.Securities
             IsPasswordStrengthRequired = isPasswordStrengthRequired;
             IsUniqueEmailRequired = isUniqueEmailRequired;
             IsActive = isActive;
-            LastAction = lastAction ?? throw new ArgumentNullException(nameof(lastAction));
         }
 
         public virtual int Id { get; set; }
@@ -47,7 +46,6 @@ namespace WsmSystem.Erp.Domain.Entities.V1.Securities
         public virtual bool IsPasswordStrengthRequired { get; set; }
 
         public virtual bool IsUniqueEmailRequired { get; set; }
-        public virtual string LastAction { get; set; }
     }
 
 }

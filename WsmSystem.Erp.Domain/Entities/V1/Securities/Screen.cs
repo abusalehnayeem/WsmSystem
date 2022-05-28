@@ -12,7 +12,7 @@ namespace WsmSystem.Erp.Domain.Entities.V1.Securities
 {
     public class Screen : BaseEntity
     {
-        public Screen(int idClient, int screenCode, string screenName, int idModule, int idSubModule, int idSubModuleSection, short? ordinal, string screenUri, string? screenDescription, bool isRequiredForApproval, bool isFinancialScreen, string? iconName, string lastAction, IList<RoleWiseScreenPermission> roleWiseScreenPermissions, SubModuleSection subModuleSection)
+        public Screen(int idClient, int screenCode, string screenName, int idModule, int idSubModule, int idSubModuleSection, short? ordinal, string screenUri, string? screenDescription, bool isRequiredForApproval, bool isFinancialScreen, string? iconName, IList<RoleWiseScreenPermission> roleWiseScreenPermissions, SubModuleSection subModuleSection)
         {
             IdClient = idClient;
             ScreenCode = screenCode;
@@ -26,7 +26,6 @@ namespace WsmSystem.Erp.Domain.Entities.V1.Securities
             IsRequiredForApproval = isRequiredForApproval;
             IsFinancialScreen = isFinancialScreen;
             IconName = iconName;
-            LastAction = lastAction ?? throw new ArgumentNullException(nameof(lastAction));
             RoleWiseScreenPermissions = roleWiseScreenPermissions ?? throw new ArgumentNullException(nameof(roleWiseScreenPermissions));
             SubModuleSection = subModuleSection ?? throw new ArgumentNullException(nameof(subModuleSection));
         }
@@ -54,8 +53,6 @@ namespace WsmSystem.Erp.Domain.Entities.V1.Securities
         public virtual bool IsFinancialScreen { get; set; }
 
         public virtual string? IconName { get; set; }
-
-        public virtual string LastAction { get; set; }
 
         public virtual IList<RoleWiseScreenPermission> RoleWiseScreenPermissions { get; set; } = new List<RoleWiseScreenPermission>();
 

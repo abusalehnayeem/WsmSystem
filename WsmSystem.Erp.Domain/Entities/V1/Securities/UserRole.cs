@@ -12,13 +12,12 @@ namespace WsmSystem.Erp.Domain.Entities.V1.Securities
 {
     public class UserRole : BaseEntity
     {
-        public UserRole(int idClient, int id, string roleName, string? roleDescription, string lastAction, IList<RoleWiseScreenPermission> roleWiseScreenPermissions, IList<UserGroupRoleLink> userGroupRoleLinks, IList<UserInfo> userInfos, IList<UserRoleResourceLink> userRoleResourceLinks)
+        public UserRole(int idClient, int id, string roleName, string? roleDescription, IList<RoleWiseScreenPermission> roleWiseScreenPermissions, IList<UserGroupRoleLink> userGroupRoleLinks, IList<UserInfo> userInfos, IList<UserRoleResourceLink> userRoleResourceLinks)
         {
             IdClient = idClient;
             Id = id;
             RoleName = roleName ?? throw new ArgumentNullException(nameof(roleName));
             RoleDescription = roleDescription;
-            LastAction = lastAction ?? throw new ArgumentNullException(nameof(lastAction));
             RoleWiseScreenPermissions = roleWiseScreenPermissions ?? throw new ArgumentNullException(nameof(roleWiseScreenPermissions));
             UserGroupRoleLinks = userGroupRoleLinks ?? throw new ArgumentNullException(nameof(userGroupRoleLinks));
             UserInfos = userInfos ?? throw new ArgumentNullException(nameof(userInfos));
@@ -32,8 +31,6 @@ namespace WsmSystem.Erp.Domain.Entities.V1.Securities
         public virtual string RoleName { get; set; }
 
         public virtual string? RoleDescription { get; set; }
-
-        public virtual string LastAction { get; set; }
 
         public virtual IList<RoleWiseScreenPermission> RoleWiseScreenPermissions { get; set; } = new List<RoleWiseScreenPermission>();
 

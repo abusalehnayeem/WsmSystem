@@ -12,13 +12,12 @@ namespace WsmSystem.Erp.Domain.Entities.V1.Securities
 {
     public class AppClient : BaseEntity
     {
-        public AppClient(int id, string appClientName, string? applicationKey, DateTime? expireDate, string lastAction, IList<ClientInfo> clientInfos)
+        public AppClient(int id, string appClientName, string? applicationKey, DateTime? expireDate, IList<ClientInfo> clientInfos)
         {
             Id = id;
             AppClientName = appClientName ?? throw new ArgumentNullException(nameof(appClientName));
             ApplicationKey = applicationKey;
             ExpireDate = expireDate;
-            LastAction = lastAction ?? throw new ArgumentNullException(nameof(lastAction));
             ClientInfos = clientInfos ?? throw new ArgumentNullException(nameof(clientInfos));
         }
 
@@ -29,8 +28,6 @@ namespace WsmSystem.Erp.Domain.Entities.V1.Securities
         public virtual string? ApplicationKey { get; private set; }
 
         public virtual DateTime? ExpireDate { get; private set; }
-
-        public virtual string LastAction { get; private set; }
 
         public virtual IList<ClientInfo> ClientInfos { get; private set; } = new List<ClientInfo>();
     }

@@ -12,13 +12,12 @@ namespace WsmSystem.Erp.Domain.Entities.V1.Securities
 {
     public class Module : BaseEntity
     {
-        public Module(int idClient, int id, string? moduleName, string? iconName, string lastAction, IList<SubModule> subModules)
+        public Module(int idClient, int id, string? moduleName, string? iconName, IList<SubModule> subModules)
         {
             IdClient = idClient;
             Id = id;
             ModuleName = moduleName;
             IconName = iconName;
-            LastAction = lastAction ?? throw new ArgumentNullException(nameof(lastAction));
             SubModules = subModules ?? throw new ArgumentNullException(nameof(subModules));
         }
 
@@ -29,8 +28,6 @@ namespace WsmSystem.Erp.Domain.Entities.V1.Securities
         public virtual string? ModuleName { get; set; }
 
         public virtual string? IconName { get; set; }
-
-        public virtual string LastAction { get; set; }
 
         public virtual IList<SubModule> SubModules { get; set; } = new List<SubModule>();
 

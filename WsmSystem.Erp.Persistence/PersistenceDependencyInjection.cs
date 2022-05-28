@@ -21,7 +21,7 @@ namespace WsmSystem.Erp.Persistence
                     {
                         options.UseSqlServer(connection, sqlOptions => { sqlOptions.EnableRetryOnFailure(); });
                         options.UseInternalServiceProvider(serviceProvider);
-                        options.EnableSensitiveDataLogging(); // in production its need to turnoff
+                        options.EnableSensitiveDataLogging(); // in production its need to be turnoff
                     });
 
             return services;

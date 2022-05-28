@@ -12,13 +12,12 @@ namespace WsmSystem.Erp.Domain.Entities.V1.Securities
 {
     public class HttpRequestType : BaseEntity
     {
-        public HttpRequestType(int idClient, int id, string httpMethodType, bool isActive, string lastAction, IList<UserResource> userResources)
+        public HttpRequestType(int idClient, int id, string httpMethodType, bool isActive, IList<UserResource> userResources)
         {
             IdClient = idClient;
             Id = id;
             HttpMethodType = httpMethodType ?? throw new ArgumentNullException(nameof(httpMethodType));
             IsActive = isActive;
-            LastAction = lastAction ?? throw new ArgumentNullException(nameof(lastAction));
             UserResources = userResources ?? throw new ArgumentNullException(nameof(UserResources));
         }
 
@@ -27,8 +26,6 @@ namespace WsmSystem.Erp.Domain.Entities.V1.Securities
         public virtual int Id { get; set; }
 
         public virtual string HttpMethodType { get; set; }
-
-        public virtual string LastAction { get; set; }
 
         public virtual IList<UserResource> UserResources { get; set; } = new List<UserResource>();
 

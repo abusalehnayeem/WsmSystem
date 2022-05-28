@@ -12,13 +12,12 @@ namespace WsmSystem.Erp.Domain.Entities.V1.Securities
 {
     public class RoleWiseScreenPermission : BaseEntity
     {
-        public RoleWiseScreenPermission(int idRole, int idClient, int screenCode, string? accessRight, string lastAction, Screen screen, UserRole userRole)
+        public RoleWiseScreenPermission(int idRole, int idClient, int screenCode, string? accessRight, Screen screen, UserRole userRole)
         {
             IdRole = idRole;
             IdClient = idClient;
             ScreenCode = screenCode;
             AccessRight = accessRight;
-            LastAction = lastAction ?? throw new ArgumentNullException(nameof(lastAction));
             Screen = screen ?? throw new ArgumentNullException(nameof(screen));
             UserRole = userRole ?? throw new ArgumentNullException(nameof(userRole));
         }
@@ -30,8 +29,6 @@ namespace WsmSystem.Erp.Domain.Entities.V1.Securities
         public virtual int ScreenCode { get; set; }
 
         public virtual string? AccessRight { get; set; }
-
-        public virtual string LastAction { get; set; }
 
         public virtual Screen Screen { get; set; }
 

@@ -12,13 +12,12 @@ namespace WsmSystem.Erp.Domain.Entities.V1.Securities
 {
     public class UserRoleResourceLink : BaseEntity
     {
-        public UserRoleResourceLink(int idClient, int id, int idUserResource, int idUserRole, string lastAction, UserResource userResource, UserRole userRole)
+        public UserRoleResourceLink(int idClient, int id, int idUserResource, int idUserRole, UserResource userResource, UserRole userRole)
         {
             IdClient = idClient;
             Id = id;
             IdUserResource = idUserResource;
             IdUserRole = idUserRole;
-            LastAction = lastAction ?? throw new ArgumentNullException(nameof(lastAction));
             UserResource = userResource ?? throw new ArgumentNullException(nameof(userResource));
             UserRole = userRole ?? throw new ArgumentNullException(nameof(userRole));
         }
@@ -30,8 +29,6 @@ namespace WsmSystem.Erp.Domain.Entities.V1.Securities
         public virtual int IdUserResource { get; set; }
 
         public virtual int IdUserRole { get; set; }
-
-        public virtual string LastAction { get; set; }
 
         public virtual UserResource UserResource { get; set; }
 

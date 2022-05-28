@@ -12,7 +12,7 @@ namespace WsmSystem.Erp.Domain.Entities.V1.Securities
 {
     public class ClientInfo : BaseEntity
     {
-        public ClientInfo(int id, int idAppClient, string? companyName, string? companyEmail, string? companyUrl, string? companyAddress, string? logoUrl, string lastAction, AppClient appClient)
+        public ClientInfo(int id, int idAppClient, string? companyName, string? companyEmail, string? companyUrl, string? companyAddress, string? logoUrl, AppClient appClient)
         {
             Id = id;
             IdAppClient = idAppClient;
@@ -21,7 +21,6 @@ namespace WsmSystem.Erp.Domain.Entities.V1.Securities
             CompanyUrl = companyUrl;
             CompanyAddress = companyAddress;
             LogoUrl = logoUrl;
-            LastAction = lastAction ?? throw new ArgumentNullException(nameof(lastAction));
             AppClient = appClient ?? throw new ArgumentNullException(nameof(appClient));
         }
 
@@ -38,8 +37,6 @@ namespace WsmSystem.Erp.Domain.Entities.V1.Securities
         public virtual string? CompanyAddress { get; set; }
 
         public virtual string? LogoUrl { get; set; }
-
-        public virtual string LastAction { get; set; }
 
         public virtual AppClient AppClient { get; set; }
     }
