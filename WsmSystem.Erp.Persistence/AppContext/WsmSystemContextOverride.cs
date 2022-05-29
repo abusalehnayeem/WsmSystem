@@ -1,12 +1,4 @@
-﻿using System.Data;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Storage;
-using WsmSystem.Erp.Contract;
-using WsmSystem.Erp.Domain.Common;
-using WsmSystem.Erp.Domain.Entities.V1.Securities;
-using WsmSystem.Erp.Persistence.EntityConfigurations.V1.Securities;
-
-namespace WsmSystem.Erp.Persistence.AppContext
+﻿namespace WsmSystem.Erp.Persistence.AppContext
 {
     public partial class WsmSystemContext : IWsmSystemContext
     {
@@ -15,13 +7,22 @@ namespace WsmSystem.Erp.Persistence.AppContext
         private readonly ICurrentUserService _currentUserService = null!;
         private IDbContextTransaction _currentTransaction = null!;
 
-        #endregion
+        #endregion private variable
+
         public IDbContextTransaction GetCurrentTransaction() => _currentTransaction;
+
         public bool HasActiveTransaction => _currentTransaction != null;
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            #region common features
+
+            //https://docs.microsoft.com/en-us/answers/questions/658905/apply-common-configuration-to-all-entity-types-ef.html
+
+            #endregion common features
+
             #region Securities
+
             modelBuilder.ApplyConfiguration(new AppClientConfiguration());
             modelBuilder.ApplyConfiguration(new ClientInfoConfiguration());
             modelBuilder.ApplyConfiguration(new ModuleConfiguration());
@@ -39,18 +40,20 @@ namespace WsmSystem.Erp.Persistence.AppContext
             modelBuilder.ApplyConfiguration(new UserRoleResourceLinkConfiguration());
             modelBuilder.ApplyConfiguration(new UserGroupLinkConfiguration());
             modelBuilder.ApplyConfiguration(new UserResourceConfiguration());
-            #endregion
+
+            #endregion Securities
 
             #region Relationship Mappings
 
             RelationshipsMapping(modelBuilder);
 
-            #endregion
+            #endregion Relationship Mappings
 
             base.OnModelCreating(modelBuilder);
         }
 
         #region Core Operation Implementation
+
         public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
             foreach (var entry in ChangeTracker.Entries<BaseEntity>())
@@ -63,13 +66,16 @@ namespace WsmSystem.Erp.Persistence.AppContext
                         entry.Entity.IsActive = true;
                         entry.Entity.LastAction = "ADD";
                         break;
+
                     case EntityState.Modified:
                         entry.Entity.UpdateBy = _currentUserService.IdUser ?? string.Empty;
                         entry.Entity.UpdateDate = DateTime.Now;
                         entry.Entity.IsActive = true;
                         entry.Entity.LastAction = "EDT";
                         break;
+
                     case EntityState.Deleted:
+                        entry.State = EntityState.Modified;
                         entry.Entity.UpdateBy = _currentUserService.IdUser ?? string.Empty;
                         entry.Entity.UpdateDate = DateTime.Now;
                         entry.Entity.IsActive = false;
@@ -134,6 +140,7 @@ namespace WsmSystem.Erp.Persistence.AppContext
                 }
             }
         }
-        #endregion
+
+        #endregion Core Operation Implementation
     }
 }

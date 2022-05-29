@@ -1,16 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WsmSystem.Erp.Domain.Entities.V1.Securities;
-
-namespace WsmSystem.Erp.Persistence.AppContext
+﻿namespace WsmSystem.Erp.Persistence.AppContext
 {
     public partial class WsmSystemContext
     {
-        private void RelationshipsMapping(ModelBuilder modelBuilder)
+        private static void RelationshipsMapping(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<AppClient>().HasMany(x => x.ClientInfos).WithOne(op => op.AppClient).HasForeignKey(@"IdAppClient").IsRequired(true);
 

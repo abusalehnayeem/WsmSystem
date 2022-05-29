@@ -1,11 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
-using WsmSystem.Erp.Domain.Entities.V1.Securities;
-
-namespace WsmSystem.Erp.Persistence.AppContext
+﻿namespace WsmSystem.Erp.Persistence.AppContext
 {
     public partial class WsmSystemContext
     {
         #region Securities
+
         public virtual DbSet<AppClient> AppClients => Set<AppClient>();
 
         public virtual DbSet<ClientInfo> ClientInfos => Set<ClientInfo>();
@@ -36,6 +34,7 @@ namespace WsmSystem.Erp.Persistence.AppContext
 
         public virtual DbSet<UserRole> UserRoles => Set<UserRole>();
         public virtual DbSet<UserRoleResourceLink> UserRoleResourceLinks => Set<UserRoleResourceLink>();
-        #endregion
+
+        #endregion Securities
     }
 }

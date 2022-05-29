@@ -1,11 +1,4 @@
-﻿using System.Runtime.InteropServices;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using WsmSystem.Erp.Contract;
-using WsmSystem.Erp.Persistence.AppContext;
-
-namespace WsmSystem.Erp.Persistence
+﻿namespace WsmSystem.Erp.Persistence
 {
     public static class PersistenceDependencyInjection
     {
