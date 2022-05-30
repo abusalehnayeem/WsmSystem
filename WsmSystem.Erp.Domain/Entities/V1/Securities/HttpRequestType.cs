@@ -18,7 +18,7 @@ namespace WsmSystem.Erp.Domain.Entities.V1.Securities
             Id = id;
             HttpMethodType = httpMethodType ?? throw new ArgumentNullException(nameof(httpMethodType));
             IsActive = isActive;
-            UserResources = userResources ?? throw new ArgumentNullException(nameof(UserResources));
+            UserResources = userResources ?? throw new ArgumentNullException(nameof(userResources));
         }
 
         public virtual int IdClient { get; set; }
