@@ -9,22 +9,29 @@ namespace WsmSystem.Erp.Contract
     public interface IWsmSystemContext
     {
         #region Core Operation Implementation
+
         Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
 
         Task<int> SaveChangesAsync(bool acceptAllChangesOnSuccess = false,
             CancellationToken cancellationToken = default);
+
         public DatabaseFacade Database { get; }
         bool HasActiveTransaction { get; }
+
         Task<IDbContextTransaction> BeginTransactionAsync(CancellationToken cancellationToken = default);
+
         Task CommitTransactionAsync(IDbContextTransaction transaction, CancellationToken cancellationToken = default);
+
         Task RollbackTransactionAsync(CancellationToken cancellationToken = default);
 
         EntityEntry Entry(object entity);
+
         EntityEntry Attach(object entity);
 
+        #endregion Core Operation Implementation
 
-        #endregion
         #region Securities
+
         DbSet<AppClient> AppClients { get; }
         DbSet<ClientInfo> ClientInfos { get; }
         DbSet<HttpRequestType> HttpRequestTypes { get; }
@@ -41,6 +48,7 @@ namespace WsmSystem.Erp.Contract
         DbSet<UserResource> UserResources { get; }
         DbSet<UserRoleResourceLink> UserRoleResourceLinks { get; }
         DbSet<UserRole> UserRoles { get; }
-        #endregion
+
+        #endregion Securities
     }
 }

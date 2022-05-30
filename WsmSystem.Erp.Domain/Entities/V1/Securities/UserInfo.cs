@@ -54,7 +54,5 @@ namespace WsmSystem.Erp.Domain.Entities.V1.Securities
         public virtual IList<UserGroupLink> UserGroupLinks { get; set; } = new List<UserGroupLink>();
 
         public virtual UserRole UserRole { get; set; }
-
     }
-
 }

@@ -47,5 +47,4 @@ namespace WsmSystem.Erp.Domain.Entities.V1.Securities
 
         public virtual bool IsUniqueEmailRequired { get; set; }
     }
-
 }

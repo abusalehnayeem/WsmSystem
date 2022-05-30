@@ -39,7 +39,5 @@ namespace WsmSystem.Erp.Domain.Entities.V1.Securities
         public virtual IList<UserInfo> UserInfos { get; set; } = new List<UserInfo>();
 
         public virtual IList<UserRoleResourceLink> UserRoleResourceLinks { get; set; } = new List<UserRoleResourceLink>();
-
     }
-
 }

@@ -33,7 +33,5 @@ namespace WsmSystem.Erp.Domain.Entities.V1.Securities
         public virtual HttpRequestType HttpRequestType { get; set; }
 
         public virtual IList<UserRoleResourceLink> UserRoleResourceLinks { get; set; } = new List<UserRoleResourceLink>();
-
     }
-
 }

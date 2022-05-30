@@ -33,7 +33,5 @@ namespace WsmSystem.Erp.Domain.Entities.V1.Securities
         public virtual UserResource UserResource { get; set; }
 
         public virtual UserRole UserRole { get; set; }
-
     }
-
 }

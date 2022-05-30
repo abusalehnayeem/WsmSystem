@@ -39,7 +39,5 @@ namespace WsmSystem.Erp.Domain.Entities.V1.Securities
         public virtual Module Module { get; set; }
 
         public virtual IList<SubModuleSection> SubModuleSections { get; set; } = new List<SubModuleSection>();
-
     }
-
 }

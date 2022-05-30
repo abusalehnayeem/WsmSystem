@@ -30,7 +30,5 @@ namespace WsmSystem.Erp.Domain.Entities.V1.Securities
         public virtual string? IconName { get; set; }
 
         public virtual IList<SubModule> SubModules { get; set; } = new List<SubModule>();
-
     }
-
 }

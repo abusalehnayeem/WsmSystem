@@ -28,7 +28,5 @@ namespace WsmSystem.Erp.Domain.Entities.V1.Securities
         public virtual string HttpMethodType { get; set; }
 
         public virtual IList<UserResource> UserResources { get; set; } = new List<UserResource>();
-
     }
-
 }

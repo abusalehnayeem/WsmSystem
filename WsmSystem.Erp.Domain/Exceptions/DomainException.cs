@@ -3,7 +3,7 @@
 namespace WsmSystem.Erp.Domain.Exceptions
 {
     [Serializable]
-    public class DomainException: Exception
+    public class DomainException : Exception
     {
         public DomainException()
         { }
@@ -15,6 +15,7 @@ namespace WsmSystem.Erp.Domain.Exceptions
         public DomainException(string message, Exception innerException)
             : base(message, innerException)
         { }
+
         // Without this constructor, deserialization will fail
         protected DomainException(SerializationInfo info, StreamingContext context)
             : base(info, context)

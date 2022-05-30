@@ -33,7 +33,5 @@ namespace WsmSystem.Erp.Domain.Entities.V1.Securities
         public virtual UserInfo UserInfo { get; set; }
 
         public virtual UserGroup UserGroup { get; set; }
-
     }
-
 }
