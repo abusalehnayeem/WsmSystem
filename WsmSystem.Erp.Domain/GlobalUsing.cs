@@ -1,1 +1,1 @@
-﻿global using WsmSystem.Erp.Domain.Common;
+﻿global using WsmSystem.Erp.SharedKarnel.Common;

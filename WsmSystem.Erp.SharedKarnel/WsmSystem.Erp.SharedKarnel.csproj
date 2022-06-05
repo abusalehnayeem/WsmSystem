@@ -6,8 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\WsmSystem.Erp.SharedKarnel\WsmSystem.Erp.SharedKarnel.csproj" />
-  </ItemGroup>
-
 </Project>

@@ -1,4 +1,6 @@
-﻿namespace WsmSystem.Erp.Persistence.AppContext
+﻿using WsmSystem.Erp.SharedKarnel.Common;
+
+namespace WsmSystem.Erp.Persistence.AppContext
 {
     public partial class WsmSystemContext : IWsmSystemContext
     {

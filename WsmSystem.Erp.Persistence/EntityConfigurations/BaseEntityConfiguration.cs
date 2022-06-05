@@ -1,4 +1,6 @@
-﻿namespace WsmSystem.Erp.Persistence.EntityConfigurations
+﻿using WsmSystem.Erp.SharedKarnel.Common;
+
+namespace WsmSystem.Erp.Persistence.EntityConfigurations
 {
     public abstract class BaseEntityConfiguration<TEntity> : IEntityTypeConfiguration<TEntity> where TEntity : BaseEntity
     {

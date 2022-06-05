@@ -1,4 +1,4 @@
-﻿namespace WsmSystem.Erp.Domain.Common
+﻿namespace WsmSystem.Erp.SharedKarnel.Common
 {
     public abstract class BaseEntity
     {
