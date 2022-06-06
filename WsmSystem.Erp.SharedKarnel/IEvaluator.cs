@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WsmSystem.Erp.SharedKarnel
 {
-    public interface IEvaluator<T> where T : BaseEntity
+    public interface IEvaluator<T> where T : class
     {
         bool IsCriteriaEvaluator { get; }
         IQueryable<T> GetQuery(IQueryable<T> query, ISpecification<T> specification);

@@ -1,4 +1,5 @@
 ﻿using WsmSystem.Erp.Domain.Common;
+using WsmSystem.Erp.Domain.Interfaces;
 
 namespace WsmSystem.Erp.Persistence.AppContext
 {

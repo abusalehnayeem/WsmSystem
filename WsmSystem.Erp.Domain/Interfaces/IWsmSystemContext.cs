@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage;
 using WsmSystem.Erp.Domain.Entities.V1.Securities;
 
-namespace WsmSystem.Erp.Contract
+namespace WsmSystem.Erp.Domain.Interfaces
 {
     public interface IWsmSystemContext
     {

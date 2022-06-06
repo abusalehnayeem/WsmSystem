@@ -1,4 +1,4 @@
-﻿using WsmSystem.Erp.Contract;
+﻿using WsmSystem.Erp.Domain.Interfaces;
 
 namespace WsmSystem.Erp.Api.Services
 {

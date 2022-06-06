@@ -1,6 +1,6 @@
 ﻿namespace WsmSystem.Erp.SharedKarnel.Specifications
 {
-    public class SpecificationEvaluator<TEntity> : IEvaluator<TEntity> where TEntity : BaseEntity
+    public class SpecificationEvaluator<TEntity> : IEvaluator<TEntity> where TEntity : class
     {
         public bool IsCriteriaEvaluator { get; } = false;
 

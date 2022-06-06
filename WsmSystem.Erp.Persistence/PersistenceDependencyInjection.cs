@@ -1,4 +1,6 @@
-﻿namespace WsmSystem.Erp.Persistence
+﻿using WsmSystem.Erp.Domain.Interfaces;
+
+namespace WsmSystem.Erp.Persistence
 {
     public static class PersistenceDependencyInjection
     {
