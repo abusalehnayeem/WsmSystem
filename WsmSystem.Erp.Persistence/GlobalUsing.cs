@@ -4,6 +4,7 @@ global using Microsoft.EntityFrameworkCore.Storage;
 global using Microsoft.Extensions.Configuration;
 global using Microsoft.Extensions.DependencyInjection;
 global using System.Data;
+global using System.Linq.Expressions;
 global using System.Runtime.InteropServices;
 global using WsmSystem.Erp.Domain.Entities.V1.Securities;
 global using WsmSystem.Erp.Persistence.AppContext;

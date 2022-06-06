@@ -1,4 +1,4 @@
-﻿namespace WsmSystem.Erp.SharedKarnel
+﻿namespace WsmSystem.Erp.Domain.Interfaces
 {
     public interface ISpecification<T>
     {

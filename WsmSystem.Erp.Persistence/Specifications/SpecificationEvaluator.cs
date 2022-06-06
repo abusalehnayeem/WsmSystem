@@ -1,4 +1,6 @@
-﻿namespace WsmSystem.Erp.SharedKarnel.Specifications
+﻿using WsmSystem.Erp.Domain.Interfaces;
+
+namespace WsmSystem.Erp.Persistence.Specifications
 {
     public class SpecificationEvaluator<TEntity> : IEvaluator<TEntity> where TEntity : class
     {

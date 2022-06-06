@@ -1,4 +1,6 @@
-﻿namespace WsmSystem.Erp.SharedKarnel.Specifications
+﻿using WsmSystem.Erp.Domain.Interfaces;
+
+namespace WsmSystem.Erp.Persistence.Specifications
 {
     public abstract class BaseSpecification<T> : ISpecification<T>
     {
@@ -6,10 +8,11 @@
         {
             Criteria = criteria;
         }
+
         protected BaseSpecification()
         {
-
         }
+
         public Expression<Func<T, bool>> Criteria { get; private set; } = null!;
         public List<Expression<Func<T, object>>> Includes { get; private set; } = new List<Expression<Func<T, object>>>();
         public List<string> IncludeStrings { get; private set; } = new List<string>();

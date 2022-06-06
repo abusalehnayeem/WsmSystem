@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace WsmSystem.Erp.SharedKarnel
+﻿namespace WsmSystem.Erp.Domain.Interfaces
 {
     public interface IEvaluator<T> where T : class
     {
         bool IsCriteriaEvaluator { get; }
+
         IQueryable<T> GetQuery(IQueryable<T> query, ISpecification<T> specification);
     }
 }
