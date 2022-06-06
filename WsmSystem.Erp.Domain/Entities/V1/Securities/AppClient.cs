@@ -8,8 +8,6 @@
 // the code is regenerated.
 //------------------------------------------------------------------------------
 
-
-
 namespace WsmSystem.Erp.Domain.Entities.V1.Securities
 {
     public class AppClient : BaseEntity

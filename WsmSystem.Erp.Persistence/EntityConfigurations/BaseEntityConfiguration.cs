@@ -1,4 +1,4 @@
-﻿using WsmSystem.Erp.SharedKarnel.Common;
+﻿using WsmSystem.Erp.Domain.Common;
 
 namespace WsmSystem.Erp.Persistence.EntityConfigurations
 {
