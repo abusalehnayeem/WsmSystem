@@ -1,4 +1,6 @@
-﻿namespace WsmSystem.Erp.Persistence.Repositories
+﻿using WsmSystem.Erp.Domain.NoNeedCodes.Interfaces;
+
+namespace WsmSystem.Erp.Persistence.Repositories
 {
     internal class BaseRepository<T> : IBaseRepository<T> where T : BaseEntity
     {

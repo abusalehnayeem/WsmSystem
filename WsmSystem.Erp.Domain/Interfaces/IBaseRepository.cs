@@ -1,4 +1,6 @@
-﻿namespace WsmSystem.Erp.Domain.Interfaces
+﻿using WsmSystem.Erp.Domain.NoNeedCodes.Interfaces;
+
+namespace WsmSystem.Erp.Domain.Interfaces
 {
     public interface IBaseRepository<T> where T : BaseEntity
     {
