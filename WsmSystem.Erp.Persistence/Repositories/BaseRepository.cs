@@ -1,4 +1,4 @@
-﻿using WsmSystem.Erp.Domain.NoNeedCodes.Interfaces;
+﻿using WsmSystem.Erp.Domain.Specifications;
 
 namespace WsmSystem.Erp.Persistence.Repositories
 {
@@ -13,42 +13,8 @@ namespace WsmSystem.Erp.Persistence.Repositories
         }
 
         public BaseRepository(IWsmSystemContext context) : this(context, SpecificationEvaluator.Default) { }
-        public Task<T> AddAsync(T entity, CancellationToken cancellationToken = default)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<int> CountAsync(ISpecification<T> specification, CancellationToken cancellationToken = default)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task DeleteAsync(T entity, CancellationToken cancellationToken = default)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task DeleteRangeAsync(IEnumerable<T> entities, CancellationToken cancellationToken = default)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<T> FindByIdAsync(object id, CancellationToken cancellationToken = default)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<T> FindByIdAsync(object id, ISpecification<T> specification, CancellationToken cancellationToken = default)
-        {
-            throw new NotImplementedException();
-        }
 
         public Task<T?> GetByIdAsync<TId>(TId id, CancellationToken cancellationToken = default) where TId : notnull
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<T?> GetBySpecAsync<Spec>(Spec specification, CancellationToken cancellationToken = default) where Spec : ISingleResultSpecification, ISpecification<T>
         {
             throw new NotImplementedException();
         }
@@ -63,7 +29,37 @@ namespace WsmSystem.Erp.Persistence.Repositories
             throw new NotImplementedException();
         }
 
-        public Task UpdateAsync(T entity, CancellationToken cancellationToken = default)
+        public Task<T> FindByIdAsync(object id, CancellationToken cancellationToken = default)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<T> FindByIdAsync(object id, ISpecification<T> specification, CancellationToken cancellationToken = default)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<int> CountAsync(ISpecification<T> specification, CancellationToken cancellationToken = default)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Add(T entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update(T entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete(T entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void DeleteRange(IEnumerable<T> entities)
         {
             throw new NotImplementedException();
         }
