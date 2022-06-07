@@ -1,6 +1,4 @@
-﻿using System.Runtime.Serialization;
-
-namespace WsmSystem.Erp.Domain.Exceptions
+﻿namespace WsmSystem.Erp.Domain.Exceptions
 {
     [Serializable]
     public class DomainException : Exception

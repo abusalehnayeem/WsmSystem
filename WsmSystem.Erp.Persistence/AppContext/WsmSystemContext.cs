@@ -1,6 +1,4 @@
-﻿using WsmSystem.Erp.Domain.Interfaces;
-
-namespace WsmSystem.Erp.Persistence.AppContext
+﻿namespace WsmSystem.Erp.Persistence.AppContext
 {
     public partial class WsmSystemContext : DbContext
     {

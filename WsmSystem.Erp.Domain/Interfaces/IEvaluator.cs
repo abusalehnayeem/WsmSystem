@@ -1,9 +1,9 @@
 ﻿namespace WsmSystem.Erp.Domain.Interfaces
 {
-    public interface IEvaluator<T> where T : class
+    public interface IEvaluator
     {
         bool IsCriteriaEvaluator { get; }
 
-        IQueryable<T> GetQuery(IQueryable<T> query, ISpecification<T> specification);
+        IQueryable<T> GetQuery<T>(IQueryable<T> query, ISpecification<T> specification) where T : class;
     }
 }

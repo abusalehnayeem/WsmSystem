@@ -2,6 +2,10 @@
 {
     public interface IBaseRepository<T> where T : BaseEntity
     {
+        Task<T?> GetByIdAsync<TId>(TId id, CancellationToken cancellationToken = default) where TId : notnull;
+
+        Task<T?> GetBySpecAsync<Spec>(Spec specification, CancellationToken cancellationToken = default) where Spec : ISingleResultSpecification, ISpecification<T>;
+
         Task<List<T>> ListAsync(CancellationToken cancellationToken = default);
 
         Task<List<T>> ListAsync(ISpecification<T> specification, CancellationToken cancellationToken = default);
