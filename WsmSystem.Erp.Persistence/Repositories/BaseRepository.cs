@@ -44,7 +44,12 @@ namespace WsmSystem.Erp.Persistence.Repositories
             throw new NotImplementedException();
         }
 
-        public void Add(T entity)
+        public Task AddAsync(T entity, CancellationToken cancellationToken = default)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task AddRangeAsync(IEnumerable<T> entities, CancellationToken cancellationToken = default)
         {
             throw new NotImplementedException();
         }
@@ -54,12 +59,12 @@ namespace WsmSystem.Erp.Persistence.Repositories
             throw new NotImplementedException();
         }
 
-        public void Delete(T entity)
+        public Task DeleteAsync(T entity, CancellationToken cancellationToken = default)
         {
             throw new NotImplementedException();
         }
 
-        public void DeleteRange(IEnumerable<T> entities)
+        public void DeleteRangeAsync(IEnumerable<T> entities, CancellationToken cancellationToken = default)
         {
             throw new NotImplementedException();
         }

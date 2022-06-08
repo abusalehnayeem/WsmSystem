@@ -13,6 +13,8 @@
 
         public bool HasActiveTransaction => _currentTransaction != null;
 
+        public DbContext Instance => new WsmSystemContext();
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             #region common features
@@ -53,7 +55,6 @@
         }
 
         #region Core Operation Implementation
-
         public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
             foreach (var entry in ChangeTracker.Entries<BaseEntity>())

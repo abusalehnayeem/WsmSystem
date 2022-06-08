@@ -28,6 +28,8 @@ namespace WsmSystem.Erp.Domain.Interfaces
 
         EntityEntry Attach(object entity);
 
+        DbContext Instance { get; }
+
         #endregion Core Operation Implementation
 
         #region Securities

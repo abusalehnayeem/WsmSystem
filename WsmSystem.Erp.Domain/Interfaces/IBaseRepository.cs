@@ -14,12 +14,13 @@
 
         Task<int> CountAsync(ISpecification<T> specification, CancellationToken cancellationToken = default);
 
-        void Add(T entity);
+        Task AddAsync(T entity, CancellationToken cancellationToken = default);
+        Task AddRangeAsync(IEnumerable<T> entities, CancellationToken cancellationToken = default);
 
         void Update(T entity);
 
-        void Delete(T entity);
+        Task DeleteAsync(T entity, CancellationToken cancellationToken = default);
 
-        void DeleteRange(IEnumerable<T> entities);
+        void DeleteRangeAsync(IEnumerable<T> entities, CancellationToken cancellationToken = default);
     }
 }
