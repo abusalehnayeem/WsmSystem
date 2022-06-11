@@ -7,7 +7,6 @@ global using System.Data;
 global using System.Runtime.InteropServices;
 global using WsmSystem.Erp.Domain.Common;
 global using WsmSystem.Erp.Domain.Entities.V1.Securities;
-global using WsmSystem.Erp.Domain.Evaluators;
 global using WsmSystem.Erp.Domain.Interfaces;
 global using WsmSystem.Erp.Persistence.AppContext;
 global using WsmSystem.Erp.Persistence.EntityConfigurations.V1.Securities;

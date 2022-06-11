@@ -1,4 +1,6 @@
-﻿using WsmSystem.Erp.Domain.Interfaces;
+﻿using WsmSystem.Erp.Domain.Interfaces.Repositories;
+using WsmSystem.Erp.Persistence.Repositories;
+using WsmSystem.Erp.Persistence.Repositories.Repositories;
 
 namespace WsmSystem.Erp.Persistence
 {
@@ -19,6 +21,15 @@ namespace WsmSystem.Erp.Persistence
                         options.EnableSensitiveDataLogging(); // in production its need to be turnoff
                     });
 
+            return services;
+        }
+
+
+        public static IServiceCollection AddRepositoryService(this IServiceCollection services)
+        {
+            services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
+            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+            services.AddScoped<IAppclientRepository, AppclientRepository>();
             return services;
         }
     }
