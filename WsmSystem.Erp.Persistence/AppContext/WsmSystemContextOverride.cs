@@ -13,8 +13,6 @@
 
         public bool HasActiveTransaction => _currentTransaction != null;
 
-        public DbContext Instance => new WsmSystemContext();
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             #region common features

@@ -2,25 +2,21 @@
 {
     public interface IBaseRepository<T> where T : BaseEntity
     {
-        Task<T?> GetByIdAsync<TId>(TId id, CancellationToken cancellationToken = default) where TId : notnull;
-
-        Task<List<T>> ListAsync(CancellationToken cancellationToken = default);
-
-        Task<List<T>> ListAsync(ISpecification<T> specification, CancellationToken cancellationToken = default);
-
-        Task<T> FindByIdAsync(object id, CancellationToken cancellationToken = default);
-
-        Task<T> FindByIdAsync(object id, ISpecification<T> specification, CancellationToken cancellationToken = default);
-
-        Task<int> CountAsync(ISpecification<T> specification, CancellationToken cancellationToken = default);
-
-        Task AddAsync(T entity, CancellationToken cancellationToken = default);
-        Task AddRangeAsync(IEnumerable<T> entities, CancellationToken cancellationToken = default);
-
+        #region Commands Part
+        void Add(T entity);
+        void AddRange(IEnumerable<T> entities);
         void Update(T entity);
+        void UpdateRange(IEnumerable<T> entities);
+        void Delete(T entity);
+        void DeleteRange(IEnumerable<T> entities);
+        #endregion
 
-        Task DeleteAsync(T entity, CancellationToken cancellationToken = default);
+        #region Query Part
+        Task<T?> FirstOrDefault(Expression<Func<T, bool>> predicate, ISpecification<T>? specification = null, CancellationToken cancellationToken = default);
 
-        void DeleteRangeAsync(IEnumerable<T> entities, CancellationToken cancellationToken = default);
+        Task<List<T>> GetAllAsync(Expression<Func<T, bool>> predicate, ISpecification<T>? specification = null, CancellationToken cancellationToken = default);
+
+        Task<int> CountAsync(Expression<Func<T, bool>> predicate, ISpecification<T>? specification = null, CancellationToken cancellationToken = default);
+        #endregion
     }
 }

@@ -1,72 +1,87 @@
-﻿using WsmSystem.Erp.Domain.Specifications;
+﻿using System.Linq.Expressions;
+using WsmSystem.Erp.Domain.Specifications;
 
 namespace WsmSystem.Erp.Persistence.Repositories
 {
-    internal class BaseRepository<T> : IBaseRepository<T> where T : BaseEntity
+    public abstract class BaseRepository<T> : IBaseRepository<T> where T : BaseEntity
     {
-        private readonly IWsmSystemContext _context;
+        private readonly DbContext _context;
         private readonly ISpecificationEvaluator _specificationEvaluator;
-        public BaseRepository(IWsmSystemContext context, ISpecificationEvaluator specificationEvaluator)
+        protected BaseRepository(DbContext context, ISpecificationEvaluator specificationEvaluator)
         {
             _context = context;
             _specificationEvaluator = specificationEvaluator;
         }
-
-        public BaseRepository(IWsmSystemContext context) : this(context, SpecificationEvaluator.Default) { }
-
-        public Task<T?> GetByIdAsync<TId>(TId id, CancellationToken cancellationToken = default) where TId : notnull
+        protected BaseRepository(DbContext context) : this(context, SpecificationEvaluator.Default)
         {
-            throw new NotImplementedException();
         }
 
-        public Task<List<T>> ListAsync(CancellationToken cancellationToken = default)
+        public void Add(T entity)
         {
-            throw new NotImplementedException();
+            if (entity is null) throw new ArgumentNullException(nameof(entity));
+            _context.Set<T>().Add(entity);
         }
 
-        public Task<List<T>> ListAsync(ISpecification<T> specification, CancellationToken cancellationToken = default)
+        public void AddRange(IEnumerable<T> entities)
         {
-            throw new NotImplementedException();
+            if (entities is null) throw new ArgumentNullException(nameof(entities));
+            _context.Set<T>().AddRange(entities);
         }
 
-        public Task<T> FindByIdAsync(object id, CancellationToken cancellationToken = default)
+        public async Task<int> CountAsync(Expression<Func<T, bool>> predicate, ISpecification<T>? specification = null, CancellationToken cancellationToken = default) => await ApplySpecification(predicate, specification).CountAsync(cancellationToken);
+
+        public void Delete(T entity)
         {
-            throw new NotImplementedException();
+            if (entity is null) throw new ArgumentNullException(nameof(entity));
+            _context.Set<T>().Remove(entity);
         }
 
-        public Task<T> FindByIdAsync(object id, ISpecification<T> specification, CancellationToken cancellationToken = default)
+        public void DeleteRange(IEnumerable<T> entities)
         {
-            throw new NotImplementedException();
+            if (entities is null) throw new ArgumentNullException(nameof(entities));
+            _context.Set<T>().RemoveRange(entities);
         }
 
-        public Task<int> CountAsync(ISpecification<T> specification, CancellationToken cancellationToken = default)
+        public Task<T?> FirstOrDefault(Expression<Func<T, bool>> predicate, ISpecification<T>? specification = null, CancellationToken cancellationToken = default)
         {
-            throw new NotImplementedException();
+            if (predicate is null) throw new ArgumentNullException(nameof(predicate));
+            return InternalSingleReturn(predicate, specification, cancellationToken);
         }
 
-        public Task AddAsync(T entity, CancellationToken cancellationToken = default)
+        private async Task<T?> InternalSingleReturn(Expression<Func<T, bool>> predicate, ISpecification<T>? specification, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            return specification is null
+                            ? await ApplySpecification(predicate, null).FirstOrDefaultAsync(predicate, cancellationToken)
+                            : await ApplySpecification(predicate, specification).FirstOrDefaultAsync(cancellationToken);
         }
 
-        public Task AddRangeAsync(IEnumerable<T> entities, CancellationToken cancellationToken = default)
+        public Task<List<T>> GetAllAsync(Expression<Func<T, bool>> predicate, ISpecification<T>? specification = null, CancellationToken cancellationToken = default)
         {
-            throw new NotImplementedException();
+            if (predicate is null) throw new ArgumentNullException(nameof(predicate));
+            return specification is null
+                ? InternalGetAllAsync(predicate, null, cancellationToken)
+                : InternalGetAllAsync(predicate, specification, cancellationToken);
         }
+
+        private async Task<List<T>> InternalGetAllAsync(Expression<Func<T, bool>> predicate, ISpecification<T>? specification, CancellationToken cancellationToken) => await ApplySpecification(predicate, specification).ToListAsync(cancellationToken);
 
         public void Update(T entity)
         {
-            throw new NotImplementedException();
+            if (entity is null) throw new ArgumentNullException(nameof(entity));
+            _context.Set<T>().Update(entity);
         }
 
-        public Task DeleteAsync(T entity, CancellationToken cancellationToken = default)
+        public void UpdateRange(IEnumerable<T> entities)
         {
-            throw new NotImplementedException();
+            if (entities is null) throw new ArgumentNullException(nameof(entities));
+            _context.Set<T>().UpdateRange(entities);
         }
-
-        public void DeleteRangeAsync(IEnumerable<T> entities, CancellationToken cancellationToken = default)
+        protected virtual IQueryable<T> ApplySpecification(Expression<Func<T, bool>> predicate, ISpecification<T>? specification = null)
         {
-            throw new NotImplementedException();
+            if (predicate is null) throw new ArgumentNullException(nameof(predicate));
+            return specification is null
+                ? _specificationEvaluator.GetQuery(_context.Set<T>().Where(predicate).AsQueryable(), null)
+                : _specificationEvaluator.GetQuery(_context.Set<T>().Where(predicate).AsQueryable(), specification);
         }
     }
 }

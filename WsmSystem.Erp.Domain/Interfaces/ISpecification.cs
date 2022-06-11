@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace WsmSystem.Erp.Domain.Interfaces
+﻿namespace WsmSystem.Erp.Domain.Interfaces
 {
     public interface ISpecification<T> where T : BaseEntity
     {
