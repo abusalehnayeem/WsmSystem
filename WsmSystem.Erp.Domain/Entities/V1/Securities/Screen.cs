@@ -12,29 +12,11 @@ namespace WsmSystem.Erp.Domain.Entities.V1.Securities
 {
     public class Screen : BaseEntity
     {
-        public Screen(int idClient, int screenCode, string screenName, int idModule, int idSubModule, int idSubModuleSection, short? ordinal, string screenUri, string? screenDescription, bool isRequiredForApproval, bool isFinancialScreen, string? iconName, IList<RoleWiseScreenPermission> roleWiseScreenPermissions, SubModuleSection subModuleSection)
-        {
-            IdClient = idClient;
-            ScreenCode = screenCode;
-            ScreenName = screenName ?? throw new ArgumentNullException(nameof(screenName));
-            IdModule = idModule;
-            IdSubModule = idSubModule;
-            IdSubModuleSection = idSubModuleSection;
-            Ordinal = ordinal;
-            ScreenUri = screenUri ?? throw new ArgumentNullException(nameof(screenUri));
-            ScreenDescription = screenDescription;
-            IsRequiredForApproval = isRequiredForApproval;
-            IsFinancialScreen = isFinancialScreen;
-            IconName = iconName;
-            RoleWiseScreenPermissions = roleWiseScreenPermissions ?? throw new ArgumentNullException(nameof(roleWiseScreenPermissions));
-            SubModuleSection = subModuleSection ?? throw new ArgumentNullException(nameof(subModuleSection));
-        }
-
         public virtual int IdClient { get; set; }
 
         public virtual int ScreenCode { get; set; }
 
-        public virtual string ScreenName { get; set; }
+        public virtual string ScreenName { get; set; } = null!;
 
         public virtual int IdModule { get; set; }
 
@@ -44,7 +26,7 @@ namespace WsmSystem.Erp.Domain.Entities.V1.Securities
 
         public virtual short? Ordinal { get; set; }
 
-        public virtual string ScreenUri { get; set; }
+        public virtual string ScreenUri { get; set; } = null!;
 
         public virtual string? ScreenDescription { get; set; }
 
@@ -56,6 +38,6 @@ namespace WsmSystem.Erp.Domain.Entities.V1.Securities
 
         public virtual IList<RoleWiseScreenPermission> RoleWiseScreenPermissions { get; set; } = new List<RoleWiseScreenPermission>();
 
-        public virtual SubModuleSection SubModuleSection { get; set; }
+        public virtual SubModuleSection SubModuleSection { get; set; } = null!;
     }
 }

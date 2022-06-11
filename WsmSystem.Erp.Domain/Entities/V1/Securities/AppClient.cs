@@ -12,18 +12,9 @@ namespace WsmSystem.Erp.Domain.Entities.V1.Securities
 {
     public class AppClient : BaseEntity
     {
-        public AppClient(int id, string appClientName, string? applicationKey, DateTime? expireDate, IList<ClientInfo> clientInfos)
-        {
-            Id = id;
-            AppClientName = appClientName ?? throw new ArgumentNullException(nameof(appClientName));
-            ApplicationKey = applicationKey;
-            ExpireDate = expireDate;
-            ClientInfos = clientInfos ?? throw new ArgumentNullException(nameof(clientInfos));
-        }
-
         public virtual int Id { get; private set; }
 
-        public virtual string AppClientName { get; private set; }
+        public virtual string AppClientName { get; private set; } = null!;
 
         public virtual string? ApplicationKey { get; private set; }
 

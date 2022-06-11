@@ -12,16 +12,6 @@ namespace WsmSystem.Erp.Domain.Entities.V1.Securities
 {
     public class UserGroupLink : BaseEntity
     {
-        public UserGroupLink(int idClient, int id, int idUser, int idUserGroup, UserInfo userInfo, UserGroup userGroup)
-        {
-            IdClient = idClient;
-            Id = id;
-            IdUser = idUser;
-            IdUserGroup = idUserGroup;
-            UserInfo = userInfo ?? throw new ArgumentNullException(nameof(userInfo));
-            UserGroup = userGroup ?? throw new ArgumentNullException(nameof(userGroup));
-        }
-
         public virtual int IdClient { get; set; }
 
         public virtual int Id { get; set; }
@@ -30,8 +20,8 @@ namespace WsmSystem.Erp.Domain.Entities.V1.Securities
 
         public virtual int IdUserGroup { get; set; }
 
-        public virtual UserInfo UserInfo { get; set; }
+        public virtual UserInfo UserInfo { get; set; } = null!;
 
-        public virtual UserGroup UserGroup { get; set; }
+        public virtual UserGroup UserGroup { get; set; } = null!;
     }
 }

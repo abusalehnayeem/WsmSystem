@@ -12,18 +12,6 @@ namespace WsmSystem.Erp.Domain.Entities.V1.Securities
 {
     public class SubModuleSection : BaseEntity
     {
-        public SubModuleSection(int idClient, int id, int idModule, int idSubModule, string? sectionName, string? iconName, IList<Screen> screens, SubModule subModule)
-        {
-            IdClient = idClient;
-            Id = id;
-            IdModule = idModule;
-            IdSubModule = idSubModule;
-            SectionName = sectionName;
-            IconName = iconName;
-            Screens = screens ?? throw new ArgumentNullException(nameof(screens));
-            SubModule = subModule ?? throw new ArgumentNullException(nameof(subModule));
-        }
-
         public virtual int IdClient { get; set; }
 
         public virtual int Id { get; set; }
@@ -38,6 +26,6 @@ namespace WsmSystem.Erp.Domain.Entities.V1.Securities
 
         public virtual IList<Screen> Screens { get; set; } = new List<Screen>();
 
-        public virtual SubModule SubModule { get; set; }
+        public virtual SubModule SubModule { get; set; } = null!;
     }
 }

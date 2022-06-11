@@ -12,34 +12,17 @@ namespace WsmSystem.Erp.Domain.Entities.V1.Securities
 {
     public class UserInfo : BaseEntity
     {
-        public UserInfo(int idClient, int id, string? accessLevel, string userName, string? userFullName, string userPassword, string? passwordSalt, int? idRole, string? userEmail, bool isLockedOut, bool? changePassword, IList<UserGroupLink> userGroupLinks, UserRole userRole)
-        {
-            IdClient = idClient;
-            Id = id;
-            AccessLevel = accessLevel;
-            UserName = userName ?? throw new ArgumentNullException(nameof(userName));
-            UserFullName = userFullName;
-            UserPassword = userPassword ?? throw new ArgumentNullException(nameof(userPassword));
-            PasswordSalt = passwordSalt;
-            IdRole = idRole;
-            UserEmail = userEmail;
-            IsLockedOut = isLockedOut;
-            ChangePassword = changePassword;
-            UserGroupLinks = userGroupLinks ?? throw new ArgumentNullException(nameof(userGroupLinks));
-            UserRole = userRole ?? throw new ArgumentNullException(nameof(userRole));
-        }
-
         public virtual int IdClient { get; set; }
 
         public virtual int Id { get; set; }
 
         public virtual string? AccessLevel { get; set; }
 
-        public virtual string UserName { get; set; }
+        public virtual string UserName { get; set; } = null!;
 
         public virtual string? UserFullName { get; set; }
 
-        public virtual string UserPassword { get; set; }
+        public virtual string UserPassword { get; set; } = null!;
 
         public virtual string? PasswordSalt { get; set; }
 
@@ -53,6 +36,6 @@ namespace WsmSystem.Erp.Domain.Entities.V1.Securities
 
         public virtual IList<UserGroupLink> UserGroupLinks { get; set; } = new List<UserGroupLink>();
 
-        public virtual UserRole UserRole { get; set; }
+        public virtual UserRole UserRole { get; set; } = null!;
     }
 }

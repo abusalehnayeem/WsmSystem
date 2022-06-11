@@ -1,4 +1,6 @@
+using WsmSystem.Erp.Api.Configurations;
 using WsmSystem.Erp.Persistence;
+using WsmSystem.Erp.Service;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,9 +9,13 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddHttpContextAccessor();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbService(builder.Configuration);
 builder.Services.AddRepositoryService();
+builder.Services.AddUnitOfWorkService();
+builder.Services.AddApplicationService();
+builder.Services.AddUserService();
 
 var app = builder.Build();
 

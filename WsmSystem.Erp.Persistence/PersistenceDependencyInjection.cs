@@ -1,6 +1,7 @@
 ﻿using WsmSystem.Erp.Domain.Interfaces.Repositories;
 using WsmSystem.Erp.Persistence.Repositories;
 using WsmSystem.Erp.Persistence.Repositories.Repositories;
+using WsmSystem.Erp.Persistence.UnitOfWorks;
 
 namespace WsmSystem.Erp.Persistence
 {
@@ -30,6 +31,12 @@ namespace WsmSystem.Erp.Persistence
             services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             services.AddScoped<IAppclientRepository, AppclientRepository>();
+            return services;
+        }
+
+        public static IServiceCollection AddUnitOfWorkService(this IServiceCollection services)
+        {
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
             return services;
         }
     }

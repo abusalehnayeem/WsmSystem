@@ -12,18 +12,6 @@ namespace WsmSystem.Erp.Domain.Entities.V1.Securities
 {
     public class ClientInfo : BaseEntity
     {
-        public ClientInfo(int id, int idAppClient, string? companyName, string? companyEmail, string? companyUrl, string? companyAddress, string? logoUrl, AppClient appClient)
-        {
-            Id = id;
-            IdAppClient = idAppClient;
-            CompanyName = companyName;
-            CompanyEmail = companyEmail;
-            CompanyUrl = companyUrl;
-            CompanyAddress = companyAddress;
-            LogoUrl = logoUrl;
-            AppClient = appClient ?? throw new ArgumentNullException(nameof(appClient));
-        }
-
         public virtual int Id { get; set; }
 
         public virtual int IdAppClient { get; set; }
@@ -38,6 +26,6 @@ namespace WsmSystem.Erp.Domain.Entities.V1.Securities
 
         public virtual string? LogoUrl { get; set; }
 
-        public virtual AppClient AppClient { get; set; }
+        public virtual AppClient AppClient { get; set; } = null!;
     }
 }

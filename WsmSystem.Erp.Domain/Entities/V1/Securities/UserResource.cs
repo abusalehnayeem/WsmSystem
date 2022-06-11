@@ -12,25 +12,15 @@ namespace WsmSystem.Erp.Domain.Entities.V1.Securities
 {
     public class UserResource : BaseEntity
     {
-        public UserResource(int idClient, int id, string apiUrl, int idHttpMethod, HttpRequestType httpRequestType, IList<UserRoleResourceLink> userRoleResourceLinks)
-        {
-            IdClient = idClient;
-            Id = id;
-            ApiUrl = apiUrl ?? throw new ArgumentNullException(nameof(apiUrl));
-            IdHttpMethod = idHttpMethod;
-            HttpRequestType = httpRequestType ?? throw new ArgumentNullException(nameof(httpRequestType));
-            UserRoleResourceLinks = userRoleResourceLinks ?? throw new ArgumentNullException(nameof(userRoleResourceLinks));
-        }
-
         public virtual int IdClient { get; set; }
 
         public virtual int Id { get; set; }
 
-        public virtual string ApiUrl { get; set; }
+        public virtual string ApiUrl { get; set; } = null!;
 
         public virtual int IdHttpMethod { get; set; }
 
-        public virtual HttpRequestType HttpRequestType { get; set; }
+        public virtual HttpRequestType HttpRequestType { get; set; } = null!;
 
         public virtual IList<UserRoleResourceLink> UserRoleResourceLinks { get; set; } = new List<UserRoleResourceLink>();
     }

@@ -12,23 +12,11 @@ namespace WsmSystem.Erp.Domain.Entities.V1.Securities
 {
     public class UserRole : BaseEntity
     {
-        public UserRole(int idClient, int id, string roleName, string? roleDescription, IList<RoleWiseScreenPermission> roleWiseScreenPermissions, IList<UserGroupRoleLink> userGroupRoleLinks, IList<UserInfo> userInfos, IList<UserRoleResourceLink> userRoleResourceLinks)
-        {
-            IdClient = idClient;
-            Id = id;
-            RoleName = roleName ?? throw new ArgumentNullException(nameof(roleName));
-            RoleDescription = roleDescription;
-            RoleWiseScreenPermissions = roleWiseScreenPermissions ?? throw new ArgumentNullException(nameof(roleWiseScreenPermissions));
-            UserGroupRoleLinks = userGroupRoleLinks ?? throw new ArgumentNullException(nameof(userGroupRoleLinks));
-            UserInfos = userInfos ?? throw new ArgumentNullException(nameof(userInfos));
-            UserRoleResourceLinks = userRoleResourceLinks ?? throw new ArgumentNullException(nameof(userRoleResourceLinks));
-        }
-
         public virtual int IdClient { get; set; }
 
         public virtual int Id { get; set; }
 
-        public virtual string RoleName { get; set; }
+        public virtual string RoleName { get; set; } = null!;
 
         public virtual string? RoleDescription { get; set; }
 
