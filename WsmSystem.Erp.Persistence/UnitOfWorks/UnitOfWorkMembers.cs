@@ -13,6 +13,13 @@ namespace WsmSystem.Erp.Persistence.UnitOfWorks
                 return _appclientRepository ?? (_appclientRepository = new AppclientRepository(_context));
             }
         }
+        public IClientInfoRepository ClientInfoRepository
+        {
+            get
+            {
+                return _clientInfoRepository ?? (_clientInfoRepository = new ClientInfoRepository(_context));
+            }
+        }
         #endregion
 
     }

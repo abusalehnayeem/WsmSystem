@@ -31,6 +31,8 @@ namespace WsmSystem.Erp.Persistence
             services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             services.AddScoped<IAppclientRepository, AppclientRepository>();
+            services.AddScoped<IClientInfoRepository, ClientInfoRepository>();
+
             return services;
         }
 

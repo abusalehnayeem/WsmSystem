@@ -7,6 +7,7 @@ namespace WsmSystem.Erp.Persistence.UnitOfWorks
     {
         #region securities
         private IAppclientRepository? _appclientRepository;
+        private IClientInfoRepository? _clientInfoRepository;
         #endregion
     }
 }

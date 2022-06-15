@@ -1,4 +1,5 @@
-﻿using System.Linq.Expressions;
+﻿using Microsoft.EntityFrameworkCore.Query;
+using System.Linq.Expressions;
 using WsmSystem.Erp.Domain.Specifications;
 
 namespace WsmSystem.Erp.Persistence.Repositories
@@ -16,13 +17,7 @@ namespace WsmSystem.Erp.Persistence.Repositories
         {
         }
 
-        protected virtual IQueryable<T> ApplySpecification(Expression<Func<T, bool>>? predicate = null, ISpecification<T>? specification = null)
-        {
-            var query = _context.Set<T>().AsNoTracking().AsQueryable();
-            if (predicate != null) query = query.Where(predicate);
-            return _specificationEvaluator.GetQuery(query, specification);
-        }
-
+        #region command parts
         public void Add(T entity)
         {
             if (entity is null) throw new ArgumentNullException(nameof(entity));
@@ -58,22 +53,79 @@ namespace WsmSystem.Erp.Persistence.Repositories
             if (entities is null) throw new ArgumentNullException(nameof(entities));
             _context.Set<T>().UpdateRange(entities);
         }
+        #endregion
 
-        public async Task<T?> FirstOrDefault(Expression<Func<T, bool>>? predicate = null, ISpecification<T>? specification = null, CancellationToken cancellationToken = default)
+        #region query parts
+
+        public IQueryable<T> GetQueryable()
         {
-            return await ApplySpecification(predicate, specification).FirstOrDefaultAsync(cancellationToken);
+            return _context.Set<T>().AsQueryable();
         }
 
-        public async Task<List<T>?> GetAllAsync(Expression<Func<T, bool>>? predicate = null, ISpecification<T>? specification = null, CancellationToken cancellationToken = default)
+        public async Task<List<T>> GetListAsync(ISpecification<T> specification, bool asNoTracking, CancellationToken cancellationToken = default)
         {
-            return await ApplySpecification(predicate, specification).ToListAsync(cancellationToken);
+            var query = GetQueryable();
+
+            if (specification != null)
+            {
+                query = _specificationEvaluator.GetQuery(query);
+            }
+
+            if (asNoTracking)
+            {
+                query = query.AsNoTracking();
+            }
+
+            return await query.ToListAsync(cancellationToken).ConfigureAwait(false);
         }
 
-        public async Task<int?> CountAsync(Expression<Func<T, bool>>? predicate = null, ISpecification<T>? specification = null, CancellationToken cancellationToken = default)
+        public async Task<List<T>>? GetListAsync(Expression<Func<T, bool>>? condition = null, Func<IQueryable<T>, IIncludableQueryable<T, object>>? includes = null, bool asNoTracking = true, CancellationToken cancellationToken = default)
         {
-            return await ApplySpecification(predicate, specification).CountAsync(cancellationToken);
+            var query = GetQueryable();
+            if (condition != null)
+            {
+                query = query.Where(condition);
+            }
+
+            if (includes != null)
+            {
+                query = includes(query);
+            }
+
+            if (asNoTracking)
+            {
+                query = query.AsNoTracking();
+            }
+            return await query.ToListAsync(cancellationToken).ConfigureAwait(false);
         }
 
+        public Task<List<TResult>>? GetListAsync<TResult>(Expression<Func<T, TResult>> selectExpression, Expression<Func<T, bool>>? condition = null, Func<IQueryable<T>, IIncludableQueryable<T, object>>? includes = null, bool asNoTracking = true, CancellationToken cancellationToken = default)
+        {
+            var query = GetQueryable();
+            if (condition != null)
+            {
+                query = query.Where(condition);
+            }
 
+            if (includes != null)
+            {
+                query = includes(query);
+            }
+
+            if (asNoTracking)
+            {
+                query = query.AsNoTracking();
+            }
+
+            if (selectExpression == null) throw new ArgumentNullException(nameof(selectExpression));
+            return InternalGetListAsync(selectExpression, query, cancellationToken);
+        }
+
+        private async Task<List<TResult>> InternalGetListAsync<TResult>(Expression<Func<T, TResult>> selectExpression, IQueryable<T> query, CancellationToken cancellationToken)
+        {
+            return await query.Select(selectExpression).ToListAsync(cancellationToken).ConfigureAwait(false);
+        }
+
+        #endregion
     }
 }

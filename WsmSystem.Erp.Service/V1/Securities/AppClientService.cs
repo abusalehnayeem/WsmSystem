@@ -1,4 +1,6 @@
-﻿using WsmSystem.Erp.Domain.Interfaces;
+﻿using System.Linq.Expressions;
+using WsmSystem.Erp.Domain.Entities.V1.Securities;
+using WsmSystem.Erp.Domain.Interfaces;
 using WsmSystem.Erp.ReadModel.V1.Securities;
 using WsmSystem.Erp.Service.Abstraction.V1.Securities;
 
@@ -12,16 +14,14 @@ namespace WsmSystem.Erp.Service.V1.Securities
 
         public async Task<List<AppClientDto>> GetAllAppClientAsync(CancellationToken cancellationToken = default)
         {
-            var contentList = await _unitOfWork.AppclientRepository.GetAllAsync();
-            return contentList.Select(i => new AppClientDto()
+            Expression<Func<AppClient, AppClientDto>> selectExpression = i => new AppClientDto
             {
                 Id = i.Id,
                 AppClientName = i.AppClientName,
-                ApplicationKey = i.ApplicationKey,
-                ExpireDate = i.ExpireDate
-            }).ToList();
-
-
+                ApplicationKey = i.ApplicationKey
+            };
+            var appClientList = await _unitOfWork?.AppclientRepository?.GetListAsync(selectExpression, null, null, true, cancellationToken);
+            return appClientList;
         }
     }
 }

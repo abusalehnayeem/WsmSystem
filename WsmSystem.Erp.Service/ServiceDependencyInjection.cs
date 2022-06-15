@@ -10,6 +10,7 @@ namespace WsmSystem.Erp.Service
         {
             #region securities
             services.AddScoped<IAppClientService, AppClientService>();
+            services.AddScoped<IClientInfoService, ClientInfoService>();
             #endregion
             return services;
         }

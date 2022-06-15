@@ -6,6 +6,7 @@ namespace WsmSystem.Erp.Domain.Interfaces
     {
         #region Securities
         IAppclientRepository AppclientRepository { get; }
+        IClientInfoRepository ClientInfoRepository { get; }
         #endregion
 
         #region core method

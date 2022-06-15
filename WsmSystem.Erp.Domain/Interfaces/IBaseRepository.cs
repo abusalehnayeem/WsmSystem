@@ -1,4 +1,6 @@
-﻿namespace WsmSystem.Erp.Domain.Interfaces
+﻿using Microsoft.EntityFrameworkCore.Query;
+
+namespace WsmSystem.Erp.Domain.Interfaces
 {
     public interface IBaseRepository<T> where T : BaseEntity
     {
@@ -12,11 +14,10 @@
         #endregion
 
         #region Query Part
-        Task<T?> FirstOrDefault(Expression<Func<T, bool>>? predicate = null, ISpecification<T>? specification = null, CancellationToken cancellationToken = default);
-
-        Task<List<T>?> GetAllAsync(Expression<Func<T, bool>>? predicate = null, ISpecification<T>? specification = null, CancellationToken cancellationToken = default);
-
-        Task<int?> CountAsync(Expression<Func<T, bool>>? predicate = null, ISpecification<T>? specification = null, CancellationToken cancellationToken = default);
+        IQueryable<T> GetQueryable();
+        public Task<List<T>>? GetListAsync(Expression<Func<T, bool>>? condition = null, Func<IQueryable<T>, IIncludableQueryable<T, object>>? includes = null, bool asNoTracking = true, CancellationToken cancellationToken = default);
+        public Task<List<TResult>>? GetListAsync<TResult>(Expression<Func<T, TResult>> selectExpression, Expression<Func<T, bool>>? condition = null, Func<IQueryable<T>, IIncludableQueryable<T, object>>? includes = null, bool asNoTracking = true, CancellationToken cancellationToken = default);
+        Task<List<T>> GetListAsync(ISpecification<T> specification, bool asNoTracking, CancellationToken cancellationToken = default);
         #endregion
     }
 }
