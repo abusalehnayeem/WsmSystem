@@ -1,6 +1,4 @@
-﻿using WsmSystem.Erp.Domain.Common;
-
-namespace WsmSystem.Erp.Persistence.EntityConfigurations
+﻿namespace WsmSystem.Erp.Persistence.EntityConfigurations
 {
     public abstract class BaseEntityConfiguration<TEntity> : IEntityTypeConfiguration<TEntity> where TEntity : BaseEntity
     {

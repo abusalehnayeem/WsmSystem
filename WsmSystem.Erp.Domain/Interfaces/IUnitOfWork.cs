@@ -5,12 +5,16 @@ namespace WsmSystem.Erp.Domain.Interfaces
     public interface IUnitOfWork
     {
         #region Securities
+
         IAppclientRepository AppclientRepository { get; }
         IClientInfoRepository ClientInfoRepository { get; }
-        #endregion
+
+        #endregion Securities
 
         #region core method
+
         Task<int> SaveChangesAsync(CancellationToken cancellationToken);
-        #endregion
+
+        #endregion core method
     }
 }

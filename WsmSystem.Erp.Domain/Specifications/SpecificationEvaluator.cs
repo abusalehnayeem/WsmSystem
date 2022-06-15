@@ -4,8 +4,11 @@ namespace WsmSystem.Erp.Domain.Specifications
 {
     public class SpecificationEvaluator : ISpecificationEvaluator
     {
-        private SpecificationEvaluator() { }
+        private SpecificationEvaluator()
+        { }
+
         public static SpecificationEvaluator Default { get; } = new SpecificationEvaluator();
+
         public IQueryable<T> GetQuery<T>(IQueryable<T> inputQuery, ISpecification<T>? specification = null) where T : BaseEntity
         {
             var query = inputQuery;

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq.Expressions;
 using WsmSystem.Erp.Domain.Entities.V1.Securities;
 using WsmSystem.Erp.Domain.Interfaces;
 using WsmSystem.Erp.ReadModel.V1.Securities;
@@ -13,7 +8,6 @@ namespace WsmSystem.Erp.Service.V1.Securities
 {
     public class ClientInfoService : IClientInfoService
     {
-
         private readonly IUnitOfWork _unitOfWork;
 
         public ClientInfoService(IUnitOfWork unitOfWork) => _unitOfWork = unitOfWork;

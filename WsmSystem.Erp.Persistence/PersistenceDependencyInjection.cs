@@ -25,7 +25,6 @@ namespace WsmSystem.Erp.Persistence
             return services;
         }
 
-
         public static IServiceCollection AddRepositoryService(this IServiceCollection services)
         {
             services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));

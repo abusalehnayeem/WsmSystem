@@ -9,9 +9,12 @@ namespace WsmSystem.Erp.Service
         public static IServiceCollection AddApplicationService(this IServiceCollection services)
         {
             #region securities
+
             services.AddScoped<IAppClientService, AppClientService>();
             services.AddScoped<IClientInfoService, ClientInfoService>();
-            #endregion
+
+            #endregion securities
+
             return services;
         }
     }

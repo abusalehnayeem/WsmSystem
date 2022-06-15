@@ -6,21 +6,10 @@ namespace WsmSystem.Erp.Persistence.UnitOfWorks
     public partial class UnitOfWork
     {
         #region securities
-        public IAppclientRepository AppclientRepository
-        {
-            get
-            {
-                return _appclientRepository ?? (_appclientRepository = new AppclientRepository(_context));
-            }
-        }
-        public IClientInfoRepository ClientInfoRepository
-        {
-            get
-            {
-                return _clientInfoRepository ?? (_clientInfoRepository = new ClientInfoRepository(_context));
-            }
-        }
-        #endregion
 
+        public IAppclientRepository AppclientRepository => _appclientRepository ??= new AppclientRepository(_context);
+        public IClientInfoRepository ClientInfoRepository => _clientInfoRepository ??= new ClientInfoRepository(_context);
+
+        #endregion securities
     }
 }

@@ -8,16 +8,19 @@ namespace WsmSystem.Erp.Persistence.Repositories
     {
         private readonly DbContext _context;
         private readonly ISpecificationEvaluator _specificationEvaluator;
+
         protected BaseRepository(DbContext context, ISpecificationEvaluator specificationEvaluator)
         {
             _context = context;
             _specificationEvaluator = specificationEvaluator;
         }
+
         protected BaseRepository(DbContext context) : this(context, SpecificationEvaluator.Default)
         {
         }
 
         #region command parts
+
         public void Add(T entity)
         {
             if (entity is null) throw new ArgumentNullException(nameof(entity));
@@ -53,7 +56,8 @@ namespace WsmSystem.Erp.Persistence.Repositories
             if (entities is null) throw new ArgumentNullException(nameof(entities));
             _context.Set<T>().UpdateRange(entities);
         }
-        #endregion
+
+        #endregion command parts
 
         #region query parts
 
@@ -126,6 +130,6 @@ namespace WsmSystem.Erp.Persistence.Repositories
             return await query.Select(selectExpression).ToListAsync(cancellationToken).ConfigureAwait(false);
         }
 
-        #endregion
+        #endregion query parts
     }
 }

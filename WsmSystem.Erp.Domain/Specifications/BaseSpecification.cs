@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace WsmSystem.Erp.Domain.Specifications
+﻿namespace WsmSystem.Erp.Domain.Specifications
 {
     public abstract class BaseSpecification<T> : ISpecification<T> where T : BaseEntity
     {

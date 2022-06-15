@@ -53,6 +53,7 @@
         }
 
         #region Core Operation Implementation
+
         public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
             foreach (var entry in ChangeTracker.Entries<BaseEntity>())

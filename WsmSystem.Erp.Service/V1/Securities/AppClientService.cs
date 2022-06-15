@@ -14,14 +14,13 @@ namespace WsmSystem.Erp.Service.V1.Securities
 
         public async Task<List<AppClientDto>> GetAllAppClientAsync(CancellationToken cancellationToken = default)
         {
-            Expression<Func<AppClient, AppClientDto>> selectExpression = i => new AppClientDto
+            Expression<Func<AppClient, AppClientDto>> selectExpression = i => new AppClientDto()
             {
                 Id = i.Id,
                 AppClientName = i.AppClientName,
                 ApplicationKey = i.ApplicationKey
             };
-            var appClientList = await _unitOfWork?.AppclientRepository?.GetListAsync(selectExpression, null, null, true, cancellationToken);
-            return appClientList;
+            return await _unitOfWork.AppclientRepository.GetListAsync(selectExpression, null, null, true, cancellationToken);
         }
     }
 }
