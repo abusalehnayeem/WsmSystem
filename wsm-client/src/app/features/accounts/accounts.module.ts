@@ -2,13 +2,15 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { AccountsRoutingModule } from './accounts-routing.module';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
-    AccountsRoutingModule
+    AccountsRoutingModule,
+    SharedModule
   ]
 })
 export class AccountsModule { }
