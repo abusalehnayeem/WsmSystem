@@ -5,30 +5,13 @@ VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{453C94EC-1DF6-4797-95F1-0A6F2DFFF25E}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiGateways", "ApiGateways", "{0CCB96D9-D3A3-44F6-90D0-50B696A0D1C0}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web.Bff.Erp", "Web.Bff.Erp", "{779625A5-A114-4E2F-9C65-FF5E81ECA784}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WsmSystem.Web.Bff.Erp.HttpAggregator", "WsmSystem.Web.Bff.Erp.HttpAggregator\WsmSystem.Web.Bff.Erp.HttpAggregator.csproj", "{08397929-AE61-44F1-B901-46D2DB15C2AD}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{08397929-AE61-44F1-B901-46D2DB15C2AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{08397929-AE61-44F1-B901-46D2DB15C2AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{08397929-AE61-44F1-B901-46D2DB15C2AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{08397929-AE61-44F1-B901-46D2DB15C2AD}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{0CCB96D9-D3A3-44F6-90D0-50B696A0D1C0} = {453C94EC-1DF6-4797-95F1-0A6F2DFFF25E}
-		{779625A5-A114-4E2F-9C65-FF5E81ECA784} = {0CCB96D9-D3A3-44F6-90D0-50B696A0D1C0}
-		{08397929-AE61-44F1-B901-46D2DB15C2AD} = {779625A5-A114-4E2F-9C65-FF5E81ECA784}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E6B9B681-E497-4B90-A877-1F5972999BB6}
