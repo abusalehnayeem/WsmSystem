@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WsmSystem.Erp.Infrastructur
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WsmSystem.Erp.Application", "WsmSystem.Erp.Application\WsmSystem.Erp.Application.csproj", "{1DD6B462-BB0D-4634-8178-1406174FBFC5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WsmSystem.Erp.Api", "WsmSystem.Erp.Api\WsmSystem.Erp.Api.csproj", "{91CD8736-DF12-4F3A-8787-93DB261C52E9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,10 @@ Global
 		{1DD6B462-BB0D-4634-8178-1406174FBFC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1DD6B462-BB0D-4634-8178-1406174FBFC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1DD6B462-BB0D-4634-8178-1406174FBFC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91CD8736-DF12-4F3A-8787-93DB261C52E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91CD8736-DF12-4F3A-8787-93DB261C52E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91CD8736-DF12-4F3A-8787-93DB261C52E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91CD8736-DF12-4F3A-8787-93DB261C52E9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -37,6 +43,7 @@ Global
 		{C707D3BA-3DC0-4B10-9E2C-B9C986D05DC3} = {453C94EC-1DF6-4797-95F1-0A6F2DFFF25E}
 		{21619371-46D2-441C-8814-3CF51C276C28} = {453C94EC-1DF6-4797-95F1-0A6F2DFFF25E}
 		{1DD6B462-BB0D-4634-8178-1406174FBFC5} = {453C94EC-1DF6-4797-95F1-0A6F2DFFF25E}
+		{91CD8736-DF12-4F3A-8787-93DB261C52E9} = {453C94EC-1DF6-4797-95F1-0A6F2DFFF25E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E6B9B681-E497-4B90-A877-1F5972999BB6}
