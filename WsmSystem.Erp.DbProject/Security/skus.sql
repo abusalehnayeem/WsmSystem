@@ -1,3 +1,0 @@
-﻿CREATE SCHEMA [skus]
-    AUTHORIZATION [dbo];
-
