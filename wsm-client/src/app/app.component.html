@@ -1,0 +1,75 @@
+<div class="navbar fixed-top bg-primary navbar-expand flex-row" role="navigation">
+  <button type="button" class="navbar-toggler d-block d-lg-none mr-3" data-target=".level1Nav">
+    <span class="navbar-toggler-icon"></span>
+    <!--&#9776;-->
+  </button>
+  <a routerLink="/" class="navbar-brand" aria-label="C-Logic">
+    <span class="ci ci-logo-clogic d-inline-block align-top" aria-hidden="true"></span>
+    <span class="sr-only">C-Logic</span>
+  </a>
+  <ul class="navbar-nav flex-h ml-auto">
+    <!-- <li class="nav-item" [class.active]="showSPEinstellungen">
+      <a class="nav-link text-muted" (click)="showSPEinstellungen = !showSPEinstellungen" aria-label="Einstellungen"
+        title="Einstellungen">
+        <span class="ci ci-xl ci-cogs" title="Einstellungen" aria-hidden="true"></span>
+        <span class="sr-only">Einstellungen</span>
+      </a>
+    </li> -->
+
+    <!-- <li class="nav-item dropdown" [class.show]="showUserComponent">
+      <a class="nav-link dropdown-toggle" (click)="showUserComponent = !showUserComponent">
+        <span class="ci ci-xl ci-user" aria-hidden="true"></span>
+      </a>
+      <app-user class="dropdown-menu dropdown-menu-right" [class.show]="showUserComponent"></app-user>
+    </li> -->
+  </ul>
+</div>
+
+<div class="navbar-fixed-left">
+  <div id="level1Nav" class="level1Nav d-none d-lg-block">
+    <ul class="nav">
+      <!-- <li *ngFor="let module of navigationData" class="submenu nav-item"
+        [class.hasFocus]="level1Open === module.moduleName">
+        <span [title]="module.moduleName|translate" class="nav-link" (click)="openMenu(module.moduleName)">
+          <span [className]="module.moduleIconName"></span>
+          <span class="d-none d-xl-block">{{ module.moduleName|translate }}</span>
+        </span>
+        <div class="level2Nav">
+          <div class="navbar-header h4">{{module.moduleName|translate}}</div>
+          <ul class="nav">
+            <li class="divider"></li>
+            <li *ngFor="let subModule of module.subModules" class="nav-item submenu"
+              [class.hasFocus]="level1Open === module.moduleName && level2Open === subModule.subModuleName">
+              <a class="nav-link submenu-toggle"
+                (click)="openMenu(module.moduleName, subModule.subModuleName)">{{subModule.subModuleName}} <span
+                  class="ci ci-angle-right"></span></a>
+              <div class="level3Nav">
+                <div class="navbar-header h4">{{subModule.subModuleName}}</div>
+                <ul class="nav">
+                  <li *ngFor="let section of subModule.sections" class="nav-item submenu"
+                    [class.hasFocus]="level1Open === module.moduleName && level2Open === subModule.subModuleName && level3Open === section.sectionName">
+                    <a class="nav-link submenu-toggle"
+                      (click)="openMenu(module.moduleName, subModule.subModuleName, section.sectionName)">{{section.sectionName}}
+                      <span class="ci ci-angle-right"></span></a>
+                    <div class="level3Nav">
+                      <div class="navbar-header h4">{{section.sectionName}}</div>
+                      <ul class="nav">
+                        <li *ngFor="let screen of section.screens" class="nav-item"><a [routerLink]="[screen.uri]"
+                            routerLinkActive="router-link-active" class="nav-link">{{screen.screenName}}</a></li>
+                        <li class="divider"></li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="divider"></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </li> -->
+    </ul>
+  </div>
+</div>
+
+<!-- content -->
+<router-outlet></router-outlet>
