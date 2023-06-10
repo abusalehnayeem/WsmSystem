@@ -1,0 +1,22 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-primary ps-0 ps-lg-3 px-0 px-lg-3">
+  <div class="container-fluid">
+    <a routerLink="/" class="navbar-brand" aria-label="nErp">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId"
+      aria-expanded="false" aria-controls="collapsibleNavId" aria-label="toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavId">
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown" [class.show]="showUserComponent">
+          <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" id="showUserComponentDropdown"
+            aria-expanded="false" (click)="showUserComponent=!showUserComponent">
+            <span class="bx bx-md bx-user-circle" aria-hidden="true"></span>
+          </a>
+          <app-shared-nav-bar-user class="dropdown-menu dropdown-menu-end"
+            [class.show]="showUserComponent"></app-shared-nav-bar-user>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
