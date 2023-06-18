@@ -1,0 +1,2294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<efcore p1:name="WsmSystemModel" p1:Guid="b579d66e-de6a-4005-b82e-edc6ad564ba2" xmlns:p1="http://devart.com/schemas/EntityDeveloper/1.0">
+  <class name="AppClient" entity-set="AppClients" table="AppClient" schema="core" p1:Guid="2586e650-0923-475c-8771-d629562eebe2">
+    <id name="Id" type="Int32" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="225284ee-3700-41bf-896b-54048d628577">
+      <column name="Id" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </id>
+    <property name="AppClientName" type="String" p1:ValidateMaxLength="250" p1:ValidateRequired="true" p1:Guid="92ee724e-db31-4a2f-9345-f498e344af92">
+      <column name="AppClientName" not-null="True" length="250" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="ApplicationKey" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="138150cb-c847-4f2c-afa8-84b9eca13f84">
+      <column name="ApplicationKey" not-null="False" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="ExpireDate" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="13fa1110-8caa-4ce2-970f-3e75d3a3c584">
+      <column name="ExpireDate" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="IsActive" type="Boolean" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="c3486954-1467-4f7b-a1d3-f85d59026746">
+      <Documentation>
+        <Summary>((0))</Summary>
+      </Documentation>
+      <column name="IsActive" default="1" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="LastAction" type="String" p1:ValidateMaxLength="3" p1:ValidateRequired="true" p1:Guid="bb5676c9-9d92-4668-8fb3-c169b7d17823">
+      <column name="LastAction" not-null="True" length="3" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="MakeBy" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="721411ca-37c0-47c0-b0b7-4c0b21953329">
+      <column name="MakeBy" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="MakeDate" type="DateTime" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="d23bcef0-c957-4dc6-8dea-72c2f59204fd">
+      <Documentation>
+        <Summary>((getdate()))</Summary>
+      </Documentation>
+      <column name="MakeDate" default="getdate()" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="UpdateBy" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="c18e5916-d6f9-4c4d-a9c8-b01d48f4ad46">
+      <column name="UpdateBy" not-null="False" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="UpdateDate" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="7375c596-99f1-42dc-88ca-b92846f30812">
+      <column name="UpdateDate" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="StartTime" type="DateTime" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="4afcb5d9-190b-43b8-906f-ab7d5be26ad7">
+      <column name="StartTime" default="getutcdate()" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="EndTime" type="DateTime" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="b3b91c08-80e4-4dc8-934b-a5dd94c2406c">
+      <column name="EndTime" default="CONVERT([datetime2],'9999-12-31 23:59:59.9999999')" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="AppClientHistory" entity-set="AppClientHistories" table="AppClientHistory" schema="core" query-type="True" p1:Guid="09e9b8d5-9055-444d-bb22-0b08e8c9c5a7">
+    <property name="Id" type="Int32" p1:ValidateRequired="true" p1:Guid="fe618516-7787-444a-b3c9-b5edcd72092e">
+      <column name="Id" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="AppClientName" type="String" p1:ValidateMaxLength="250" p1:ValidateRequired="true" p1:Guid="ef10a065-3a1c-4bb6-9a09-19d651573afa">
+      <column name="AppClientName" not-null="True" length="250" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="ApplicationKey" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="f15f4301-9243-4776-b125-4e9ce2ec53eb">
+      <column name="ApplicationKey" not-null="False" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="ExpireDate" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="93e5597d-5940-4bce-9fee-44f1ee0ea2cf">
+      <column name="ExpireDate" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="IsActive" type="Boolean" p1:ValidateRequired="true" p1:Guid="fa6324e0-136f-46c2-a12b-ad2f72481e00">
+      <column name="IsActive" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="LastAction" type="String" p1:ValidateMaxLength="3" p1:ValidateRequired="true" p1:Guid="1f7182ab-cdce-4ff9-93e4-66da6d325795">
+      <column name="LastAction" not-null="True" length="3" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="MakeBy" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="049b1e10-88f8-46fb-86c7-5e9042b29d32">
+      <column name="MakeBy" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="MakeDate" type="DateTime" p1:ValidateRequired="true" p1:Guid="d8966770-356a-4a5a-b809-38177c4e36bf">
+      <column name="MakeDate" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="UpdateBy" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="4ad882a2-d13a-4daa-a749-140ce1185d65">
+      <column name="UpdateBy" not-null="False" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="UpdateDate" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="4cdd963c-3800-418e-b16e-57d8d91aaeef">
+      <column name="UpdateDate" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="StartTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="64e9650a-8611-47da-af2b-219455947427">
+      <column name="StartTime" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="EndTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="d58a8eb6-8ff7-45e1-8d59-b1621ea2b9b2">
+      <column name="EndTime" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="BaseLanguage" entity-set="BaseLanguages" table="BaseLanguage" schema="core" p1:Guid="7f686fd2-f910-4e7a-935c-8d6e3747134b">
+    <composite-id>
+      <key-property name="IdClient" type="Int32" p1:ValidateRequired="true" p1:Guid="5ca88005-8ee7-486e-8429-39bd8edf1f8f">
+        <column name="IdClient" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+      </key-property>
+      <key-property name="Id" type="Int32" primary-key-index="1" p1:ValidateRequired="true" p1:Guid="0a199286-3da9-4afb-a124-4bd82fef4af5">
+        <column name="Id" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+      </key-property>
+    </composite-id>
+    <property name="DescriptionDetail" type="String" p1:nullable="True" p1:ValidateMaxLength="30" p1:ValidateRequired="false" p1:Guid="a9dc1c84-a055-44ff-861d-b11569d0c7df">
+      <column name="DescriptionDetail" not-null="False" length="30" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="DescriptionShort" type="String" p1:nullable="True" p1:ValidateMaxLength="5" p1:ValidateRequired="false" p1:Guid="0724f7b0-144e-4703-b179-0875f0f46631">
+      <column name="DescriptionShort" not-null="False" length="5" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IdAuthorizationStatus" type="String" p1:ValidateMaxLength="1" p1:ValidateRequired="true" p1:Guid="3d3b7c2b-3823-4d75-bd0c-5a981cba9ad8">
+      <column name="IdAuthorizationStatus" not-null="True" length="1" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IsActive" type="Boolean" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="3c6e595c-c0aa-4ef7-a262-96eb587ebdb0">
+      <column name="IsActive" default="1" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="LastAction" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="030167a4-b99d-4c92-8f9b-5d7828fb736c">
+      <column name="LastAction" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="MakeBy" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="492b9177-11bc-438a-8cd3-c90324719095">
+      <column name="MakeBy" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="MakeDate" type="DateTime" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="4fb1ad64-92a9-4e34-8a4f-e0eca3bcc8d1">
+      <column name="MakeDate" default="getdate()" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="UpdateBy" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="2aa9432b-a18f-4210-9d11-480a5814069d">
+      <column name="UpdateBy" not-null="False" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="UpdateDate" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="ca0669b4-d8e3-429a-936d-bd2fbc3b8568">
+      <column name="UpdateDate" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="StartTime" type="DateTime" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="3053c246-ef95-4566-b41c-382ecb2c7a9e">
+      <column name="StartTime" default="getutcdate()" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="EndTime" type="DateTime" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="27205382-9e67-4ba6-93a8-1266f1f6a385">
+      <column name="EndTime" default="CONVERT([datetime2],'9999-12-31 23:59:59.9999999')" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="BaseLanguageHistory" entity-set="BaseLanguageHistories" table="BaseLanguageHistory" schema="core" query-type="True" p1:Guid="f987506e-0f6d-4126-8e8f-00dbdc39e189">
+    <property name="IdClient" type="Int32" p1:ValidateRequired="true" p1:Guid="d6de918a-f751-4bab-b47b-fa0ac4d5ceb9">
+      <column name="IdClient" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="Id" type="Int32" p1:ValidateRequired="true" p1:Guid="e7163a95-6ed0-4765-97d0-0790334e2b22">
+      <column name="Id" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="DescriptionDetail" type="String" p1:nullable="True" p1:ValidateMaxLength="30" p1:ValidateRequired="false" p1:Guid="e7cf09b1-5e74-4256-a582-bfa00c18e801">
+      <column name="DescriptionDetail" not-null="False" length="30" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="DescriptionShort" type="String" p1:nullable="True" p1:ValidateMaxLength="5" p1:ValidateRequired="false" p1:Guid="6d9144f6-c33e-4525-aac3-471947a3bb22">
+      <column name="DescriptionShort" not-null="False" length="5" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IdAuthorizationStatus" type="String" p1:ValidateMaxLength="1" p1:ValidateRequired="true" p1:Guid="ccd458f4-cad5-41a8-91bd-6598f78699c0">
+      <column name="IdAuthorizationStatus" not-null="True" length="1" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IsActive" type="Boolean" p1:ValidateRequired="true" p1:Guid="923ada45-48e7-4016-8381-164c8b00e75d">
+      <column name="IsActive" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="LastAction" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="8155038c-b9c6-4b53-9d02-235a2d588697">
+      <column name="LastAction" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="MakeBy" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="9e52ee4c-39d0-4443-8a0c-b5034957de6e">
+      <column name="MakeBy" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="MakeDate" type="DateTime" p1:ValidateRequired="true" p1:Guid="401dfe4a-06f2-4c87-89fc-7e0170d64e36">
+      <column name="MakeDate" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="UpdateBy" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="772c906f-38d5-45d1-bc22-14d0c7b5385f">
+      <column name="UpdateBy" not-null="False" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="UpdateDate" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="b97c5cf4-4acc-41e9-bcbc-80b01a9c8e5b">
+      <column name="UpdateDate" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="StartTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="11c689c2-86f3-4db3-9731-102d4ef0bfe1">
+      <column name="StartTime" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="EndTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="7043aa4c-56b7-4f71-beda-37b3a9b32ce5">
+      <column name="EndTime" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="ClientCompany" entity-set="ClientCompanies" table="ClientCompany" schema="core" p1:Guid="5ac5f470-9b24-4b3a-b700-6c828e2ad186">
+    <id name="IdClient" type="Int32" p1:ValidateRequired="true" p1:Guid="60bc3020-a6b7-4ba0-b46c-8db499455d43">
+      <column name="IdClient" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </id>
+    <property name="IdAppClient" type="Int32" p1:ValidateRequired="true" p1:Guid="536e9fcb-afec-4ca7-929e-395927d45111">
+      <column name="IdAppClient" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="CompanyShortCode" type="String" p1:nullable="True" p1:ValidateMaxLength="20" p1:ValidateRequired="false" p1:Guid="39474a95-2f50-4463-8bee-df25ab2c0c00">
+      <column name="CompanyShortCode" not-null="False" length="20" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="CompanyName" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="ec6dbf44-e073-43a3-8dc9-1dbb14ccf7fb">
+      <column name="CompanyName" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="CompanyFullName" type="String" p1:nullable="True" p1:ValidateMaxLength="400" p1:ValidateRequired="false" p1:Guid="8bea371f-cbae-41fc-ac53-58dfca729b06">
+      <column name="CompanyFullName" not-null="False" length="400" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="CompanyTelephone" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="ed517d30-bd60-439c-9fcf-bed66aeefe69">
+      <column name="CompanyTelephone" not-null="False" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="CompanyFax" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="0fd54362-7945-4f4f-876d-7444306f4200">
+      <column name="CompanyFax" not-null="False" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="CompanyEmail" type="String" p1:nullable="True" p1:ValidateMaxLength="200" p1:ValidateRequired="false" p1:Guid="e420c042-47a8-42c1-96f9-2da6248737ed">
+      <column name="CompanyEmail" not-null="False" length="200" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="CompanyUrl" type="String" p1:nullable="True" p1:ValidateMaxLength="150" p1:ValidateRequired="false" p1:Guid="863b7b51-566e-4d12-bcaf-9b00db4ab2ce">
+      <column name="CompanyUrl" not-null="False" length="150" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="CompanyAddress" type="String" p1:nullable="True" p1:ValidateMaxLength="250" p1:ValidateRequired="false" p1:Guid="70b9014d-7945-4832-8ae3-28cd80b8909c">
+      <column name="CompanyAddress" not-null="False" length="250" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="CompanyIdentificationNo" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="2a123e15-0407-4d94-86a1-b6d2067290ac">
+      <column name="CompanyIdentificationNo" not-null="False" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="CompanyLogo" type="Blob" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="6025ae08-6c89-4e20-919f-6e1cd547fa0b">
+      <column name="CompanyLogo" not-null="False" length="2147483647" sql-type="image" p1:unicode="False" />
+    </property>
+    <property name="IsActive" type="Boolean" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="41c49878-92ab-4d35-aae1-43bc7c4e4c1e">
+      <column name="IsActive" default="1" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="IsDefault" type="Boolean" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="1ff194fb-d023-47f3-b349-3e26fc05f6bf">
+      <column name="IsDefault" default="0" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="ExcludeSocialSecurity" type="Boolean" p1:nullable="True" value-generated="OnAdd" p1:ValidateRequired="false" p1:Guid="e61af89d-152c-4871-a3fe-1feb771c11e6">
+      <column name="ExcludeSocialSecurity" default="0" not-null="False" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="ExcludeSalaryTax" type="Boolean" p1:nullable="True" value-generated="OnAdd" p1:ValidateRequired="false" p1:Guid="47b81e70-0089-4cb0-9f97-f51b81df813e">
+      <column name="ExcludeSalaryTax" default="0" not-null="False" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="SocialSecurityNumber" type="String" p1:nullable="True" p1:ValidateMaxLength="20" p1:ValidateRequired="false" p1:Guid="a801f6ef-d111-4955-a163-f73983066756">
+      <column name="SocialSecurityNumber" not-null="False" length="20" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="LastAction" type="String" p1:ValidateMaxLength="3" p1:ValidateRequired="true" p1:Guid="2acb5f1f-88e3-401f-b631-d9a087e69f1d">
+      <column name="LastAction" not-null="True" length="3" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="MakeBy" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="134bc61f-d3b8-4655-80f8-b942c6062d0a">
+      <column name="MakeBy" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="MakeDate" type="DateTime" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="2313dc57-58e9-4575-9c0a-8fd6f4829ef6">
+      <column name="MakeDate" default="getdate()" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="UpdateBy" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="5481a96d-3da9-4668-b611-fb12f58c0388">
+      <column name="UpdateBy" not-null="False" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="UpdateDate" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="73fd5dd2-01ee-4466-b146-a213c564b4c8">
+      <column name="UpdateDate" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="StartTime" type="DateTime" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="aefda337-767b-4242-8365-0dcd32822775">
+      <column name="StartTime" default="getutcdate()" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="EndTime" type="DateTime" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="5b1d3f23-3963-478c-b19b-68020ba5fc70">
+      <column name="EndTime" default="CONVERT([datetime2],'9999-12-31 23:59:59.9999999')" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="ClientCompanyHistory" entity-set="ClientCompanyHistories" table="ClientCompanyHistory" schema="core" query-type="True" p1:Guid="3ec8cc65-9a88-4f47-842e-860ecce337bb">
+    <property name="IdClient" type="Int32" p1:ValidateRequired="true" p1:Guid="717645c5-6ea5-4614-9db3-327ecd81d9ab">
+      <column name="IdClient" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="IdAppClient" type="Int32" p1:ValidateRequired="true" p1:Guid="51fe659c-03f5-4570-9fc7-762d4522a323">
+      <column name="IdAppClient" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="CompanyShortCode" type="String" p1:nullable="True" p1:ValidateMaxLength="20" p1:ValidateRequired="false" p1:Guid="5a81772f-170a-4400-aba3-9fad3bc88489">
+      <column name="CompanyShortCode" not-null="False" length="20" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="CompanyName" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="49045251-ffb8-4aa4-a739-058f64ab4cc2">
+      <column name="CompanyName" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="CompanyFullName" type="String" p1:nullable="True" p1:ValidateMaxLength="400" p1:ValidateRequired="false" p1:Guid="2aac129f-0f03-4811-8011-6e51cd4d83d7">
+      <column name="CompanyFullName" not-null="False" length="400" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="CompanyTelephone" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="94fb4b97-881b-43ed-a3ea-dca07da6d9f6">
+      <column name="CompanyTelephone" not-null="False" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="CompanyFax" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="482218e5-e2dd-4e21-a6b5-53d526d64b4d">
+      <column name="CompanyFax" not-null="False" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="CompanyEmail" type="String" p1:nullable="True" p1:ValidateMaxLength="200" p1:ValidateRequired="false" p1:Guid="a961ae64-84e7-4e0b-a4ce-2b137221455d">
+      <column name="CompanyEmail" not-null="False" length="200" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="CompanyUrl" type="String" p1:nullable="True" p1:ValidateMaxLength="150" p1:ValidateRequired="false" p1:Guid="6a3eaa66-be08-4bc1-a9f8-89c86ad6857b">
+      <column name="CompanyUrl" not-null="False" length="150" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="CompanyAddress" type="String" p1:nullable="True" p1:ValidateMaxLength="250" p1:ValidateRequired="false" p1:Guid="94fa2756-22d0-48bf-8682-4b524d982239">
+      <column name="CompanyAddress" not-null="False" length="250" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="CompanyIdentificationNo" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="435954c1-44b1-4788-b45b-6bae290bd3f0">
+      <column name="CompanyIdentificationNo" not-null="False" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="CompanyLogo" type="Blob" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="5f18b6e7-249f-47ea-83c9-3d2dc86a7fe7">
+      <column name="CompanyLogo" not-null="False" length="2147483647" sql-type="image" p1:unicode="False" />
+    </property>
+    <property name="IsActive" type="Boolean" p1:ValidateRequired="true" p1:Guid="7a674b4d-287c-4ffd-ba34-d9871b592bd4">
+      <column name="IsActive" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="IsDefault" type="Boolean" p1:ValidateRequired="true" p1:Guid="4f581455-a2ed-4246-b6a5-629d947df71b">
+      <column name="IsDefault" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="ExcludeSocialSecurity" type="Boolean" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="40e3cae0-46a3-4f66-bc73-3fc18e758117">
+      <column name="ExcludeSocialSecurity" not-null="False" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="ExcludeSalaryTax" type="Boolean" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="b978f91b-9e71-44ed-a69c-a001a48636a7">
+      <column name="ExcludeSalaryTax" not-null="False" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="SocialSecurityNumber" type="String" p1:nullable="True" p1:ValidateMaxLength="20" p1:ValidateRequired="false" p1:Guid="178dce5f-d1ab-48a5-b4b4-0abec2ead334">
+      <column name="SocialSecurityNumber" not-null="False" length="20" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="LastAction" type="String" p1:ValidateMaxLength="3" p1:ValidateRequired="true" p1:Guid="61fd1849-2189-4ad7-a2e1-96eb0902d218">
+      <column name="LastAction" not-null="True" length="3" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="MakeBy" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="0974acea-cb31-40f6-9e09-25f0f93f19d7">
+      <column name="MakeBy" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="MakeDate" type="DateTime" p1:ValidateRequired="true" p1:Guid="82297c74-3b5c-40dc-af2a-a5e543e6ecc3">
+      <column name="MakeDate" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="UpdateBy" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="294b5f3d-563a-42ea-b3af-2faad5d69b68">
+      <column name="UpdateBy" not-null="False" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="UpdateDate" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="9f48d244-97a4-4344-9a83-fa9138e44a95">
+      <column name="UpdateDate" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="StartTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="31e48a4f-5347-4cc5-ba1c-d8860a52f26f">
+      <column name="StartTime" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="EndTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="c5bacb54-cbca-4eda-b22b-a978d82d7ee8">
+      <column name="EndTime" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="EmailTemplate" entity-set="EmailTemplates" table="EmailTemplate" schema="core" p1:Guid="9a3dcf50-c95c-4c72-a4ba-2beb0af4e118">
+    <composite-id>
+      <key-property name="IdClient" type="Int32" p1:ValidateRequired="true" p1:Guid="69570caa-7264-4e64-ae83-76e26fb7c850">
+        <column name="IdClient" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+      </key-property>
+      <key-property name="Id" type="Int32" primary-key-index="1" p1:ValidateRequired="true" p1:Guid="b097c3f1-218e-430c-aafc-b26b13f2795c">
+        <column name="Id" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+      </key-property>
+    </composite-id>
+    <property name="TemplateName" type="String" p1:ValidateMaxLength="60" p1:ValidateRequired="true" p1:Guid="bff8f110-7ee2-4c1b-8e1b-e70f6c5c19fc">
+      <column name="TemplateName" not-null="True" length="60" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="Subject" type="String" p1:nullable="True" p1:ValidateMaxLength="500" p1:ValidateRequired="false" p1:Guid="06620558-e0b3-448e-b202-ae88622f8f41">
+      <column name="Subject" not-null="False" length="500" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IdServiceType" type="Int32" p1:ValidateRequired="true" p1:Guid="57406473-b58f-4e72-8096-ac02c46889c4">
+      <column name="IdServiceType" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="TemplateBody" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="6cd42cae-825a-4f23-9575-c259a0fce031">
+      <column name="TemplateBody" not-null="False" sql-type="varchar(max)" p1:unicode="False" />
+    </property>
+    <property name="IdAuthorizationStatus" type="String" p1:ValidateMaxLength="1" p1:ValidateRequired="true" p1:Guid="f7288d65-bcf0-40a4-bcc9-6ac05a7d00ae">
+      <column name="IdAuthorizationStatus" not-null="True" length="1" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IsActive" type="Boolean" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="020a8fa8-df6a-4b30-bbac-cb31f24157d8">
+      <column name="IsActive" default="1" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="LastAction" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="9f7b428c-2cf5-47fa-bf5d-360042ecf30d">
+      <column name="LastAction" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="MakeBy" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="29167fb8-c27f-4941-8d7c-e6f5c897882c">
+      <column name="MakeBy" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="MakeDate" type="DateTime" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="b996ab99-2fa5-40e1-9309-464739c04b77">
+      <column name="MakeDate" default="getdate()" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="UpdateBy" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="9a550876-2ccf-4252-805a-ef5b9834e17e">
+      <column name="UpdateBy" not-null="False" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="UpdateDate" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="ba5148de-4e64-4d81-b105-5d712595d220">
+      <column name="UpdateDate" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="StartTime" type="DateTime" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="0e0bc059-7ccb-405e-b15e-c2d3ac87a47f">
+      <column name="StartTime" default="getutcdate()" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="EndTime" type="DateTime" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="36c5ff59-422a-4b23-b7ec-319e25f8eb90">
+      <column name="EndTime" default="CONVERT([datetime2],'9999-12-31 23:59:59.9999999')" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="EmailTemplateHistory" entity-set="EmailTemplateHistories" table="EmailTemplateHistory" schema="core" query-type="True" p1:Guid="d6b47676-41aa-4493-a921-f4b016eeb5e2">
+    <property name="IdClient" type="Int32" p1:ValidateRequired="true" p1:Guid="3b402e74-8662-4782-a848-a5192861ddbe">
+      <column name="IdClient" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="Id" type="Int32" p1:ValidateRequired="true" p1:Guid="76f53293-ec85-4048-9e63-e7701be73907">
+      <column name="Id" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="TemplateName" type="String" p1:ValidateMaxLength="60" p1:ValidateRequired="true" p1:Guid="9ee78655-5951-43b1-b752-a7d5ce03b613">
+      <column name="TemplateName" not-null="True" length="60" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="Subject" type="String" p1:nullable="True" p1:ValidateMaxLength="500" p1:ValidateRequired="false" p1:Guid="e3a40508-449d-498a-8c84-0f1859f6d09a">
+      <column name="Subject" not-null="False" length="500" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IdServiceType" type="Int32" p1:ValidateRequired="true" p1:Guid="f3db8f48-9875-45bb-8cd1-15eefee1e052">
+      <column name="IdServiceType" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="TemplateBody" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="1a3f2d2c-b123-4535-96c2-12b8a170e759">
+      <column name="TemplateBody" not-null="False" sql-type="varchar(max)" p1:unicode="False" />
+    </property>
+    <property name="IdAuthorizationStatus" type="String" p1:ValidateMaxLength="1" p1:ValidateRequired="true" p1:Guid="942123d2-07f3-431b-99f9-635e18069d68">
+      <column name="IdAuthorizationStatus" not-null="True" length="1" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IsActive" type="Boolean" p1:ValidateRequired="true" p1:Guid="8e4ee08d-6cdf-4cfe-91e7-2a7beb2400ce">
+      <column name="IsActive" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="LastAction" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="62016242-add2-401a-aacc-0b5b247502f5">
+      <column name="LastAction" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="MakeBy" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="c15baecd-4062-454a-a27a-066e2da39f89">
+      <column name="MakeBy" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="MakeDate" type="DateTime" p1:ValidateRequired="true" p1:Guid="94f765c4-4473-4d4b-9e2c-f2428d0096da">
+      <column name="MakeDate" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="UpdateBy" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="e0c0d7ff-9827-40b1-bb93-b8accf9648a8">
+      <column name="UpdateBy" not-null="False" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="UpdateDate" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="a297a46a-5063-427b-a6d9-3d6fa7975f63">
+      <column name="UpdateDate" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="StartTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="0d185fe0-0be9-49aa-91a3-9695642c93d0">
+      <column name="StartTime" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="EndTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="a1754be7-083b-4531-b291-c6ee4ad09f2a">
+      <column name="EndTime" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="HttpMethod" entity-set="HttpMethods" table="HttpMethod" schema="core" p1:Guid="94e935fd-299a-462e-b7dc-38e050a6e59b">
+    <composite-id>
+      <key-property name="IdClient" type="Int32" p1:ValidateRequired="true" p1:Guid="e9ecca19-ae77-44b5-9731-3bce9675d077">
+        <column name="IdClient" default="10001001" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+      </key-property>
+      <key-property name="Id" type="Int32" primary-key-index="1" p1:ValidateRequired="true" p1:Guid="c1063cf6-a14f-404a-ae5d-f4eaf46dc4ea">
+        <column name="Id" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+      </key-property>
+    </composite-id>
+    <property name="Method" type="String" p1:ValidateMaxLength="10" p1:ValidateRequired="true" p1:Guid="19d1e3e2-18dc-4ed0-8a56-df94676a2e1b">
+      <column name="Method" not-null="True" length="10" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="LastAction" type="String" p1:ValidateMaxLength="3" p1:ValidateRequired="true" p1:Guid="e93862a0-6bc6-4840-b39e-cf456ea17ad9">
+      <column name="LastAction" not-null="True" length="3" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IdAuthorizationStatus" type="String" p1:ValidateMaxLength="1" p1:ValidateRequired="true" p1:Guid="a803ac40-5dea-4c9d-9337-217dcc35fd2b">
+      <column name="IdAuthorizationStatus" default="'N'" not-null="True" length="1" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IsActive" type="Boolean" p1:ValidateRequired="true" p1:Guid="d09fef98-d44b-4e92-be2c-c7eaad45e1c2">
+      <column name="IsActive" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="MakeBy" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="56759720-d96d-4db7-b8a4-3f256e14abd8">
+      <column name="MakeBy" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="MakeDate" type="DateTime" p1:ValidateRequired="true" p1:Guid="fe7eb57c-5219-4702-9203-2a800b9d8cd8">
+      <column name="MakeDate" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="UpdateBy" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="25260c46-5432-48d4-ad27-a6a363aae02a">
+      <column name="UpdateBy" not-null="False" length="50" sql-type="varchar" p1:unicode="False" />
+    </property>
+    <property name="UpdateDate" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="e2ac8757-b98c-4328-bde9-d31a2943add2">
+      <column name="UpdateDate" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="StartTime" type="DateTime" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="cda4f550-5913-4505-a7f6-4cf79e888d2b">
+      <column name="StartTime" default="getutcdate()" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="EndTime" type="DateTime" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="80f2f368-0f04-4804-b94c-d86722eeeac3">
+      <column name="EndTime" default="CONVERT([datetime2],'9999-12-31 23:59:59.9999999')" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="HttpMethodHistory" entity-set="HttpMethodHistories" table="HttpMethodHistory" schema="core" query-type="True" p1:Guid="6a47eb32-d119-4110-9b71-4b570f950327">
+    <property name="IdClient" type="Int32" p1:ValidateRequired="true" p1:Guid="e87916cf-17a4-4fad-a955-c6de197431a2">
+      <column name="IdClient" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="Id" type="Int32" p1:ValidateRequired="true" p1:Guid="3cee486e-f52b-47e6-89f7-259a2a287132">
+      <column name="Id" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="Method" type="String" p1:ValidateMaxLength="10" p1:ValidateRequired="true" p1:Guid="d8132d48-f0c5-492c-83b9-76e9162c9e26">
+      <column name="Method" not-null="True" length="10" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="LastAction" type="String" p1:ValidateMaxLength="3" p1:ValidateRequired="true" p1:Guid="fa30605d-7201-46b4-bb00-6f1a3c5a4369">
+      <column name="LastAction" not-null="True" length="3" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IdAuthorizationStatus" type="String" p1:ValidateMaxLength="1" p1:ValidateRequired="true" p1:Guid="6bf0953c-7d3c-46fc-9c13-4f25b1463d61">
+      <column name="IdAuthorizationStatus" not-null="True" length="1" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IsActive" type="Boolean" p1:ValidateRequired="true" p1:Guid="bffae362-82ea-46fc-ae59-5b55d45568bf">
+      <column name="IsActive" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="MakeBy" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="53c04a38-c721-41ed-9020-f9bcc295926a">
+      <column name="MakeBy" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="MakeDate" type="DateTime" p1:ValidateRequired="true" p1:Guid="2693f56e-cbba-44b7-8f77-7e2d016906ad">
+      <column name="MakeDate" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="UpdateBy" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="198c50cc-b940-462a-95d0-0a03bd59cb55">
+      <column name="UpdateBy" not-null="False" length="50" sql-type="varchar" p1:unicode="False" />
+    </property>
+    <property name="UpdateDate" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="707c8a4e-eeaa-4261-8c3f-91eccbc07485">
+      <column name="UpdateDate" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="StartTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="dca2f073-3e11-4e74-b6e4-cdafb8e9ab20">
+      <column name="StartTime" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="EndTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="a071bf6d-d19e-46dd-88d9-59d2a4f7febd">
+      <column name="EndTime" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="Module" entity-set="Modules" table="Module" schema="core" p1:Guid="4e19f9a0-796a-424e-b44b-e8c1575f8391">
+    <composite-id>
+      <key-property name="IdClient" type="Int32" p1:ValidateRequired="true" p1:Guid="b3b61e88-8840-4255-a9ff-2ba1791844ce">
+        <column name="IdClient" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+      </key-property>
+      <key-property name="Id" type="Int32" value-generated="OnAdd" primary-key-index="1" p1:ValidateRequired="true" p1:Guid="6e0c4164-241d-4005-9d85-6ac8849e4445">
+        <column name="Id" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+      </key-property>
+    </composite-id>
+    <property name="ModuleCode" type="Int32" p1:ValidateRequired="true" p1:Guid="167dacdf-a632-46e6-95dc-f22c70d80354">
+      <column name="ModuleCode" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="ModuleName" type="String" p1:nullable="True" p1:ValidateMaxLength="100" p1:ValidateRequired="false" p1:Guid="9f1d50ca-c96e-49be-8c74-0ecbccbeecf8">
+      <column name="ModuleName" not-null="False" length="100" sql-type="varchar" p1:unicode="False" />
+    </property>
+    <property name="IconName" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="d10dd347-e7ca-49c5-9c42-15cb064adc85">
+      <column name="IconName" not-null="False" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="LastAction" type="String" p1:ValidateMaxLength="3" p1:ValidateRequired="true" p1:Guid="e9617815-2970-4241-b092-efbe6b4a2ec1">
+      <column name="LastAction" not-null="True" length="3" sql-type="varchar" p1:unicode="False" />
+    </property>
+    <property name="IdAuthorizationStatus" type="String" p1:ValidateMaxLength="1" p1:ValidateRequired="true" p1:Guid="3d8f7516-f040-41b7-b570-7013fbdfac2d">
+      <column name="IdAuthorizationStatus" not-null="True" length="1" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IsActive" type="Boolean" p1:ValidateRequired="true" p1:Guid="e0cf025e-e3ec-4145-a083-62afc13810ea">
+      <column name="IsActive" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="MakeBy" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="11a363a8-e5d5-474a-b50e-d64f7582d33d">
+      <column name="MakeBy" not-null="True" length="50" sql-type="varchar" p1:unicode="False" />
+    </property>
+    <property name="MakeDate" type="DateTime" p1:ValidateRequired="true" p1:Guid="a8b2ad86-b039-40ef-9944-0567923e27c2">
+      <column name="MakeDate" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="UpdateBy" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="162567f3-04b6-47a0-8769-cadb039f6d10">
+      <column name="UpdateBy" not-null="False" length="50" sql-type="varchar" p1:unicode="False" />
+    </property>
+    <property name="UpdateDate" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="50538f3a-8ed5-45e6-b5d6-31c585fbccca">
+      <column name="UpdateDate" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="Ordinal" type="Int16" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="57d44f34-7eac-4444-92c9-484062da75b4">
+      <column name="Ordinal" not-null="False" precision="5" scale="0" sql-type="smallint" p1:unicode="False" />
+    </property>
+    <property name="StartTime" type="DateTime" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="c6dbb978-1df9-4d3b-999a-7ca00844bca2">
+      <column name="StartTime" default="getutcdate()" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="EndTime" type="DateTime" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="3481b7ea-8f4c-4166-8978-4a6a790aa7d8">
+      <column name="EndTime" default="CONVERT([datetime2],'9999-12-31 23:59:59.9999999')" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="ModuleHistory" entity-set="ModuleHistories" table="ModuleHistory" schema="core" query-type="True" p1:Guid="aec1bb7a-4f68-46c1-842b-cc8a26aa4719">
+    <property name="IdClient" type="Int32" p1:ValidateRequired="true" p1:Guid="c365c0a8-f3b3-41ec-b73b-0afa9d5978b6">
+      <column name="IdClient" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="Id" type="Int32" p1:ValidateRequired="true" p1:Guid="5ba95be1-e84f-4c08-8fa2-549e1cbdc86d">
+      <column name="Id" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="ModuleCode" type="Int32" p1:ValidateRequired="true" p1:Guid="c18f3161-f54e-41a0-b419-acbf2eec1ebd">
+      <column name="ModuleCode" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="ModuleName" type="String" p1:nullable="True" p1:ValidateMaxLength="100" p1:ValidateRequired="false" p1:Guid="39c058eb-8aaa-4174-8af9-c526971e3da7">
+      <column name="ModuleName" not-null="False" length="100" sql-type="varchar" p1:unicode="False" />
+    </property>
+    <property name="IconName" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="55aac940-97c4-4ac7-be44-5baf23e66c16">
+      <column name="IconName" not-null="False" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="LastAction" type="String" p1:ValidateMaxLength="3" p1:ValidateRequired="true" p1:Guid="03e2c8f4-7e27-437b-9e0f-414573676fd5">
+      <column name="LastAction" not-null="True" length="3" sql-type="varchar" p1:unicode="False" />
+    </property>
+    <property name="IdAuthorizationStatus" type="String" p1:ValidateMaxLength="1" p1:ValidateRequired="true" p1:Guid="bb9c6be2-cafe-4830-a01f-869a5cbd2135">
+      <column name="IdAuthorizationStatus" not-null="True" length="1" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IsActive" type="Boolean" p1:ValidateRequired="true" p1:Guid="1d31d01b-1808-452d-a2ee-451692dad043">
+      <column name="IsActive" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="MakeBy" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="1e400a29-5237-4afb-aa3b-224ce8ad3832">
+      <column name="MakeBy" not-null="True" length="50" sql-type="varchar" p1:unicode="False" />
+    </property>
+    <property name="MakeDate" type="DateTime" p1:ValidateRequired="true" p1:Guid="ab251a9d-2c10-4ee2-b31f-c1b6281e1455">
+      <column name="MakeDate" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="UpdateBy" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="be1262d4-1dca-4094-9677-1e6a44efe25b">
+      <column name="UpdateBy" not-null="False" length="50" sql-type="varchar" p1:unicode="False" />
+    </property>
+    <property name="UpdateDate" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="eb48988f-3471-44e4-ae27-99d13ba808b9">
+      <column name="UpdateDate" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="Ordinal" type="Int16" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="2af34326-6bb5-45c8-8029-7a27c30cccc4">
+      <column name="Ordinal" not-null="False" precision="5" scale="0" sql-type="smallint" p1:unicode="False" />
+    </property>
+    <property name="StartTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="7087e506-ab1a-4dda-a588-0fffbbab0731">
+      <column name="StartTime" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="EndTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="568fd9ee-dfa8-418c-ae18-3f6deb0ed8d8">
+      <column name="EndTime" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="Notice" entity-set="Notices" table="Notice" schema="core" p1:Guid="995aa55f-cf51-45dd-80f7-7bf814108aa6">
+    <composite-id>
+      <key-property name="IdClient" type="Int32" p1:ValidateRequired="true" p1:Guid="dbb9e694-a4dc-4cbf-b545-45c6c2023859">
+        <column name="IdClient" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+      </key-property>
+      <key-property name="Id" type="Int32" primary-key-index="1" p1:ValidateRequired="true" p1:Guid="8218f71b-2ced-4584-aeaa-720645b155cf">
+        <column name="Id" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+      </key-property>
+    </composite-id>
+    <property name="Title" type="String" p1:ValidateMaxLength="100" p1:ValidateRequired="true" p1:Guid="dc5497d6-bf33-431a-b0ff-a5b86217fa56">
+      <column name="Title" not-null="True" length="100" sql-type="varchar" p1:unicode="False" />
+    </property>
+    <property name="NoticeBody" type="String" p1:ValidateRequired="true" p1:Guid="3f915baf-1440-4996-9490-6cb353b9bca4">
+      <column name="NoticeBody" not-null="True" sql-type="varchar(max)" p1:unicode="False" />
+    </property>
+    <property name="AttachedFileUrl" type="String" p1:nullable="True" p1:ValidateMaxLength="250" p1:ValidateRequired="false" p1:Guid="c18029a5-6db6-4391-995a-b9ddb9a784f1">
+      <column name="AttachedFileUrl" not-null="False" length="250" sql-type="varchar" p1:unicode="False" />
+    </property>
+    <property name="IsPublished" type="Boolean" p1:ValidateRequired="true" p1:Guid="e5621bba-641e-40cd-9776-9684d90e258c">
+      <column name="IsPublished" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="PublishedDate" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="b756ce90-b76b-4cd3-bfc3-10eb363994de">
+      <column name="PublishedDate" not-null="False" sql-type="datetime" p1:unicode="False" />
+    </property>
+    <property name="IdAuthorizationStatus" type="String" p1:ValidateMaxLength="1" p1:ValidateRequired="true" p1:Guid="f0643c59-03a5-425f-abc5-09a3b126e247">
+      <column name="IdAuthorizationStatus" default="'N'" not-null="True" length="1" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IsActive" type="Boolean" p1:ValidateRequired="true" p1:Guid="01357896-d687-4439-b9b6-62d7a0f38bee">
+      <column name="IsActive" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="LastAction" type="String" p1:ValidateMaxLength="3" p1:ValidateRequired="true" p1:Guid="0ac0bde5-406c-4297-8806-d24141053ca2">
+      <column name="LastAction" not-null="True" length="3" sql-type="varchar" p1:unicode="False" />
+    </property>
+    <property name="MakeBy" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="583e93cf-ea9b-495b-b1fa-d2926d466bfc">
+      <column name="MakeBy" not-null="True" length="50" sql-type="varchar" p1:unicode="False" />
+    </property>
+    <property name="MakeDate" type="DateTime" p1:ValidateRequired="true" p1:Guid="8520fef4-4803-4df0-9654-d10420ad71ec">
+      <column name="MakeDate" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="UpdateBy" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="baf4399f-8435-4f63-b30f-e85b29eccd6a">
+      <column name="UpdateBy" not-null="False" length="50" sql-type="varchar" p1:unicode="False" />
+    </property>
+    <property name="UpdateDate" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="5a859709-6936-4446-af57-21ebc14439a0">
+      <column name="UpdateDate" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="StartTime" type="DateTime" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="8c021caf-0666-4ec0-8b15-da55333a1cb3">
+      <column name="StartTime" default="getutcdate()" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="EndTime" type="DateTime" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="95a7682a-9a64-4264-9d91-4b9a2377bd94">
+      <column name="EndTime" default="CONVERT([datetime2],'9999-12-31 23:59:59.9999999')" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="NoticeHistory" entity-set="NoticeHistories" table="NoticeHistory" schema="core" query-type="True" p1:Guid="89521da0-6527-4157-acf5-0913ca4d64bd">
+    <property name="IdClient" type="Int32" p1:ValidateRequired="true" p1:Guid="7f8f4600-3d44-4c2f-b836-be5fee7a9730">
+      <column name="IdClient" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="Id" type="Int32" p1:ValidateRequired="true" p1:Guid="c378581a-9e14-46fc-aaa3-e7b571204e6c">
+      <column name="Id" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="Title" type="String" p1:ValidateMaxLength="100" p1:ValidateRequired="true" p1:Guid="218006a5-7a13-46c4-ad68-5c6bba25fa26">
+      <column name="Title" not-null="True" length="100" sql-type="varchar" p1:unicode="False" />
+    </property>
+    <property name="NoticeBody" type="String" p1:ValidateRequired="true" p1:Guid="c55ebe27-ef02-49e1-b2d5-dbf743b89a30">
+      <column name="NoticeBody" not-null="True" sql-type="varchar(max)" p1:unicode="False" />
+    </property>
+    <property name="AttachedFileUrl" type="String" p1:nullable="True" p1:ValidateMaxLength="250" p1:ValidateRequired="false" p1:Guid="d6c6d3b7-3570-4f4f-8f58-ac774073f055">
+      <column name="AttachedFileUrl" not-null="False" length="250" sql-type="varchar" p1:unicode="False" />
+    </property>
+    <property name="IsPublished" type="Boolean" p1:ValidateRequired="true" p1:Guid="408e8ea0-c441-4eb3-a7d6-9ff414cda9b5">
+      <column name="IsPublished" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="PublishedDate" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="77939a7a-662a-4b4f-ae75-20b294311be9">
+      <column name="PublishedDate" not-null="False" sql-type="datetime" p1:unicode="False" />
+    </property>
+    <property name="IdAuthorizationStatus" type="String" p1:ValidateMaxLength="1" p1:ValidateRequired="true" p1:Guid="8c812fc8-f4bb-455e-8fdd-f44f83fea7e0">
+      <column name="IdAuthorizationStatus" not-null="True" length="1" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IsActive" type="Boolean" p1:ValidateRequired="true" p1:Guid="e3f3fe27-8be9-4389-ab3d-3254bcf3feea">
+      <column name="IsActive" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="LastAction" type="String" p1:ValidateMaxLength="3" p1:ValidateRequired="true" p1:Guid="a2aa514c-64f4-4a14-b5f1-7d7e1ece303f">
+      <column name="LastAction" not-null="True" length="3" sql-type="varchar" p1:unicode="False" />
+    </property>
+    <property name="MakeBy" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="a08fd8f1-b418-4ad4-92e7-b5a798e753d0">
+      <column name="MakeBy" not-null="True" length="50" sql-type="varchar" p1:unicode="False" />
+    </property>
+    <property name="MakeDate" type="DateTime" p1:ValidateRequired="true" p1:Guid="3bf536e1-3ec5-464f-a382-e919f5794661">
+      <column name="MakeDate" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="UpdateBy" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="06c5f90b-de2d-49f6-8a45-a79b8763e18f">
+      <column name="UpdateBy" not-null="False" length="50" sql-type="varchar" p1:unicode="False" />
+    </property>
+    <property name="UpdateDate" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="bbd1d0ed-e1f9-412f-b2cd-169145808e79">
+      <column name="UpdateDate" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="StartTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="a29e94c9-0f0d-4392-813f-9be8736d7ddb">
+      <column name="StartTime" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="EndTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="4d23502f-6e6a-4c39-9cc6-92eba65bab55">
+      <column name="EndTime" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="PermissionNamingPolicy" entity-set="PermissionNamingPolicies" table="PermissionNamingPolicy" schema="core" p1:Guid="fd619c58-d371-462e-b802-9bd2f5a6ba73">
+    <composite-id>
+      <key-property name="IdClient" type="Int32" p1:ValidateRequired="true" p1:Guid="005dbec3-bbc1-4905-b88a-5a9d877bd8be">
+        <column name="IdClient" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+      </key-property>
+      <key-property name="Id" type="Int32" value-generated="OnAdd" primary-key-index="1" p1:ValidateRequired="true" p1:Guid="aba0a94d-b24c-4cba-b293-56d88f2cdfb6">
+        <column name="Id" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+      </key-property>
+    </composite-id>
+    <property name="LevelName" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="2a1c48c4-17e6-4ae7-b507-487f1c798d35">
+      <column name="LevelName" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="LevelLength" type="Int32" p1:ValidateRequired="true" p1:Guid="f3ae7b6b-428a-4d35-ae2f-3a3efed82ad3">
+      <column name="LevelLength" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="LevelStartPoint" type="Int32" p1:ValidateRequired="true" p1:Guid="ad2ede62-1d1d-47a5-b70f-997dae5274cc">
+      <column name="LevelStartPoint" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="LevelEndPoint" type="Int32" p1:ValidateRequired="true" p1:Guid="6649b55e-8171-45bf-90b3-2a55e643274a">
+      <column name="LevelEndPoint" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="LevelIncrementBy" type="Int32" p1:ValidateRequired="true" p1:Guid="0a9cc1e8-66d5-4956-8349-3d32cbd962b8">
+      <column name="LevelIncrementBy" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="LastAction" type="String" p1:ValidateMaxLength="3" p1:ValidateRequired="true" p1:Guid="a8b8a021-98d6-4b04-aaac-880b44309d88">
+      <column name="LastAction" default="'ADD'" not-null="True" length="3" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IdAuthorizationStatus" type="String" p1:ValidateMaxLength="1" p1:ValidateRequired="true" p1:Guid="5ed1c79a-e200-44aa-943c-4a05ad21219d">
+      <column name="IdAuthorizationStatus" not-null="True" length="1" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IsActive" type="Boolean" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="404a64c6-f371-4493-8837-4a6e94b0f8bb">
+      <column name="IsActive" default="1" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="MakeBy" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="db0e8f82-dba8-4cee-95e0-4e475ccebb79">
+      <column name="MakeBy" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="MakeDate" type="DateTime" p1:ValidateRequired="true" p1:Guid="3c3b4506-58a3-4478-9647-413aa71090ca">
+      <column name="MakeDate" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="UpdateBy" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="ec623942-f89a-4c1a-a727-a0292a4cb477">
+      <column name="UpdateBy" not-null="False" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="UpdateDate" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="7657ea99-5636-41e6-87e3-b24153833102">
+      <column name="UpdateDate" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="StartTime" type="DateTime" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="a1c9787b-a1ff-4966-b8be-91a1d933b34e">
+      <column name="StartTime" default="getutcdate()" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="EndTime" type="DateTime" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="24102038-f1b1-4454-ab6f-a36074519171">
+      <column name="EndTime" default="CONVERT([datetime2],'9999-12-31 23:59:59.9999999')" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="PermissionNamingPolicyHistory" entity-set="PermissionNamingPolicyHistories" table="PermissionNamingPolicyHistory" schema="core" query-type="True" p1:Guid="ca998896-af91-4cd9-894d-b9e0e28ce2db">
+    <property name="IdClient" type="Int32" p1:ValidateRequired="true" p1:Guid="6189597a-e487-4eaf-a64d-10ca1c23f3ed">
+      <column name="IdClient" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="Id" type="Int32" p1:ValidateRequired="true" p1:Guid="475c8e38-9ea2-4c97-94a6-cacb649b249f">
+      <column name="Id" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="LevelName" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="e907b09b-2fa7-4e13-a5d9-cb852177efb7">
+      <column name="LevelName" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="LevelLength" type="Int32" p1:ValidateRequired="true" p1:Guid="f93512b3-4c48-4282-ac94-6f4e44d8ecd6">
+      <column name="LevelLength" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="LevelStartPoint" type="Int32" p1:ValidateRequired="true" p1:Guid="7ccca88d-151d-4533-9762-1cfb10176048">
+      <column name="LevelStartPoint" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="LevelEndPoint" type="Int32" p1:ValidateRequired="true" p1:Guid="29993811-3e91-423c-84b5-f0ec291da27d">
+      <column name="LevelEndPoint" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="LevelIncrementBy" type="Int32" p1:ValidateRequired="true" p1:Guid="2cfb0faa-36e9-4965-bcdf-c03e63e063b0">
+      <column name="LevelIncrementBy" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="LastAction" type="String" p1:ValidateMaxLength="3" p1:ValidateRequired="true" p1:Guid="2136aae4-c89e-4d25-bdc0-dae9fb24ad52">
+      <column name="LastAction" not-null="True" length="3" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IdAuthorizationStatus" type="String" p1:ValidateMaxLength="1" p1:ValidateRequired="true" p1:Guid="2cd97f39-ed4e-4fbb-9d1c-70ca642883bb">
+      <column name="IdAuthorizationStatus" not-null="True" length="1" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IsActive" type="Boolean" p1:ValidateRequired="true" p1:Guid="071028cf-6caa-48b4-aa16-98230e2ab81e">
+      <column name="IsActive" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="MakeBy" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="e5e1d93c-ebc1-46f2-9336-93c3e81e8b4e">
+      <column name="MakeBy" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="MakeDate" type="DateTime" p1:ValidateRequired="true" p1:Guid="db9d45dc-e37a-4a22-a81a-7ab27e0afe63">
+      <column name="MakeDate" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="UpdateBy" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="22978b3a-2c60-42fb-adb3-f53c8ed01cfe">
+      <column name="UpdateBy" not-null="False" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="UpdateDate" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="08932b41-b39e-4fd9-abb0-8acf9bb5b273">
+      <column name="UpdateDate" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="StartTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="7d1b496c-778e-4039-baea-9be869c6c476">
+      <column name="StartTime" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="EndTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="102f55e4-9725-4e34-9fbe-833999717160">
+      <column name="EndTime" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="PhraseTag" entity-set="PhraseTags" table="PhraseTag" schema="core" p1:Guid="83a2905b-3a19-432a-a81d-32d0b025e449">
+    <composite-id>
+      <key-property name="IdClient" type="Int32" p1:ValidateRequired="true" p1:Guid="eb2490e9-ac28-4fb5-a8b3-cf5e3cb80515">
+        <column name="IdClient" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+      </key-property>
+      <key-property name="Id" type="Int32" primary-key-index="1" p1:ValidateRequired="true" p1:Guid="b22848d3-3bbc-4fe2-b015-be97d88b6554">
+        <column name="Id" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+      </key-property>
+    </composite-id>
+    <property name="PhraseName" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="11a0459c-5035-4591-8e11-dcb3622ce33c">
+      <column name="PhraseName" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="UsageIn" type="String" p1:nullable="True" p1:ValidateMaxLength="500" p1:ValidateRequired="false" p1:Guid="90c92100-d2a2-4721-8abf-eb9a3ebaea11">
+      <column name="UsageIn" not-null="False" length="500" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IdAuthorizationStatus" type="String" p1:ValidateMaxLength="1" p1:ValidateRequired="true" p1:Guid="fde0ce16-adba-4749-856f-fa7a20272b1d">
+      <column name="IdAuthorizationStatus" default="'N'" not-null="True" length="1" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IsActive" type="Boolean" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="9bf4260e-c406-4f68-b5b3-0ce14ae3eddf">
+      <column name="IsActive" default="1" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="LastAction" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="873e4acb-f2d1-495c-abb0-3e223f5163ad">
+      <column name="LastAction" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="MakeBy" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="cdfa5d00-50eb-4b42-b9fe-1cb4fc22e895">
+      <column name="MakeBy" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="MakeDate" type="DateTime" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="7e1a3a15-2114-4306-ae11-5db5e98fc5ec">
+      <column name="MakeDate" default="getdate()" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="UpdateBy" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="7c247208-0b0b-4c56-979e-131d7a67699b">
+      <column name="UpdateBy" not-null="False" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="UpdateDate" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="b00b2b0f-9367-46f6-97db-a0dceb786928">
+      <column name="UpdateDate" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="StartTime" type="DateTime" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="bd1c2cd9-a46d-4164-9d7d-7e0b30490029">
+      <column name="StartTime" default="getutcdate()" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="EndTime" type="DateTime" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="f8f4a97a-ed76-42f9-97eb-9555ad24f121">
+      <column name="EndTime" default="CONVERT([datetime2],'9999-12-31 23:59:59.9999999')" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="PhraseTagHistory" entity-set="PhraseTagHistories" table="PhraseTagHistory" schema="core" query-type="True" p1:Guid="5fa4f7cc-1290-4da6-8443-3ae1c9edc2ed">
+    <property name="IdClient" type="Int32" p1:ValidateRequired="true" p1:Guid="2b7a36b8-4a7f-4e20-b75a-3a48f1baf75f">
+      <column name="IdClient" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="Id" type="Int32" p1:ValidateRequired="true" p1:Guid="ce36e706-f385-44f4-ab79-e2a8b0948c04">
+      <column name="Id" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="PhraseName" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="00df401d-2257-4473-b490-341528cccda4">
+      <column name="PhraseName" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="UsageIn" type="String" p1:nullable="True" p1:ValidateMaxLength="500" p1:ValidateRequired="false" p1:Guid="6b27a7fa-2a3d-402c-8517-26e2afda5985">
+      <column name="UsageIn" not-null="False" length="500" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IdAuthorizationStatus" type="String" p1:ValidateMaxLength="1" p1:ValidateRequired="true" p1:Guid="cbe4c158-915b-4507-8c1d-a663132241f3">
+      <column name="IdAuthorizationStatus" not-null="True" length="1" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IsActive" type="Boolean" p1:ValidateRequired="true" p1:Guid="cecb6fd8-9ce9-4b82-a0ab-27d7cac22b0d">
+      <column name="IsActive" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="LastAction" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="3f18ec07-dee4-4ed1-b929-06b9a7a24b5f">
+      <column name="LastAction" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="MakeBy" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="0eb2be21-ce63-42be-8c24-ca1aaf6a1bbf">
+      <column name="MakeBy" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="MakeDate" type="DateTime" p1:ValidateRequired="true" p1:Guid="1b19f962-4710-49c8-bdbe-d52f42318b17">
+      <column name="MakeDate" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="UpdateBy" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="aa0a8dc9-74ff-4ce1-a04d-d87536539143">
+      <column name="UpdateBy" not-null="False" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="UpdateDate" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="b8cff9ee-290e-495b-a3b2-a83c1e3af102">
+      <column name="UpdateDate" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="StartTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="09b11bd2-dd57-46bf-943f-7ddb803b319d">
+      <column name="StartTime" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="EndTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="38ad3de1-d07b-456e-a811-07513e06e15f">
+      <column name="EndTime" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="PhraseTagTranslation" entity-set="PhraseTagTranslations" table="PhraseTagTranslation" schema="core" p1:Guid="89d72724-86a9-41a4-913e-d2db594d26aa">
+    <composite-id>
+      <key-property name="IdClient" type="Int32" p1:ValidateRequired="true" p1:Guid="cfb8b529-109a-4e5d-8337-f5c296f8a7b2">
+        <column name="IdClient" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+      </key-property>
+      <key-property name="Id" type="Int32" primary-key-index="1" p1:ValidateRequired="true" p1:Guid="7a055bd6-1483-4a28-b0ff-f477aefce8d3">
+        <column name="Id" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+      </key-property>
+    </composite-id>
+    <property name="IdPhraseTag" type="Int32" p1:ValidateRequired="true" p1:Guid="8613c46a-252d-4ee1-9a3f-2461d5bd9084">
+      <column name="IdPhraseTag" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="IdLanguage" type="Int32" p1:ValidateRequired="true" p1:Guid="e74fac18-d1d1-4c42-9cbd-88d9de621a1f">
+      <column name="IdLanguage" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="Expression" type="String" p1:nullable="True" p1:ValidateMaxLength="250" p1:ValidateRequired="false" p1:Guid="5be23644-ce04-4d6d-9fef-a2604860a2c2">
+      <column name="Expression" not-null="False" length="250" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IdAuthorizationStatus" type="String" p1:ValidateMaxLength="1" p1:ValidateRequired="true" p1:Guid="c1d1424b-05d8-4007-98ca-1b50716041ac">
+      <column name="IdAuthorizationStatus" default="'N'" not-null="True" length="1" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IsActive" type="Boolean" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="228c647d-8dd7-4ca0-8fd9-059be6b3e310">
+      <column name="IsActive" default="1" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="LastAction" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="1cb2049c-916b-4897-a066-9d350503b356">
+      <column name="LastAction" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="MakeBy" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="204b607c-e91c-457c-ad0e-794981ae1098">
+      <column name="MakeBy" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="MakeDate" type="DateTime" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="f69cf9a1-2a50-4184-815c-8f2259e2334f">
+      <column name="MakeDate" default="getdate()" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="UpdateBy" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="05cd6800-00e8-462c-87ef-a1fe4a53b54c">
+      <column name="UpdateBy" not-null="False" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="UpdateDate" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="eb9e6835-4999-48c8-9fae-577a7e86a56f">
+      <column name="UpdateDate" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="StartTime" type="DateTime" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="f4979d00-abee-4c70-b96a-bad36c9b4d9a">
+      <column name="StartTime" default="getutcdate()" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="EndTime" type="DateTime" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="6e730049-0788-4200-bbf6-0b3edd24d2ce">
+      <column name="EndTime" default="CONVERT([datetime2],'9999-12-31 23:59:59.9999999')" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="PhraseTagTranslationHistory" entity-set="PhraseTagTranslationHistories" table="PhraseTagTranslationHistory" schema="core" query-type="True" p1:Guid="2d3f6f6e-31bf-414d-a782-d779364f8a12">
+    <property name="IdClient" type="Int32" p1:ValidateRequired="true" p1:Guid="3865602e-b7ad-4e0c-89ce-159ef7f41fab">
+      <column name="IdClient" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="Id" type="Int32" p1:ValidateRequired="true" p1:Guid="99842336-1e4f-4949-849c-c5ed4c30d07e">
+      <column name="Id" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="IdPhraseTag" type="Int32" p1:ValidateRequired="true" p1:Guid="1e4e3e91-e0ed-4181-83b2-924ca2cbce61">
+      <column name="IdPhraseTag" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="IdLanguage" type="Int32" p1:ValidateRequired="true" p1:Guid="c759d20c-5593-49c6-a1f7-8cbb974f5793">
+      <column name="IdLanguage" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="Expression" type="String" p1:nullable="True" p1:ValidateMaxLength="250" p1:ValidateRequired="false" p1:Guid="a457ba46-b32d-4350-b7eb-a3b43887b42c">
+      <column name="Expression" not-null="False" length="250" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IdAuthorizationStatus" type="String" p1:ValidateMaxLength="1" p1:ValidateRequired="true" p1:Guid="ddd9eec7-f9e0-470b-97d8-f0c5a4505d52">
+      <column name="IdAuthorizationStatus" not-null="True" length="1" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IsActive" type="Boolean" p1:ValidateRequired="true" p1:Guid="0ce4d77d-80fa-4e46-95c0-57e550c0b7c6">
+      <column name="IsActive" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="LastAction" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="17a52f6b-98e0-4134-ab03-4fd9556a2ff0">
+      <column name="LastAction" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="MakeBy" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="5669fb5b-c4bd-4688-9be6-ef8c1816c4ee">
+      <column name="MakeBy" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="MakeDate" type="DateTime" p1:ValidateRequired="true" p1:Guid="b1f89f4d-c809-44c2-b292-ff579935a255">
+      <column name="MakeDate" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="UpdateBy" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="da4cba2c-2513-4fee-83a7-bdcf06d13a22">
+      <column name="UpdateBy" not-null="False" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="UpdateDate" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="c2b92b8c-e10f-4699-a4e4-2e450eea6611">
+      <column name="UpdateDate" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="StartTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="76873053-4f86-491c-bd53-57bf2da65c67">
+      <column name="StartTime" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="EndTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="29f3739d-0beb-4fb4-ba51-54dde70ed1f8">
+      <column name="EndTime" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="RoleScreenLink" entity-set="RoleScreenLinks" table="RoleScreenLink" schema="core" p1:Guid="fee8e393-e6b7-45f7-acca-84d9bb69fac9">
+    <composite-id>
+      <key-property name="IdClient" type="Int32" p1:ValidateRequired="true" p1:Guid="1ad9aa79-f2e7-4d9f-8abc-7209b9f7158f">
+        <column name="IdClient" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+      </key-property>
+      <key-property name="Id" type="Int32" value-generated="OnAdd" primary-key-index="1" p1:ValidateRequired="true" p1:Guid="6257a4d2-dedf-4bac-b384-83341a1d1a32">
+        <column name="Id" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+      </key-property>
+    </composite-id>
+    <property name="IdRole" type="Int32" p1:ValidateRequired="true" p1:Guid="a1a8b870-43b6-46f7-b38f-841551fe8197">
+      <column name="IdRole" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="IdScreen" type="Int32" p1:ValidateRequired="true" p1:Guid="72743144-c025-4c04-8751-eac3e2ade0ce">
+      <column name="IdScreen" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="AccessRight" type="String" p1:nullable="True" p1:ValidateMaxLength="4" p1:ValidateRequired="false" p1:Guid="6d45a473-21da-483c-aed5-d7f626d02dc7">
+      <column name="AccessRight" default="'0000'" not-null="False" length="4" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="LastAction" type="String" p1:ValidateMaxLength="3" p1:ValidateRequired="true" p1:Guid="fc60b6ce-a5c7-4d23-a8da-580ffcea2472">
+      <column name="LastAction" not-null="True" length="3" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IdAuthorizationStatus" type="String" p1:ValidateMaxLength="1" p1:ValidateRequired="true" p1:Guid="3c86c6f6-9077-4bcb-abfe-00d8bd48b7c1">
+      <column name="IdAuthorizationStatus" default="'N'" not-null="True" length="1" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IsActive" type="Boolean" p1:ValidateRequired="true" p1:Guid="9a036b1b-2dc2-4a10-881e-8c37ff471a99">
+      <column name="IsActive" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="MakeBy" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="03c9b0cc-995d-4279-a0fb-bb1cb46fea79">
+      <column name="MakeBy" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="MakeDate" type="DateTime" p1:ValidateRequired="true" p1:Guid="f9e367da-7b2b-49ac-9a04-13888abe0a4c">
+      <column name="MakeDate" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="UpdateBy" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="3643e47c-2bce-4da9-b361-51648a394e7b">
+      <column name="UpdateBy" not-null="False" length="50" sql-type="varchar" p1:unicode="False" />
+    </property>
+    <property name="UpdateDate" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="64fb3fec-8167-4701-bc9a-1ba903b855c9">
+      <column name="UpdateDate" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="StartTime" type="DateTime" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="eb2ff9bd-697e-4af2-95d1-30b657fc521f">
+      <column name="StartTime" default="getutcdate()" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="EndTime" type="DateTime" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="21683733-3904-40de-ac22-37a34f292213">
+      <column name="EndTime" default="CONVERT([datetime2],'9999-12-31 23:59:59.9999999')" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="RoleScreenLinkHistory" entity-set="RoleScreenLinkHistories" table="RoleScreenLinkHistory" schema="core" query-type="True" p1:Guid="f5241284-a1fa-4a36-9b1b-b783ece55ca1">
+    <property name="IdClient" type="Int32" p1:ValidateRequired="true" p1:Guid="558734f2-b342-4e31-a91f-0a3e724bcb20">
+      <column name="IdClient" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="Id" type="Int32" p1:ValidateRequired="true" p1:Guid="3c482ddd-50a6-491f-8239-e6322eef6bc2">
+      <column name="Id" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="IdRole" type="Int32" p1:ValidateRequired="true" p1:Guid="cc54c6f0-b311-4b3c-9ee9-2e508ce3d7ec">
+      <column name="IdRole" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="IdScreen" type="Int32" p1:ValidateRequired="true" p1:Guid="42a7455c-e5de-4cc8-940a-716a4de8e57f">
+      <column name="IdScreen" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="AccessRight" type="String" p1:nullable="True" p1:ValidateMaxLength="4" p1:ValidateRequired="false" p1:Guid="51dcfce6-4f34-4d96-b64d-19f09df9edf1">
+      <column name="AccessRight" not-null="False" length="4" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="LastAction" type="String" p1:ValidateMaxLength="3" p1:ValidateRequired="true" p1:Guid="ec2efc84-5b91-4eef-b563-a5d4e42325b1">
+      <column name="LastAction" not-null="True" length="3" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IdAuthorizationStatus" type="String" p1:ValidateMaxLength="1" p1:ValidateRequired="true" p1:Guid="7ec4ac79-4abb-45e9-9350-0d3cce25d807">
+      <column name="IdAuthorizationStatus" not-null="True" length="1" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IsActive" type="Boolean" p1:ValidateRequired="true" p1:Guid="1057c9d0-a9f1-4723-aef7-5cb2e1edc002">
+      <column name="IsActive" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="MakeBy" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="c0313667-43c3-4824-9dd6-933f8c5f47f7">
+      <column name="MakeBy" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="MakeDate" type="DateTime" p1:ValidateRequired="true" p1:Guid="372cbeae-e8fb-4cf1-9582-64e94b6b995e">
+      <column name="MakeDate" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="UpdateBy" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="96afc40d-5f3c-4df2-958e-b2080fad7e97">
+      <column name="UpdateBy" not-null="False" length="50" sql-type="varchar" p1:unicode="False" />
+    </property>
+    <property name="UpdateDate" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="4f83bc21-f6bd-45d5-a876-86fb3fef3b4d">
+      <column name="UpdateDate" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="StartTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="6cfd7861-64d1-4f8d-8345-12f375740cc1">
+      <column name="StartTime" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="EndTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="fdfb5874-4a20-4833-954a-43ca77977bfc">
+      <column name="EndTime" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="Screen" entity-set="Screens" table="Screen" schema="core" p1:Guid="b56999ad-50e0-43bd-b3be-b9d4bc0cd5d0">
+    <composite-id>
+      <key-property name="IdClient" type="Int32" p1:ValidateRequired="true" p1:Guid="f71e5331-a2ee-432b-887a-5dc9e2eb16cb">
+        <column name="IdClient" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+      </key-property>
+      <key-property name="Id" type="Int32" value-generated="OnAdd" primary-key-index="1" p1:ValidateRequired="true" p1:Guid="5ed69347-4395-4538-bf7d-db0554c2ebef">
+        <column name="Id" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+      </key-property>
+    </composite-id>
+    <property name="IdSection" type="Int32" p1:ValidateRequired="true" p1:Guid="406f7a0f-86c3-42e1-976d-aea58cbe1e50">
+      <column name="IdSection" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="ScreenCode" type="Int32" p1:ValidateRequired="true" p1:Guid="0117a861-f39d-40f1-bcb8-6866e04aa49d">
+      <column name="ScreenCode" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="ScreenName" type="String" p1:ValidateMaxLength="100" p1:ValidateRequired="true" p1:Guid="d11ce3c1-da85-443d-b0c3-68bd50aa81ab">
+      <column name="ScreenName" not-null="True" length="100" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="Ordinal" type="Int16" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="dadb70f0-91d4-4e5c-a60e-e271327aeb95">
+      <column name="Ordinal" not-null="False" precision="5" scale="0" sql-type="smallint" p1:unicode="False" />
+    </property>
+    <property name="Uri" type="String" p1:ValidateMaxLength="512" p1:ValidateRequired="true" p1:Guid="4c069e79-95a6-459e-b826-32892ad7a9ab">
+      <column name="Uri" not-null="True" length="512" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="Description" type="String" p1:nullable="True" p1:ValidateMaxLength="512" p1:ValidateRequired="false" p1:Guid="7cbcf634-2459-4d2a-93df-579e9454927a">
+      <column name="Description" not-null="False" length="512" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IsRequiredForApproval" type="Boolean" p1:ValidateRequired="true" p1:Guid="a31e16d9-703b-4994-a31b-93c747948642">
+      <column name="IsRequiredForApproval" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="IsFinancialScreen" type="Boolean" p1:ValidateRequired="true" p1:Guid="587bd779-6457-4cae-89f5-dc51ec5f13b4">
+      <column name="IsFinancialScreen" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="IconName" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="d7ab9c9d-d16c-439a-bdc1-aa0032867f45">
+      <column name="IconName" not-null="False" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="LastAction" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="e3c6fc34-9354-417c-9b2b-3b9f47a1ec9a">
+      <column name="LastAction" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IdAuthorizationStatus" type="String" p1:ValidateMaxLength="1" p1:ValidateRequired="true" p1:Guid="09bd49bc-885b-49cb-8ec4-633119d7a13e">
+      <column name="IdAuthorizationStatus" default="'N'" not-null="True" length="1" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IsActive" type="Boolean" p1:ValidateRequired="true" p1:Guid="8e838096-4732-4212-a010-fea2d0f2b506">
+      <column name="IsActive" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="MakeBy" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="5d794f4e-e50f-4d10-97c1-67eadbfea7ef">
+      <column name="MakeBy" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="MakeDate" type="DateTime" p1:ValidateRequired="true" p1:Guid="b7ac5fb3-cd60-41f2-bb17-6f3795b6dbec">
+      <column name="MakeDate" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="UpdateBy" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="655c7732-7f7e-426d-81ad-aaeea32c9303">
+      <column name="UpdateBy" not-null="False" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="UpdateDate" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="c0a47fb5-06e9-45d0-be0f-8b7010a40d4a">
+      <column name="UpdateDate" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="StartTime" type="DateTime" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="63f694fb-d610-4d93-b41e-70542eebf574">
+      <column name="StartTime" default="getutcdate()" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="EndTime" type="DateTime" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="402fa357-7401-4353-8374-c0df3175551a">
+      <column name="EndTime" default="CONVERT([datetime2],'9999-12-31 23:59:59.9999999')" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="ScreenHistory" entity-set="ScreenHistories" table="ScreenHistory" schema="core" query-type="True" p1:Guid="c7debd07-905b-43be-8d11-cea33253af47">
+    <property name="IdClient" type="Int32" p1:ValidateRequired="true" p1:Guid="ce16dbb6-8652-4ec9-be71-9383628bf9d2">
+      <column name="IdClient" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="Id" type="Int32" p1:ValidateRequired="true" p1:Guid="99fa8fc0-b977-4366-963b-5c42c2ec9d39">
+      <column name="Id" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="IdSection" type="Int32" p1:ValidateRequired="true" p1:Guid="ac842e34-19cb-4526-9e45-43aa1c5afb57">
+      <column name="IdSection" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="ScreenCode" type="Int32" p1:ValidateRequired="true" p1:Guid="d19c052b-bcaa-4fff-a887-d041ff1b8202">
+      <column name="ScreenCode" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="ScreenName" type="String" p1:ValidateMaxLength="100" p1:ValidateRequired="true" p1:Guid="d8748ccd-3ce6-4c74-8259-d719227c1a7c">
+      <column name="ScreenName" not-null="True" length="100" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="Ordinal" type="Int16" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="82f960e5-258a-4ee6-a630-c1b2d8b148cc">
+      <column name="Ordinal" not-null="False" precision="5" scale="0" sql-type="smallint" p1:unicode="False" />
+    </property>
+    <property name="Uri" type="String" p1:ValidateMaxLength="512" p1:ValidateRequired="true" p1:Guid="9f950f6b-30cf-4475-9c85-9c2c4af7b45d">
+      <column name="Uri" not-null="True" length="512" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="Description" type="String" p1:nullable="True" p1:ValidateMaxLength="512" p1:ValidateRequired="false" p1:Guid="c8a93ebb-3601-47ae-b707-c4261a760e45">
+      <column name="Description" not-null="False" length="512" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IsRequiredForApproval" type="Boolean" p1:ValidateRequired="true" p1:Guid="2b15e89b-30ca-4fc3-b15b-36faa886ea83">
+      <column name="IsRequiredForApproval" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="IsFinancialScreen" type="Boolean" p1:ValidateRequired="true" p1:Guid="d218fd4b-1a53-4cf0-a9cc-ff9d7aed4782">
+      <column name="IsFinancialScreen" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="IconName" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="c7a976ea-2a37-4c61-b238-204a5e14f1ff">
+      <column name="IconName" not-null="False" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="LastAction" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="681bef74-07a7-4ff2-90d6-6adb3d628840">
+      <column name="LastAction" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IdAuthorizationStatus" type="String" p1:ValidateMaxLength="1" p1:ValidateRequired="true" p1:Guid="1c548ef0-7b81-430c-8e49-3737b948d499">
+      <column name="IdAuthorizationStatus" not-null="True" length="1" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IsActive" type="Boolean" p1:ValidateRequired="true" p1:Guid="e4af8029-ac3d-4726-a84c-729cced626c6">
+      <column name="IsActive" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="MakeBy" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="9dd3241f-516d-4ef6-8ad8-dc230f019b99">
+      <column name="MakeBy" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="MakeDate" type="DateTime" p1:ValidateRequired="true" p1:Guid="bc5394c0-2b13-47d5-918d-26a699732070">
+      <column name="MakeDate" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="UpdateBy" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="b193fd74-f59c-44f2-af1d-4a21c1530b8e">
+      <column name="UpdateBy" not-null="False" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="UpdateDate" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="af31a758-4181-42d9-9ed6-d7b623a00e6c">
+      <column name="UpdateDate" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="StartTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="9ea5bfc2-baa0-47ee-a16c-2b3cc02f203d">
+      <column name="StartTime" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="EndTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="7b636500-4995-425a-a272-30066343ae60">
+      <column name="EndTime" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="Section" entity-set="Sections" table="Section" schema="core" p1:Guid="0cce81ca-4bbb-4bf6-9960-f9a1eb3f0fb8">
+    <composite-id>
+      <key-property name="IdClient" type="Int32" p1:ValidateRequired="true" p1:Guid="d49e4fe6-13c4-4aef-a80b-fc171163bfd6">
+        <column name="IdClient" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+      </key-property>
+      <key-property name="Id" type="Int32" value-generated="OnAdd" primary-key-index="1" p1:ValidateRequired="true" p1:Guid="54040bef-920b-4378-842d-2fe31c350fe1">
+        <column name="Id" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+      </key-property>
+    </composite-id>
+    <property name="IdSubModule" type="Int32" p1:ValidateRequired="true" p1:Guid="3669cd2b-715d-43e3-843b-86b1f17d5941">
+      <column name="IdSubModule" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="SectionCode" type="Int32" p1:ValidateRequired="true" p1:Guid="1fca1c57-edb1-45d6-a1b2-5f6c1eecaf44">
+      <column name="SectionCode" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="SectionName" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="e07c147a-024d-44bb-8899-580f8b324478">
+      <column name="SectionName" not-null="False" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IconName" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="04bf4b65-ec15-427b-947e-36a7b911f852">
+      <column name="IconName" not-null="False" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="LastAction" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="0319c4c7-ec85-475e-8804-dc77cdc3123e">
+      <column name="LastAction" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IdAuthorizationStatus" type="String" p1:ValidateMaxLength="1" p1:ValidateRequired="true" p1:Guid="d47a4e64-4ac3-4109-8662-ab4e1027bdcb">
+      <column name="IdAuthorizationStatus" default="'N'" not-null="True" length="1" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IsActive" type="Boolean" p1:ValidateRequired="true" p1:Guid="9ee298f0-07ea-4fc2-b958-1d05d3272438">
+      <column name="IsActive" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="MakeBy" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="c857e71f-a22d-4ff1-914a-a8a58644fd4f">
+      <column name="MakeBy" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="MakeDate" type="DateTime" p1:ValidateRequired="true" p1:Guid="374ec20b-8a81-44b6-98bd-10410fd26ed6">
+      <column name="MakeDate" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="UpdateBy" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="3537b9b1-c2e6-4896-aab7-1c3166306df8">
+      <column name="UpdateBy" not-null="False" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="UpdateDate" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="ae30f422-6dbc-455a-b0d1-f0a1983d69de">
+      <column name="UpdateDate" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="StartTime" type="DateTime" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="901eb785-afa9-4828-9c1a-4f0febf966cb">
+      <column name="StartTime" default="getutcdate()" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="EndTime" type="DateTime" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="d011d49c-a23d-4c37-83c5-f812555f87f9">
+      <column name="EndTime" default="CONVERT([datetime2],'9999-12-31 23:59:59.9999999')" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="SectionHistory" entity-set="SectionHistories" table="SectionHistory" schema="core" query-type="True" p1:Guid="95591897-2778-4b3b-af74-1379c3fde9da">
+    <property name="IdClient" type="Int32" p1:ValidateRequired="true" p1:Guid="35e21e03-eb68-4777-bfe5-f5cfc1412edd">
+      <column name="IdClient" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="Id" type="Int32" p1:ValidateRequired="true" p1:Guid="3e098c3e-ce6c-413f-b002-bcef24b72ec9">
+      <column name="Id" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="IdSubModule" type="Int32" p1:ValidateRequired="true" p1:Guid="660dab1c-23fa-4522-a447-88d5cbed6523">
+      <column name="IdSubModule" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="SectionCode" type="Int32" p1:ValidateRequired="true" p1:Guid="93690b1b-900c-43b2-89f8-fdd3c28dd52b">
+      <column name="SectionCode" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="SectionName" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="0e452f39-cc2e-422c-ba4c-6446f5a0deea">
+      <column name="SectionName" not-null="False" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IconName" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="c7539e8b-0d43-47da-8ac4-97b585397cf5">
+      <column name="IconName" not-null="False" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="LastAction" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="cc53b809-da73-4360-9435-c8ad0701d124">
+      <column name="LastAction" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IdAuthorizationStatus" type="String" p1:ValidateMaxLength="1" p1:ValidateRequired="true" p1:Guid="40d23a2d-98f0-46f3-ab39-96b823b8839d">
+      <column name="IdAuthorizationStatus" not-null="True" length="1" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IsActive" type="Boolean" p1:ValidateRequired="true" p1:Guid="cfa4ea33-3f91-4041-bf5c-a398a8f99e68">
+      <column name="IsActive" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="MakeBy" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="6ccb5238-d562-40b7-8359-a162ee4a612b">
+      <column name="MakeBy" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="MakeDate" type="DateTime" p1:ValidateRequired="true" p1:Guid="a57906d3-8486-4724-87c7-2de97acbad76">
+      <column name="MakeDate" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="UpdateBy" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="29b69272-379c-411b-9365-3abdc43b490b">
+      <column name="UpdateBy" not-null="False" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="UpdateDate" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="de97ebf5-1446-47ea-977d-7dba6e3d4dab">
+      <column name="UpdateDate" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="StartTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="8eabcb96-a014-4f32-af58-c33848b01fc7">
+      <column name="StartTime" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="EndTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="2596366f-2407-4b1b-8428-64fd5427ba13">
+      <column name="EndTime" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="SmtpClient" entity-set="SmtpClients" table="SmtpClient" schema="core" p1:Guid="da57a412-4cf4-4253-9072-481f56daa6fd">
+    <composite-id>
+      <key-property name="IdClient" type="Int32" p1:ValidateRequired="true" p1:Guid="08ab9d9d-ff3c-414a-85e4-94a9887e1c90">
+        <column name="IdClient" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+      </key-property>
+      <key-property name="Id" type="Int32" value-generated="OnAdd" primary-key-index="1" p1:ValidateRequired="true" p1:Guid="eb11a6e6-6f12-4ebe-9b8e-141d9c642e0c">
+        <column name="Id" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+      </key-property>
+    </composite-id>
+    <property name="Server" type="String" p1:ValidateMaxLength="500" p1:ValidateRequired="true" p1:Guid="b894db45-e41c-4b72-9b49-5a6abd342f00">
+      <column name="Server" not-null="True" length="500" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="Port" type="Int32" p1:ValidateRequired="true" p1:Guid="0a5539e9-6dd5-4312-9136-e556e7b8c590">
+      <column name="Port" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="UseDefaultCredentials" type="Boolean" p1:ValidateRequired="true" p1:Guid="9885e42e-3d81-406e-997b-059252b7f53e">
+      <column name="UseDefaultCredentials" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="UserName" type="String" p1:nullable="True" p1:ValidateMaxLength="100" p1:ValidateRequired="false" p1:Guid="887a9592-2e0d-493c-a68b-103e776bb6ed">
+      <column name="UserName" not-null="False" length="100" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="Password" type="String" p1:nullable="True" p1:ValidateMaxLength="256" p1:ValidateRequired="false" p1:Guid="5c263a22-1477-42d0-9849-698a8607e5a6">
+      <column name="Password" not-null="False" length="256" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="EnableSsl" type="Boolean" p1:ValidateRequired="true" p1:Guid="f24c0034-33ea-4666-9cf4-917383baca8f">
+      <column name="EnableSsl" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="Timeout" type="Int32" p1:ValidateRequired="true" p1:Guid="9edddcfc-5d62-439d-9b99-a3296eea9aa3">
+      <column name="Timeout" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="SenderMail" type="String" p1:ValidateMaxLength="200" p1:ValidateRequired="true" p1:Guid="0a1e01b3-0916-467e-802f-1e0b0d78f949">
+      <column name="SenderMail" not-null="True" length="200" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="LastAction" type="String" p1:ValidateMaxLength="3" p1:ValidateRequired="true" p1:Guid="b23e8248-bb63-4087-bece-47aa6845fc59">
+      <column name="LastAction" not-null="True" length="3" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IdAuthorizationStatus" type="String" p1:ValidateMaxLength="1" p1:ValidateRequired="true" p1:Guid="d76e5a86-5744-4890-8af4-7915fefd00a6">
+      <column name="IdAuthorizationStatus" default="'N'" not-null="True" length="1" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IsActive" type="Boolean" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="e74a42e4-9323-47a7-b57f-e1902326fa2e">
+      <Documentation>
+        <Summary>((0))</Summary>
+      </Documentation>
+      <column name="IsActive" default="1" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="MakeBy" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="0f25d0bf-d651-4c2b-8836-2138cec07193">
+      <column name="MakeBy" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="MakeDate" type="DateTime" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="5826596a-8780-440a-811e-314ee3bd01e5">
+      <column name="MakeDate" default="getdate()" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="UpdateBy" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="0dff12c5-8540-4096-866f-ff740235d048">
+      <column name="UpdateBy" not-null="False" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="UpdateDate" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="a7002395-95da-4007-8f13-b0c436424623">
+      <column name="UpdateDate" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="StartTime" type="DateTime" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="a7c6b49a-c7f7-4fee-aeca-7424ca8371e3">
+      <column name="StartTime" default="getutcdate()" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="EndTime" type="DateTime" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="357f4646-88f4-4d0a-b64f-baf13d97d69f">
+      <column name="EndTime" default="CONVERT([datetime2],'9999-12-31 23:59:59.9999999')" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="SmtpClientHistory" entity-set="SmtpClientHistories" table="SmtpClientHistory" schema="core" query-type="True" p1:Guid="948b2e65-f187-48b6-8adf-95776c4ac137">
+    <property name="IdClient" type="Int32" p1:ValidateRequired="true" p1:Guid="79127188-9ec4-4a00-b68d-043a7d94b0d1">
+      <column name="IdClient" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="Id" type="Int32" p1:ValidateRequired="true" p1:Guid="b8cc6ce3-10e5-45a5-ad53-b2c177561289">
+      <column name="Id" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="Server" type="String" p1:ValidateMaxLength="500" p1:ValidateRequired="true" p1:Guid="10d586ab-8d1b-4718-b090-9fa4d40b98b5">
+      <column name="Server" not-null="True" length="500" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="Port" type="Int32" p1:ValidateRequired="true" p1:Guid="f92acf49-8596-4f68-a7b5-98c28f6f7b56">
+      <column name="Port" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="UseDefaultCredentials" type="Boolean" p1:ValidateRequired="true" p1:Guid="048c81e0-9bce-445e-8827-f9b7b2a02361">
+      <column name="UseDefaultCredentials" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="UserName" type="String" p1:nullable="True" p1:ValidateMaxLength="100" p1:ValidateRequired="false" p1:Guid="465432f0-9219-460b-9d88-76c92c7d85d0">
+      <column name="UserName" not-null="False" length="100" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="Password" type="String" p1:nullable="True" p1:ValidateMaxLength="256" p1:ValidateRequired="false" p1:Guid="924ab5f0-f922-4cb0-8247-ba910fd59cb7">
+      <column name="Password" not-null="False" length="256" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="EnableSsl" type="Boolean" p1:ValidateRequired="true" p1:Guid="79007b15-ebee-4a0b-a996-e5e1b9bd2c0b">
+      <column name="EnableSsl" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="Timeout" type="Int32" p1:ValidateRequired="true" p1:Guid="3dd1e88d-2550-4a0f-b038-54adc6eb2a9b">
+      <column name="Timeout" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="SenderMail" type="String" p1:ValidateMaxLength="200" p1:ValidateRequired="true" p1:Guid="be4e9fe0-4083-4a99-bd6d-9f658ca15831">
+      <column name="SenderMail" not-null="True" length="200" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="LastAction" type="String" p1:ValidateMaxLength="3" p1:ValidateRequired="true" p1:Guid="7f971cba-72ed-4832-a731-2453400ab068">
+      <column name="LastAction" not-null="True" length="3" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IdAuthorizationStatus" type="String" p1:ValidateMaxLength="1" p1:ValidateRequired="true" p1:Guid="51b4adec-0e22-4a26-a30a-823d1f1cd53f">
+      <column name="IdAuthorizationStatus" not-null="True" length="1" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IsActive" type="Boolean" p1:ValidateRequired="true" p1:Guid="ff84f968-cdd2-46f3-8058-edb2e430601f">
+      <column name="IsActive" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="MakeBy" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="e2b10c0b-9780-4a3a-bb45-11066e052079">
+      <column name="MakeBy" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="MakeDate" type="DateTime" p1:ValidateRequired="true" p1:Guid="da7329e7-7afc-4a55-8638-1dd975606d40">
+      <column name="MakeDate" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="UpdateBy" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="baa387da-3102-4d87-9672-1a9c1f81b065">
+      <column name="UpdateBy" not-null="False" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="UpdateDate" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="a8cdf937-1c21-4006-82b7-33abd81155c4">
+      <column name="UpdateDate" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="StartTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="d8b7a3b4-f13d-49cb-9736-714b18c574db">
+      <column name="StartTime" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="EndTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="7bf26682-091d-4523-9a46-0aaa0da3fa9c">
+      <column name="EndTime" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="SubModule" entity-set="SubModules" table="SubModule" schema="core" p1:Guid="44aba031-6a8a-4d18-903b-eaf753221535">
+    <composite-id>
+      <key-property name="IdClient" type="Int32" p1:ValidateRequired="true" p1:Guid="7eb0fddf-239f-4479-8df2-9c8c3a732ec0">
+        <column name="IdClient" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+      </key-property>
+      <key-property name="Id" type="Int32" value-generated="OnAdd" primary-key-index="1" p1:ValidateRequired="true" p1:Guid="9d9591ba-9421-4c63-8eca-46d27182ad4e">
+        <column name="Id" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+      </key-property>
+    </composite-id>
+    <property name="IdModule" type="Int32" p1:ValidateRequired="true" p1:Guid="3fe65829-4a24-4823-ae36-ae9b725629b2">
+      <column name="IdModule" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="SubModuleCode" type="Int32" p1:ValidateRequired="true" p1:Guid="0ae8a0ec-ea43-4a47-8b5c-f77a28e08143">
+      <column name="SubModuleCode" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="SubModuleName" type="String" p1:ValidateMaxLength="100" p1:ValidateRequired="true" p1:Guid="bb6dbe7b-6b29-44ab-8b49-c4995ee7e208">
+      <column name="SubModuleName" not-null="True" length="100" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IconName" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="08dc8a66-d516-4bd8-92dd-890da53d805d">
+      <column name="IconName" not-null="False" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="Ordinal" type="Int16" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="89475587-c57b-4c68-9fd1-624ea242ad4c">
+      <column name="Ordinal" not-null="False" precision="5" scale="0" sql-type="smallint" p1:unicode="False" />
+    </property>
+    <property name="IdAuthorizationStatus" type="String" p1:ValidateMaxLength="1" p1:ValidateRequired="true" p1:Guid="3f8d31d1-9822-4d28-a80b-a8fbc1702b2a">
+      <column name="IdAuthorizationStatus" default="'N'" not-null="True" length="1" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IsActive" type="Boolean" p1:ValidateRequired="true" p1:Guid="a32376c8-e5b5-4cba-8193-bd777b6917b5">
+      <column name="IsActive" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="LastAction" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="f748f6a8-22f6-4301-8f71-4760fb1b6567">
+      <column name="LastAction" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="MakeBy" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="a4e5c169-49ec-42a0-8d2f-4df4a9dadf51">
+      <column name="MakeBy" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="MakeDate" type="DateTime" p1:ValidateRequired="true" p1:Guid="a97af556-50bc-4848-b879-9cfee80310d3">
+      <column name="MakeDate" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="UpdateBy" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="3c27403a-fca5-414a-9a40-b555ae89c9bc">
+      <column name="UpdateBy" not-null="False" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="UpdateDate" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="6dd7ff5c-5b5b-4e3b-9d19-1c28ff8b8bfa">
+      <column name="UpdateDate" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="StartTime" type="DateTime" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="188f9a38-04dc-4fcf-bcde-153f315c5c6f">
+      <column name="StartTime" default="getutcdate()" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="EndTime" type="DateTime" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="a35b7f85-998b-4414-9d50-283dc7a3d8e7">
+      <column name="EndTime" default="CONVERT([datetime2],'9999-12-31 23:59:59.9999999')" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="SubModuleHistory" entity-set="SubModuleHistories" table="SubModuleHistory" schema="core" query-type="True" p1:Guid="61b1cde8-ce6d-4988-bcc5-788673e2da98">
+    <property name="IdClient" type="Int32" p1:ValidateRequired="true" p1:Guid="c73b066a-7320-4164-bc9e-d6f9718ed308">
+      <column name="IdClient" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="Id" type="Int32" p1:ValidateRequired="true" p1:Guid="e80998b8-5071-4724-899f-03eaef7bf400">
+      <column name="Id" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="IdModule" type="Int32" p1:ValidateRequired="true" p1:Guid="2ff185d3-0126-4870-a684-12e2960d06f2">
+      <column name="IdModule" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="SubModuleCode" type="Int32" p1:ValidateRequired="true" p1:Guid="d3260f21-80d4-40a5-88e4-f676e4c669ea">
+      <column name="SubModuleCode" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="SubModuleName" type="String" p1:ValidateMaxLength="100" p1:ValidateRequired="true" p1:Guid="5b343091-b827-4f3a-90ab-35598fd50580">
+      <column name="SubModuleName" not-null="True" length="100" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IconName" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="9598f408-0bea-4451-831b-03d48da34198">
+      <column name="IconName" not-null="False" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="Ordinal" type="Int16" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="8e74603d-cf81-4714-93c3-6f632a13e48b">
+      <column name="Ordinal" not-null="False" precision="5" scale="0" sql-type="smallint" p1:unicode="False" />
+    </property>
+    <property name="IdAuthorizationStatus" type="String" p1:ValidateMaxLength="1" p1:ValidateRequired="true" p1:Guid="da344134-d666-498f-9119-7b0cced8c828">
+      <column name="IdAuthorizationStatus" not-null="True" length="1" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IsActive" type="Boolean" p1:ValidateRequired="true" p1:Guid="4ef09e3d-d467-4d14-a4bd-61c4b1c75439">
+      <column name="IsActive" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="LastAction" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="bdb6c798-6b42-48cc-b75d-86644d5e4f78">
+      <column name="LastAction" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="MakeBy" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="c2fb3162-f1fa-4629-93f4-cb252bffd438">
+      <column name="MakeBy" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="MakeDate" type="DateTime" p1:ValidateRequired="true" p1:Guid="8f2cf189-1af2-4220-a229-cbaf4ccc3385">
+      <column name="MakeDate" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="UpdateBy" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="e71e41b2-d4c9-4084-9fdd-85504b09b443">
+      <column name="UpdateBy" not-null="False" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="UpdateDate" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="c3855730-275a-4d0d-827e-4bffe4172f12">
+      <column name="UpdateDate" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="StartTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="9bdf8c5f-929d-44e4-8e12-db1d6b17bc18">
+      <column name="StartTime" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="EndTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="f36f5a23-09ea-453b-9c84-8db45a541b01">
+      <column name="EndTime" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="UserGroup" entity-set="UserGroups" table="UserGroup" schema="core" p1:Guid="285b9e79-52f5-4507-a2b7-2ad4a53e1bc5">
+    <composite-id>
+      <key-property name="IdClient" type="Int32" p1:ValidateRequired="true" p1:Guid="41228006-2184-42be-81c0-df1f81ac5f9b">
+        <column name="IdClient" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+      </key-property>
+      <key-property name="Id" type="Int32" value-generated="OnAdd" primary-key-index="1" p1:ValidateRequired="true" p1:Guid="7a80de8a-8a4b-424c-a7e1-1f71f51e4c46">
+        <column name="Id" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+      </key-property>
+    </composite-id>
+    <property name="GroupName" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="1902cc1f-dc44-4c20-ab9d-c59fe71c0e22">
+      <column name="GroupName" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="GroupDescription" type="String" p1:nullable="True" p1:ValidateMaxLength="500" p1:ValidateRequired="false" p1:Guid="efcedf84-8ae8-40bc-ac36-3dfb76858fb8">
+      <column name="GroupDescription" not-null="False" length="500" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="LastAction" type="String" p1:ValidateMaxLength="3" p1:ValidateRequired="true" p1:Guid="55c60724-bc2e-4696-8449-a84cd9904a5f">
+      <column name="LastAction" not-null="True" length="3" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IdAuthorizationStatus" type="String" p1:ValidateMaxLength="1" p1:ValidateRequired="true" p1:Guid="e815789a-442b-4ef2-84df-cd6e9acef791">
+      <column name="IdAuthorizationStatus" default="'N'" not-null="True" length="1" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IsActive" type="Boolean" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="5199f9a0-581b-40e8-889f-8150fb0a4e95">
+      <column name="IsActive" default="1" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="MakeBy" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="cdeb194f-76bb-477f-b4ee-5a35a63ff21e">
+      <column name="MakeBy" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="MakeDate" type="DateTime" p1:ValidateRequired="true" p1:Guid="2d6edb0d-0ae8-452e-85d3-2722e761e163">
+      <column name="MakeDate" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="UpdateBy" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="1c682ee0-bfa3-4b1a-a906-1f39c79a4def">
+      <column name="UpdateBy" not-null="False" length="50" sql-type="varchar" p1:unicode="False" />
+    </property>
+    <property name="UpdateDate" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="bb6f5f79-15cb-4c6e-81bd-271621cc600a">
+      <column name="UpdateDate" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="StartTime" type="DateTime" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="fe5ea44d-02e6-4222-af38-4d5847db0433">
+      <column name="StartTime" default="getutcdate()" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="EndTime" type="DateTime" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="517c3dd5-a814-4466-9024-90ad933023e4">
+      <column name="EndTime" default="CONVERT([datetime2],'9999-12-31 23:59:59.9999999')" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="UserGroupHistory" entity-set="UserGroupHistories" table="UserGroupHistory" schema="core" query-type="True" p1:Guid="e7416019-e2f4-4d77-9ba7-a03d296c5e63">
+    <property name="IdClient" type="Int32" p1:ValidateRequired="true" p1:Guid="9ed3543c-f6a1-4594-9a05-afb7bf03136c">
+      <column name="IdClient" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="Id" type="Int32" p1:ValidateRequired="true" p1:Guid="bea02516-1cd7-4c66-8307-c8bc80cbfebb">
+      <column name="Id" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="GroupName" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="b9c43a7a-7627-47fe-a90d-60ba71c2ba95">
+      <column name="GroupName" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="GroupDescription" type="String" p1:nullable="True" p1:ValidateMaxLength="500" p1:ValidateRequired="false" p1:Guid="7732da2b-7ba8-4669-81ed-a4dae4cdf626">
+      <column name="GroupDescription" not-null="False" length="500" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="LastAction" type="String" p1:ValidateMaxLength="3" p1:ValidateRequired="true" p1:Guid="ebf31efc-ff26-48c4-af8b-9e36f318ef11">
+      <column name="LastAction" not-null="True" length="3" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IdAuthorizationStatus" type="String" p1:ValidateMaxLength="1" p1:ValidateRequired="true" p1:Guid="c944b1e3-0640-411b-8278-5b10d17cddfc">
+      <column name="IdAuthorizationStatus" not-null="True" length="1" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IsActive" type="Boolean" p1:ValidateRequired="true" p1:Guid="a2d2dbf6-82f1-43e6-9e35-94d603012a0f">
+      <column name="IsActive" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="MakeBy" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="623049e9-de5c-4765-8932-446416fe6643">
+      <column name="MakeBy" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="MakeDate" type="DateTime" p1:ValidateRequired="true" p1:Guid="fcc3c11e-03e1-4ec8-94d8-977656be76e5">
+      <column name="MakeDate" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="UpdateBy" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="68781736-256e-4702-8eba-a770974e5c39">
+      <column name="UpdateBy" not-null="False" length="50" sql-type="varchar" p1:unicode="False" />
+    </property>
+    <property name="UpdateDate" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="b720305a-cd79-4d86-97c1-dbd45be15268">
+      <column name="UpdateDate" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="StartTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="7abe80af-0ad9-492b-9fc8-bc126e0177f4">
+      <column name="StartTime" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="EndTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="13e586d2-51ad-44fa-a220-516e67f44649">
+      <column name="EndTime" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="UserGroupWiseRoleMapping" entity-set="UserGroupWiseRoleMappings" table="UserGroupWiseRoleMapping" schema="core" p1:Guid="25e642c9-a179-4bf9-811a-44723a84f3f6">
+    <composite-id>
+      <key-property name="IdClient" type="Int32" p1:ValidateRequired="true" p1:Guid="8f623830-95e0-41c5-bf27-138f610210cf">
+        <column name="IdClient" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+      </key-property>
+      <key-property name="Id" type="Int32" value-generated="OnAdd" primary-key-index="1" p1:ValidateRequired="true" p1:Guid="3bb17402-e1fc-4fab-a7a4-9d6e78eeca8d">
+        <column name="Id" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+      </key-property>
+    </composite-id>
+    <property name="IdUserRole" type="Int32" p1:ValidateRequired="true" p1:Guid="0643b397-b83b-42a5-a0c2-ec822f8a52b2">
+      <column name="IdUserRole" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="IdUserGroup" type="Int32" p1:ValidateRequired="true" p1:Guid="6d0c7030-f370-4d5e-b053-d75c5beb6721">
+      <column name="IdUserGroup" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="IdAuthorizationStatus" type="String" p1:ValidateMaxLength="1" p1:ValidateRequired="true" p1:Guid="ad665e2a-708f-4ef6-a2c7-837b928b64f6">
+      <column name="IdAuthorizationStatus" default="'N'" not-null="True" length="1" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IsActive" type="Boolean" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="d0179159-bea9-4190-bd7b-3b4c1fa1f253">
+      <column name="IsActive" default="1" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="LastAction" type="String" p1:ValidateMaxLength="3" p1:ValidateRequired="true" p1:Guid="f82f384a-0572-4ef3-9cf5-90da5eec887d">
+      <column name="LastAction" not-null="True" length="3" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="MakeBy" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="632ba72b-c161-4467-841d-d334980a0c63">
+      <column name="MakeBy" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="MakeDate" type="DateTime" p1:ValidateRequired="true" p1:Guid="3de7905f-5ba6-483b-841b-690903ad3085">
+      <column name="MakeDate" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="UpdateBy" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="2b80b128-0d9f-4d45-9b03-5b273c3fdf63">
+      <column name="UpdateBy" not-null="False" length="50" sql-type="varchar" p1:unicode="False" />
+    </property>
+    <property name="UpdateDate" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="ecaf77fd-693f-4ca0-915d-d19c856de3df">
+      <column name="UpdateDate" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="StartTime" type="DateTime" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="0044a438-2a01-4518-a002-5b15a96eb69c">
+      <column name="StartTime" default="getutcdate()" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="EndTime" type="DateTime" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="ea834a12-388e-4826-bac9-515289a7dccb">
+      <column name="EndTime" default="CONVERT([datetime2],'9999-12-31 23:59:59.9999999')" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="UserGroupWiseRoleMappingHistory" entity-set="UserGroupWiseRoleMappingHistories" table="UserGroupWiseRoleMappingHistory" schema="core" query-type="True" p1:Guid="c7d9c9f6-a875-4d8e-9af3-4124921f0b1f">
+    <property name="IdClient" type="Int32" p1:ValidateRequired="true" p1:Guid="0d9ff086-0569-48cc-9802-e789edcc3727">
+      <column name="IdClient" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="Id" type="Int32" p1:ValidateRequired="true" p1:Guid="9066f625-f036-4d65-ac71-7d313d2dcbb1">
+      <column name="Id" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="IdUserRole" type="Int32" p1:ValidateRequired="true" p1:Guid="737faa6a-8528-4232-b6e7-ab78b8ffcb80">
+      <column name="IdUserRole" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="IdUserGroup" type="Int32" p1:ValidateRequired="true" p1:Guid="879f9959-fe16-4205-851f-3c5fcaeeed37">
+      <column name="IdUserGroup" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="IdAuthorizationStatus" type="String" p1:ValidateMaxLength="1" p1:ValidateRequired="true" p1:Guid="19fe1085-29e3-4e27-9bc6-5d537c04d991">
+      <column name="IdAuthorizationStatus" not-null="True" length="1" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IsActive" type="Boolean" p1:ValidateRequired="true" p1:Guid="3df6faa4-0ce5-4a68-a152-5cc9f25caa66">
+      <column name="IsActive" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="LastAction" type="String" p1:ValidateMaxLength="3" p1:ValidateRequired="true" p1:Guid="6dd0c1be-69fd-48d3-9b49-56c8f3d9e145">
+      <column name="LastAction" not-null="True" length="3" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="MakeBy" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="cd9e3944-a232-4888-8e30-3f3cc2413d86">
+      <column name="MakeBy" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="MakeDate" type="DateTime" p1:ValidateRequired="true" p1:Guid="b5452438-5b7e-4ec6-8f18-54c08306ab88">
+      <column name="MakeDate" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="UpdateBy" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="8ef29d74-bb98-431b-9c31-1f6414830ab1">
+      <column name="UpdateBy" not-null="False" length="50" sql-type="varchar" p1:unicode="False" />
+    </property>
+    <property name="UpdateDate" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="063f4b82-b733-4f72-bdf3-d37331f34b03">
+      <column name="UpdateDate" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="StartTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="472517e7-9422-4cba-8792-ecb4f9b7e4f8">
+      <column name="StartTime" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="EndTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="af0b1b6d-a89d-470c-adc5-2377f003c55f">
+      <column name="EndTime" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="UserResource" entity-set="UserResources" table="UserResource" schema="core" p1:Guid="8396a3d5-0284-482f-bd8b-e817ad950c14">
+    <composite-id>
+      <key-property name="IdClient" type="Int32" p1:ValidateRequired="true" p1:Guid="8e095d25-82ac-4e5c-a7ae-92c46a565a1f">
+        <column name="IdClient" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+      </key-property>
+      <key-property name="Id" type="Int32" value-generated="OnAdd" primary-key-index="1" p1:ValidateRequired="true" p1:Guid="ac9671a6-95c6-48bf-b42c-0ff9284d9217">
+        <column name="Id" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+      </key-property>
+    </composite-id>
+    <property name="Url" type="String" p1:ValidateRequired="true" p1:Guid="f7283661-e905-4e4d-930e-b12adce710ee">
+      <column name="Url" not-null="True" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="IdHttpMethod" type="Int32" p1:ValidateRequired="true" p1:Guid="0bc882f6-1ec3-44c8-a9aa-e812cfcb888c">
+      <column name="IdHttpMethod" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="LastAction" type="String" p1:ValidateMaxLength="3" p1:ValidateRequired="true" p1:Guid="b0a59c4d-463d-44ab-8c9e-d29df73a1a35">
+      <column name="LastAction" not-null="True" length="3" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IdAuthorizationStatus" type="String" p1:ValidateMaxLength="1" p1:ValidateRequired="true" p1:Guid="c523b9ae-abeb-409c-8eda-08e2242ec7ef">
+      <column name="IdAuthorizationStatus" default="'N'" not-null="True" length="1" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IsActive" type="Boolean" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="ebc1eac0-0da9-4aa9-9049-ce69e975d1fc">
+      <column name="IsActive" default="1" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="MakeBy" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="7c7d10f2-ce9f-45ab-9ff6-fd75938efae4">
+      <column name="MakeBy" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="MakeDate" type="DateTime" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="314d6cc2-73aa-4685-9509-f75a8b42a17f">
+      <column name="MakeDate" default="getdate()" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="UpdateBy" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="ec9b38da-ea86-4edb-97d9-3eb3526e1658">
+      <column name="UpdateBy" not-null="False" length="50" sql-type="varchar" p1:unicode="False" />
+    </property>
+    <property name="UpdateDate" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="fbae141a-6f1d-460e-8fdc-b86cabbd3c77">
+      <column name="UpdateDate" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="StartTime" type="DateTime" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="d469e5cf-eaf2-4d3e-823d-19f2ef347b01">
+      <column name="StartTime" default="getutcdate()" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="EndTime" type="DateTime" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="69e9d58c-fa37-483d-98d5-19b1d4e9bfc7">
+      <column name="EndTime" default="CONVERT([datetime2],'9999-12-31 23:59:59.9999999')" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="UserResourceHistory" entity-set="UserResourceHistories" table="UserResourceHistory" schema="core" query-type="True" p1:Guid="a6cb897e-4cf2-4337-b14f-332601bfb05a">
+    <property name="IdClient" type="Int32" p1:ValidateRequired="true" p1:Guid="14c6f77e-4be5-4956-a680-26b6c63d12e0">
+      <column name="IdClient" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="Id" type="Int32" p1:ValidateRequired="true" p1:Guid="653f70be-2efd-4ba8-8b1e-c16693401175">
+      <column name="Id" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="Url" type="String" p1:ValidateRequired="true" p1:Guid="fa316564-2ad0-4573-bf40-5e5e770d664c">
+      <column name="Url" not-null="True" sql-type="nvarchar(max)" p1:unicode="True" />
+    </property>
+    <property name="IdHttpMethod" type="Int32" p1:ValidateRequired="true" p1:Guid="1a1b13d9-cdc2-4b97-8e17-29e76fcc3da1">
+      <column name="IdHttpMethod" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="LastAction" type="String" p1:ValidateMaxLength="3" p1:ValidateRequired="true" p1:Guid="09d9edfc-1934-4b62-9be7-fce1ed235548">
+      <column name="LastAction" not-null="True" length="3" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IdAuthorizationStatus" type="String" p1:ValidateMaxLength="1" p1:ValidateRequired="true" p1:Guid="f3b46faa-d219-4512-8f73-92cf4fdb86c2">
+      <column name="IdAuthorizationStatus" not-null="True" length="1" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IsActive" type="Boolean" p1:ValidateRequired="true" p1:Guid="002c2202-3ac8-483c-9dba-6ca886f2bdf6">
+      <column name="IsActive" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="MakeBy" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="bc40ccd3-c778-4f89-a1a9-f04ccc324a7b">
+      <column name="MakeBy" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="MakeDate" type="DateTime" p1:ValidateRequired="true" p1:Guid="02fc28b6-ef68-4f22-b67f-08a8b1f50a6d">
+      <column name="MakeDate" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="UpdateBy" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="73b4aed8-6fbc-43d4-be6f-80fd4c80d4a6">
+      <column name="UpdateBy" not-null="False" length="50" sql-type="varchar" p1:unicode="False" />
+    </property>
+    <property name="UpdateDate" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="e3c3fe73-9846-4d44-902a-56b2109f8d3e">
+      <column name="UpdateDate" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="StartTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="63e57e65-1873-4704-ae0e-a0e0367b8fcf">
+      <column name="StartTime" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="EndTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="35d73527-9a56-4b3a-afea-b3210dc0acbb">
+      <column name="EndTime" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="UserRole" entity-set="UserRoles" table="UserRole" schema="core" p1:Guid="26447886-e70f-42d5-87f7-d158038974cd">
+    <composite-id>
+      <key-property name="IdClient" type="Int32" p1:ValidateRequired="true" p1:Guid="bd80b0f3-deb7-427d-b7a8-08771d8980f3">
+        <column name="IdClient" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+      </key-property>
+      <key-property name="Id" type="Int32" value-generated="OnAdd" primary-key-index="1" p1:ValidateRequired="true" p1:Guid="65cce814-52be-4f5e-873a-e109ad02acdc">
+        <column name="Id" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+      </key-property>
+    </composite-id>
+    <property name="RoleName" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="85fccd0b-fd9b-46dc-9812-5874d0c71633">
+      <column name="RoleName" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="RoleDescription" type="String" p1:nullable="True" p1:ValidateMaxLength="500" p1:ValidateRequired="false" p1:Guid="b8ed063e-0d16-4c9a-86ca-dc30b742a9f4">
+      <column name="RoleDescription" not-null="False" length="500" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="LastAction" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="501db478-563d-4f43-b210-e00815e1c184">
+      <column name="LastAction" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IdAuthorizationStatus" type="String" p1:ValidateMaxLength="1" p1:ValidateRequired="true" p1:Guid="c4cb715b-458a-4606-b88a-f27903a154a2">
+      <column name="IdAuthorizationStatus" default="'N'" not-null="True" length="1" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IsActive" type="Boolean" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="b3630201-370f-4b47-b0e0-3bfcd6ff7e2f">
+      <column name="IsActive" default="0" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="MakeBy" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="5a71c22a-0f6e-4b92-a0db-f120a02a20c9">
+      <column name="MakeBy" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="MakeDate" type="DateTime" p1:ValidateRequired="true" p1:Guid="13ec17ad-c38b-4d83-ba5f-727ae5de4a7d">
+      <column name="MakeDate" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="UpdateBy" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="c7620149-810c-4a59-a46a-9359d6d74172">
+      <column name="UpdateBy" not-null="False" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="UpdateDate" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="918cf84e-6a6b-476c-95e6-e2df0aaf6637">
+      <column name="UpdateDate" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="StartTime" type="DateTime" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="76d7bda5-efb0-4db4-97fc-890d276f9d90">
+      <column name="StartTime" default="getutcdate()" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="EndTime" type="DateTime" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="a220e922-a58b-49a3-ab4d-4155c77370e6">
+      <column name="EndTime" default="CONVERT([datetime2],'9999-12-31 23:59:59.9999999')" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="UserRoleHistory" entity-set="UserRoleHistories" table="UserRoleHistory" schema="core" query-type="True" p1:Guid="85bbd079-abaf-4f6b-9c14-d7bd3910676e">
+    <property name="IdClient" type="Int32" p1:ValidateRequired="true" p1:Guid="6fff59fb-d513-4530-a36b-a2d3de9cd186">
+      <column name="IdClient" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="Id" type="Int32" p1:ValidateRequired="true" p1:Guid="22cd2ea6-8dc9-467b-a026-ca28245598b4">
+      <column name="Id" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="RoleName" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="f98c5a4e-9492-4fa2-b247-61e1f548c978">
+      <column name="RoleName" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="RoleDescription" type="String" p1:nullable="True" p1:ValidateMaxLength="500" p1:ValidateRequired="false" p1:Guid="a1ffd989-f313-4235-92f5-ddea456c1210">
+      <column name="RoleDescription" not-null="False" length="500" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="LastAction" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="e2e8c023-1036-440c-ae1d-6dfb8d6a0fc2">
+      <column name="LastAction" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IdAuthorizationStatus" type="String" p1:ValidateMaxLength="1" p1:ValidateRequired="true" p1:Guid="9cd034cc-0389-4b9e-97cb-248a1fbd106b">
+      <column name="IdAuthorizationStatus" not-null="True" length="1" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IsActive" type="Boolean" p1:ValidateRequired="true" p1:Guid="c2126403-6a51-49d5-94f8-1fbd0dba1a2a">
+      <column name="IsActive" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="MakeBy" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="838e14fb-2222-4cd9-a683-fba6e5bb3acb">
+      <column name="MakeBy" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="MakeDate" type="DateTime" p1:ValidateRequired="true" p1:Guid="587769f0-c22a-49ba-877b-aa341ed2c8a9">
+      <column name="MakeDate" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="UpdateBy" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="6c9404dd-86d7-4b33-b8e8-43e7809e2619">
+      <column name="UpdateBy" not-null="False" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="UpdateDate" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="df01fca3-5570-457d-b192-18d23fc30078">
+      <column name="UpdateDate" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="StartTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="ab3c3e32-c1d5-42af-ba1b-94fe8650f828">
+      <column name="StartTime" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="EndTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="2643a872-f182-46e8-b42f-ae34c9312bb3">
+      <column name="EndTime" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="UserRoleWiseResourceMapping" entity-set="UserRoleWiseResourceMappings" table="UserRoleWiseResourceMapping" schema="core" p1:Guid="33429e19-79a1-4952-a986-875dcbcaf191">
+    <composite-id>
+      <key-property name="IdClient" type="Int32" p1:ValidateRequired="true" p1:Guid="98ecb35b-a1e4-47bc-b1d3-f22ca66807fa">
+        <column name="IdClient" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+      </key-property>
+      <key-property name="Id" type="Int32" value-generated="OnAdd" primary-key-index="1" p1:ValidateRequired="true" p1:Guid="7f55cc14-8071-40d4-8ae8-b7d52f144a5f">
+        <column name="Id" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+      </key-property>
+    </composite-id>
+    <property name="IdUserResource" type="Int32" p1:ValidateRequired="true" p1:Guid="2cfeb0e5-2832-4a2e-b3b2-4d77e0099a59">
+      <column name="IdUserResource" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="IdUserRole" type="Int32" p1:ValidateRequired="true" p1:Guid="de8e3a41-e2ee-4a4d-8627-87561b4e2099">
+      <column name="IdUserRole" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="LastAction" type="String" p1:ValidateMaxLength="3" p1:ValidateRequired="true" p1:Guid="33654075-f990-4b26-972b-6042032670cd">
+      <column name="LastAction" not-null="True" length="3" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IdAuthorizationStatus" type="String" p1:ValidateMaxLength="1" p1:ValidateRequired="true" p1:Guid="9c816c35-7db5-48ed-b098-89df2077666c">
+      <column name="IdAuthorizationStatus" default="'N'" not-null="True" length="1" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IsActive" type="Boolean" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="115cfa8e-7616-47c6-9f49-df6b25822acc">
+      <column name="IsActive" default="1" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="MakeBy" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="06200147-c901-48c2-87bc-8e7a0dcfb0a1">
+      <column name="MakeBy" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="MakeDate" type="DateTime" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="6672e92b-c74b-4b4b-9118-0d9230fc4629">
+      <column name="MakeDate" default="getdate()" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="UpdateBy" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="3825774d-4e8d-4f10-b82c-44058b85d25f">
+      <column name="UpdateBy" not-null="False" length="50" sql-type="varchar" p1:unicode="False" />
+    </property>
+    <property name="UpdateDate" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="77b6fdc3-7884-400c-8b30-d136f1ee30bb">
+      <column name="UpdateDate" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="StartTime" type="DateTime" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="2b2b05b6-2b2d-453a-85a2-6fcd12a22a6f">
+      <column name="StartTime" default="getutcdate()" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="EndTime" type="DateTime" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="f07cad4f-791c-4de2-b85f-5c820d6f02a6">
+      <column name="EndTime" default="CONVERT([datetime2],'9999-12-31 23:59:59.9999999')" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="UserRoleWiseResourceMappingHistory" entity-set="UserRoleWiseResourceMappingHistories" table="UserRoleWiseResourceMappingHistory" schema="core" query-type="True" p1:Guid="c17f35f5-d290-490b-8b85-7610e8c7e843">
+    <property name="IdClient" type="Int32" p1:ValidateRequired="true" p1:Guid="6d35066c-0b1b-4a7b-aaac-fe6097eb1438">
+      <column name="IdClient" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="Id" type="Int32" p1:ValidateRequired="true" p1:Guid="8099354d-b546-49da-acb7-4e02fe994161">
+      <column name="Id" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="IdUserResource" type="Int32" p1:ValidateRequired="true" p1:Guid="5ad3be42-5369-4cfc-baff-5385462b4f8f">
+      <column name="IdUserResource" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="IdUserRole" type="Int32" p1:ValidateRequired="true" p1:Guid="8119f77e-b747-498d-bb14-727468c0f2d0">
+      <column name="IdUserRole" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="LastAction" type="String" p1:ValidateMaxLength="3" p1:ValidateRequired="true" p1:Guid="aeed49eb-5750-417b-853e-80e6aca1c80e">
+      <column name="LastAction" not-null="True" length="3" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IdAuthorizationStatus" type="String" p1:ValidateMaxLength="1" p1:ValidateRequired="true" p1:Guid="bd14f9cb-4f3b-4386-9da0-1276bc1a9c92">
+      <column name="IdAuthorizationStatus" not-null="True" length="1" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IsActive" type="Boolean" p1:ValidateRequired="true" p1:Guid="7ca822dc-36b9-47c3-98b5-f010fc16b5f2">
+      <column name="IsActive" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="MakeBy" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="7517a741-9a51-4ff1-beed-e5813c26dbd5">
+      <column name="MakeBy" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="MakeDate" type="DateTime" p1:ValidateRequired="true" p1:Guid="f4f0cefa-4181-4204-8543-b357e4f0328f">
+      <column name="MakeDate" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="UpdateBy" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="8d046e4a-4c1b-469c-9b32-fd2e00f6f83b">
+      <column name="UpdateBy" not-null="False" length="50" sql-type="varchar" p1:unicode="False" />
+    </property>
+    <property name="UpdateDate" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="d82b9329-2bb2-484c-bde8-4404cfba4570">
+      <column name="UpdateDate" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="StartTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="2598339f-3611-421b-b8b0-77cbf64e44d7">
+      <column name="StartTime" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="EndTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="7f46b613-7af7-4b58-8075-2f64cd22f24d">
+      <column name="EndTime" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="User" entity-set="Users" table="Users" schema="core" p1:Guid="b9c5e6f3-0239-4c91-9563-130e604899b5">
+    <composite-id>
+      <key-property name="IdClient" type="Int32" p1:ValidateRequired="true" p1:Guid="3260b907-9321-4c49-abec-badd28353ef2">
+        <column name="IdClient" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+      </key-property>
+      <key-property name="Id" type="Int32" primary-key-index="1" p1:ValidateRequired="true" p1:Guid="d680c10d-6a58-4371-899d-3775b41b2a1c">
+        <column name="Id" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+      </key-property>
+    </composite-id>
+    <property name="UserName" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="b6e482d8-e1c9-4e0b-9436-565fbfea0064">
+      <column name="UserName" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="UserFullName" type="String" p1:nullable="True" p1:ValidateMaxLength="100" p1:ValidateRequired="false" p1:Guid="311d4691-b1be-4b10-851a-4caa09cd7198">
+      <column name="UserFullName" not-null="False" length="100" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="Email" type="String" p1:nullable="True" p1:ValidateMaxLength="100" p1:ValidateRequired="false" p1:Guid="8a5cd071-6a69-43d6-bae1-749ccc354052">
+      <column name="Email" not-null="False" length="100" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="EmployeeId" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="1c7ded2e-500b-4903-975b-c74add74e13e">
+      <column name="EmployeeId" not-null="False" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="Password" type="String" p1:nullable="True" p1:ValidateMaxLength="500" p1:ValidateRequired="false" p1:Guid="b93f8959-b5af-4a9d-869a-9d2a312b0d71">
+      <column name="Password" not-null="False" length="500" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="PasswordSalt" type="String" p1:nullable="True" p1:ValidateMaxLength="500" p1:ValidateRequired="false" p1:Guid="11919e46-d598-4b4d-bf22-a71ce9c6e007">
+      <column name="PasswordSalt" not-null="False" length="500" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="AccessLevel" type="String" p1:nullable="True" p1:ValidateMaxLength="4" p1:ValidateRequired="false" p1:Guid="8e13e505-84e7-4005-8ca7-c5b0f0017d7e">
+      <column name="AccessLevel" not-null="False" length="4" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IdRole" type="Int32" p1:ValidateRequired="true" p1:Guid="fce37126-9703-4564-9716-cc8f30b2e7ad">
+      <column name="IdRole" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="IdUserLanguage" type="Int32" p1:ValidateRequired="true" p1:Guid="a929c5e9-3a8a-4529-83f6-30d12a8611a6">
+      <column name="IdUserLanguage" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="IdAuthorizationStatus" type="String" p1:ValidateMaxLength="1" p1:ValidateRequired="true" p1:Guid="ab2bf4e3-b603-42e3-8891-d3545980eea7">
+      <column name="IdAuthorizationStatus" default="'N'" not-null="True" length="1" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IsActive" type="Boolean" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="e01dfea7-0b70-4a9f-95b3-3ccf631ca6a2">
+      <column name="IsActive" default="1" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="IsLockedOut" type="Boolean" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="574c6f15-fe95-4a5d-9dd1-cf6cf2a78e23">
+      <column name="IsLockedOut" default="0" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="IsChangePassword" type="Boolean" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="55258d3d-eb5c-4b4a-a0cd-89903c7b70d2">
+      <column name="IsChangePassword" default="0" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="LastAction" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="31e1b431-5dbb-4515-9587-699cd5d3d78b">
+      <column name="LastAction" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="MakeBy" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="0072669e-f2cb-485e-9814-c49e03dc4602">
+      <column name="MakeBy" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="MakeDate" type="DateTime" p1:ValidateRequired="true" p1:Guid="20f88d7b-9beb-4c0f-80f0-c94ef8032e93">
+      <column name="MakeDate" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="UpdateBy" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="fddda307-2205-47a2-99c7-1f1bfa2bb402">
+      <column name="UpdateBy" not-null="False" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="UpdateDate" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="c5d21c2c-5313-45de-958c-b1f1ed57a89d">
+      <column name="UpdateDate" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="StartTime" type="DateTime" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="2ddfacc6-7ad5-4399-8bdf-98a9bb9a4647">
+      <column name="StartTime" default="getutcdate()" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="EndTime" type="DateTime" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="7f7510a9-9468-45f3-bc0c-1d14da9f5477">
+      <column name="EndTime" default="CONVERT([datetime2],'9999-12-31 23:59:59.9999999')" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="UsersHistory" entity-set="UsersHistories" table="UsersHistory" schema="core" query-type="True" p1:Guid="d9933b88-8e52-4a7e-a55f-402d5ece48b8">
+    <property name="IdClient" type="Int32" p1:ValidateRequired="true" p1:Guid="507009ba-50a3-416f-b2ec-df5869a14825">
+      <column name="IdClient" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="Id" type="Int32" p1:ValidateRequired="true" p1:Guid="360205b8-0f69-4371-b534-919e0146c5d4">
+      <column name="Id" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="UserName" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="bd2a1210-799c-41f5-a5a5-998309f3d37b">
+      <column name="UserName" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="UserFullName" type="String" p1:nullable="True" p1:ValidateMaxLength="100" p1:ValidateRequired="false" p1:Guid="46753da9-141a-48f5-be0c-1df68234fe2f">
+      <column name="UserFullName" not-null="False" length="100" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="Email" type="String" p1:nullable="True" p1:ValidateMaxLength="100" p1:ValidateRequired="false" p1:Guid="6bb5b6a0-150d-4eb2-b3ac-47b345fe5e27">
+      <column name="Email" not-null="False" length="100" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="EmployeeId" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="3c3d1834-7e46-4b00-9617-7c140bb7ee53">
+      <column name="EmployeeId" not-null="False" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="Password" type="String" p1:nullable="True" p1:ValidateMaxLength="500" p1:ValidateRequired="false" p1:Guid="492c0de8-da30-47cc-9c26-1fb207dd508b">
+      <column name="Password" not-null="False" length="500" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="PasswordSalt" type="String" p1:nullable="True" p1:ValidateMaxLength="500" p1:ValidateRequired="false" p1:Guid="826f1f84-fd01-4ca1-a400-20fa7e2c7d26">
+      <column name="PasswordSalt" not-null="False" length="500" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="AccessLevel" type="String" p1:nullable="True" p1:ValidateMaxLength="4" p1:ValidateRequired="false" p1:Guid="de635e3d-27e0-4059-9797-1864aaf86216">
+      <column name="AccessLevel" not-null="False" length="4" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IdRole" type="Int32" p1:ValidateRequired="true" p1:Guid="044d903e-24db-47d9-92b0-99c18590e3d5">
+      <column name="IdRole" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="IdUserLanguage" type="Int32" p1:ValidateRequired="true" p1:Guid="90649088-e542-49e0-9905-8dea27a952e8">
+      <column name="IdUserLanguage" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="IdAuthorizationStatus" type="String" p1:ValidateMaxLength="1" p1:ValidateRequired="true" p1:Guid="3f321202-32c2-4f59-8e22-2153ad5b6822">
+      <column name="IdAuthorizationStatus" not-null="True" length="1" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IsActive" type="Boolean" p1:ValidateRequired="true" p1:Guid="8a5205e3-d132-47f8-9f40-578cf94adc70">
+      <column name="IsActive" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="IsLockedOut" type="Boolean" p1:ValidateRequired="true" p1:Guid="6bbe9949-45e5-44db-956f-6e373c77242f">
+      <column name="IsLockedOut" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="IsChangePassword" type="Boolean" p1:ValidateRequired="true" p1:Guid="a63e44ff-3a08-407f-83f9-b13103f5ff72">
+      <column name="IsChangePassword" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="LastAction" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="c69c8463-f128-47d8-92e3-49e119636d93">
+      <column name="LastAction" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="MakeBy" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="bf4118f0-e2c7-4251-b0b3-496f745ed4f5">
+      <column name="MakeBy" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="MakeDate" type="DateTime" p1:ValidateRequired="true" p1:Guid="bfca9d69-b6d5-46ba-884a-0aa1df734252">
+      <column name="MakeDate" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="UpdateBy" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="ee51c955-37e8-4195-b045-512772a16d1d">
+      <column name="UpdateBy" not-null="False" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="UpdateDate" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="86e0b420-20bf-48a6-a894-1ee56d9df8df">
+      <column name="UpdateDate" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="StartTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="d1281a78-5938-4f45-bab0-3ed39d619b01">
+      <column name="StartTime" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="EndTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="11d0b366-60e2-4916-b2fa-cb022ae5da80">
+      <column name="EndTime" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="UserWiseGroupMapping" entity-set="UserWiseGroupMappings" table="UserWiseGroupMapping" schema="core" p1:Guid="afd272f1-e4d8-4c11-95cb-52cde48d8bcc">
+    <composite-id>
+      <key-property name="IdClient" type="Int32" p1:ValidateRequired="true" p1:Guid="f1b9d1c8-1355-4e14-81fc-11c10d602aa3">
+        <column name="IdClient" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+      </key-property>
+      <key-property name="Id" type="Int32" value-generated="OnAdd" primary-key-index="1" p1:ValidateRequired="true" p1:Guid="d5e36ad7-fa96-44fe-afff-f6a1aa5b5a52">
+        <column name="Id" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+      </key-property>
+    </composite-id>
+    <property name="IdUser" type="Int32" p1:ValidateRequired="true" p1:Guid="a1eb12dc-738e-4b11-9419-229e9a5368ab">
+      <column name="IdUser" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="IdUserGroup" type="Int32" p1:ValidateRequired="true" p1:Guid="9ad5fb27-23c2-4d8a-bbeb-be47b0f07b24">
+      <column name="IdUserGroup" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="LastAction" type="String" p1:ValidateMaxLength="3" p1:ValidateRequired="true" p1:Guid="203cf234-1c6f-463d-9457-bc44ae53c1c9">
+      <column name="LastAction" not-null="True" length="3" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IdAuthorizationStatus" type="String" p1:ValidateMaxLength="1" p1:ValidateRequired="true" p1:Guid="326e0460-0fab-4d94-b733-109b67eb1c11">
+      <column name="IdAuthorizationStatus" default="'N'" not-null="True" length="1" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IsActive" type="Boolean" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="7e0e5340-93af-411e-bf06-6457d08646c1">
+      <column name="IsActive" default="1" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="MakeBy" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="e209279f-ad8c-4a0d-bb45-34d67bd2eaf3">
+      <column name="MakeBy" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="MakeDate" type="DateTime" p1:ValidateRequired="true" p1:Guid="be0e60f7-c04a-4d0c-97c4-81a25b968d36">
+      <column name="MakeDate" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="UpdateBy" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="f2e91e5c-ab92-4873-85bd-48773faf5905">
+      <column name="UpdateBy" not-null="False" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="UpdateDate" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="2ea2421d-abed-4cf4-ae72-a730b9dcef15">
+      <column name="UpdateDate" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="StartTime" type="DateTime" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="524b8406-b211-470b-bcae-3492254a52ff">
+      <column name="StartTime" default="getutcdate()" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="EndTime" type="DateTime" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="31b2a3cd-d52a-476b-894e-431658e5d0df">
+      <column name="EndTime" default="CONVERT([datetime2],'9999-12-31 23:59:59.9999999')" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="UserWiseGroupMappingHistory" entity-set="UserWiseGroupMappingHistories" table="UserWiseGroupMappingHistory" schema="core" query-type="True" p1:Guid="082a7459-dfec-418a-a6ce-f183dbce3d91">
+    <property name="IdClient" type="Int32" p1:ValidateRequired="true" p1:Guid="1465b61e-eab5-4747-9162-764707bf4b20">
+      <column name="IdClient" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="Id" type="Int32" p1:ValidateRequired="true" p1:Guid="3154e657-411b-4b85-8f78-47b27dd15ccc">
+      <column name="Id" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="IdUser" type="Int32" p1:ValidateRequired="true" p1:Guid="cc994eac-0565-470c-9cc4-a7ce9f3edc59">
+      <column name="IdUser" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="IdUserGroup" type="Int32" p1:ValidateRequired="true" p1:Guid="d21820f8-1124-4ead-8c96-8f0f90489271">
+      <column name="IdUserGroup" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="LastAction" type="String" p1:ValidateMaxLength="3" p1:ValidateRequired="true" p1:Guid="fcdd3cc8-f2de-4786-9fb3-37a8cea4207d">
+      <column name="LastAction" not-null="True" length="3" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IdAuthorizationStatus" type="String" p1:ValidateMaxLength="1" p1:ValidateRequired="true" p1:Guid="ea311c70-3f44-48fb-bca1-2728d9932617">
+      <column name="IdAuthorizationStatus" not-null="True" length="1" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IsActive" type="Boolean" p1:ValidateRequired="true" p1:Guid="554b99c8-8260-45a4-b0af-5e6a724db835">
+      <column name="IsActive" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="MakeBy" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="f146f0ef-5ca2-4668-8341-c51e1cd86ebd">
+      <column name="MakeBy" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="MakeDate" type="DateTime" p1:ValidateRequired="true" p1:Guid="222cef85-2f09-409f-b687-a90c780a64d5">
+      <column name="MakeDate" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="UpdateBy" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="dfe2f824-7b25-4c4a-8a84-91c5a4e40ca3">
+      <column name="UpdateBy" not-null="False" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="UpdateDate" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="6fd98e4d-d1cf-4a61-b021-20a110bb724e">
+      <column name="UpdateDate" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="StartTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="19a08b34-1f54-4a6f-bb29-41ad3d66cfb1">
+      <column name="StartTime" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="EndTime" type="DateTime" p1:ValidateRequired="true" p1:Guid="99f63ca9-4227-4259-abe9-4353062ec516">
+      <column name="EndTime" not-null="True" precision="0" sql-type="datetime2" p1:unicode="False" />
+    </property>
+  </class>
+  <associations>
+    <association name="AppClient_ClientCompany" cardinality="OneToMany" p1:Guid="cc1f55a5-153b-47e2-a645-38c34d194296">
+      <end1 multiplicity="One" name="AppClient" class="ClientCompany" relation-class="AppClient" constrained="True" lazy="False" p1:Guid="3f810947-9c1b-4a33-9c64-fba41ffc5763">
+        <property name="Id" />
+      </end1>
+      <end2 multiplicity="Many" name="ClientCompanies" class="AppClient" relation-class="ClientCompany" lazy="False" p1:Guid="dde5cbc7-809f-44e8-a0cf-5c7d060564e9">
+        <property name="IdAppClient" />
+      </end2>
+    </association>
+    <association name="PhraseTag_PhraseTagTranslation" cardinality="OneToMany" p1:Guid="a6386d16-1915-4144-ab81-8e04c2783a1e">
+      <end1 multiplicity="One" name="PhraseTag" class="PhraseTagTranslation" relation-class="PhraseTag" constrained="True" lazy="False" p1:Guid="6f9ba82f-bd4e-4e4b-8921-2bb93bf1cd5f">
+        <property name="IdClient" />
+        <property name="Id" />
+      </end1>
+      <end2 multiplicity="Many" name="PhraseTagTranslations" class="PhraseTag" relation-class="PhraseTagTranslation" lazy="False" p1:Guid="eb8e3edb-44b8-4bde-9fe3-bfdd5e50e5ed">
+        <property name="IdClient" />
+        <property name="IdPhraseTag" />
+      </end2>
+    </association>
+    <association name="BaseLanguage_PhraseTagTranslation" cardinality="OneToMany" p1:Guid="1973be15-60e9-4c6a-82e0-3177c79495a0">
+      <end1 multiplicity="One" name="BaseLanguage" class="PhraseTagTranslation" relation-class="BaseLanguage" constrained="True" lazy="False" p1:Guid="8038e90a-0e8f-4eda-ac2a-6b34640556f5">
+        <property name="IdClient" />
+        <property name="Id" />
+      </end1>
+      <end2 multiplicity="Many" name="PhraseTagTranslations" class="BaseLanguage" relation-class="PhraseTagTranslation" lazy="False" p1:Guid="159cdd44-8d22-4822-af1b-23b8b8ecc6f5">
+        <property name="IdClient" />
+        <property name="IdLanguage" />
+      </end2>
+    </association>
+    <association name="Section_Screen" cardinality="OneToMany" p1:Guid="624e7826-92ea-4236-b453-f19962bca281">
+      <end1 multiplicity="One" name="Section" class="Screen" relation-class="Section" constrained="True" lazy="False" p1:Guid="0882b037-9bdf-40f9-8fc3-3998b197cb5c">
+        <property name="IdClient" />
+        <property name="Id" />
+      </end1>
+      <end2 multiplicity="Many" name="Screens" class="Section" relation-class="Screen" lazy="False" p1:Guid="d2f71a09-52cb-4646-8bde-866e51881c24">
+        <property name="IdClient" />
+        <property name="IdSection" />
+      </end2>
+    </association>
+    <association name="SubModule_Section" cardinality="OneToMany" p1:Guid="477f7252-0d43-41d7-a197-1e301ded1631">
+      <end1 multiplicity="One" name="SubModule" class="Section" relation-class="SubModule" constrained="True" lazy="False" p1:Guid="dce96f49-5c1d-445a-90eb-3890bc9d46de">
+        <property name="IdClient" />
+        <property name="Id" />
+      </end1>
+      <end2 multiplicity="Many" name="Sections" class="SubModule" relation-class="Section" lazy="False" p1:Guid="1835002c-725c-4c55-80eb-cdf8a62217f1">
+        <property name="IdClient" />
+        <property name="IdSubModule" />
+      </end2>
+    </association>
+    <association name="Module_SubModule" cardinality="OneToMany" p1:Guid="cb2e075f-5793-4fd8-add3-870d8c3e9f84">
+      <end1 multiplicity="One" name="Module" class="SubModule" relation-class="Module" constrained="True" lazy="False" p1:Guid="4c8b031c-6908-4e74-bb52-bcf3c8fad245">
+        <property name="IdClient" />
+        <property name="Id" />
+      </end1>
+      <end2 multiplicity="Many" name="SubModules" class="Module" relation-class="SubModule" lazy="False" p1:Guid="06de8771-e499-4b62-93bd-ffa753c4d1f9">
+        <property name="IdClient" />
+        <property name="IdModule" />
+      </end2>
+    </association>
+    <association name="UserRole_UserGroupWiseRoleMapping" cardinality="OneToMany" p1:Guid="361f3cb0-0e93-41a2-a5df-f681eda06e33">
+      <end1 multiplicity="One" name="UserRole" class="UserGroupWiseRoleMapping" relation-class="UserRole" constrained="True" lazy="False" p1:Guid="8a4332f8-b139-47f0-b3bf-fc2bcde16588">
+        <property name="IdClient" />
+        <property name="Id" />
+      </end1>
+      <end2 multiplicity="Many" name="UserGroupWiseRoleMappings" class="UserRole" relation-class="UserGroupWiseRoleMapping" lazy="False" p1:Guid="711f8d0b-3524-4c48-a7bd-aeff5ed0cdce">
+        <property name="IdClient" />
+        <property name="IdUserRole" />
+      </end2>
+    </association>
+    <association name="UserGroup_UserGroupWiseRoleMapping" cardinality="OneToMany" p1:Guid="7df8fa65-fbf4-4170-93dd-4e78fa68e731">
+      <end1 multiplicity="One" name="UserGroup" class="UserGroupWiseRoleMapping" relation-class="UserGroup" constrained="True" lazy="False" p1:Guid="74a660fb-4a0e-4bb4-9a8f-943b71792686">
+        <property name="IdClient" />
+        <property name="Id" />
+      </end1>
+      <end2 multiplicity="Many" name="UserGroupWiseRoleMappings" class="UserGroup" relation-class="UserGroupWiseRoleMapping" lazy="False" p1:Guid="a053b1a1-9779-4a49-a03a-6df03c556044">
+        <property name="IdClient" />
+        <property name="IdUserGroup" />
+      </end2>
+    </association>
+    <association name="HttpMethod_UserResource" cardinality="OneToMany" p1:Guid="0b2ed7ae-2230-4bb5-ad99-ccddcdab4773">
+      <end1 multiplicity="One" name="HttpMethod" class="UserResource" relation-class="HttpMethod" constrained="True" lazy="False" p1:Guid="e9c66276-08c3-4686-832a-92595a32a89a">
+        <property name="IdClient" />
+        <property name="Id" />
+      </end1>
+      <end2 multiplicity="Many" name="UserResources" class="HttpMethod" relation-class="UserResource" lazy="False" p1:Guid="ab0170fc-1601-4024-89d8-c627b7ae54f8">
+        <property name="IdClient" />
+        <property name="IdHttpMethod" />
+      </end2>
+    </association>
+    <association name="UserResource_UserRoleWiseResourceMapping" cardinality="OneToMany" p1:Guid="1af16c43-71ab-4ce0-8d59-9951c2c13404">
+      <end1 multiplicity="One" name="UserResource" class="UserRoleWiseResourceMapping" relation-class="UserResource" constrained="True" lazy="False" p1:Guid="364c03e9-d605-485d-971c-23fa33a87d58">
+        <property name="IdClient" />
+        <property name="Id" />
+      </end1>
+      <end2 multiplicity="Many" name="UserRoleWiseResourceMappings" class="UserResource" relation-class="UserRoleWiseResourceMapping" lazy="False" p1:Guid="2b5db084-3a21-4c49-9491-81cd6bdbdf7c">
+        <property name="IdClient" />
+        <property name="IdUserResource" />
+      </end2>
+    </association>
+    <association name="UserRole_UserRoleWiseResourceMapping" cardinality="OneToMany" p1:Guid="18a6baff-06e9-49aa-b5fb-7ecd58f157a4">
+      <end1 multiplicity="One" name="UserRole" class="UserRoleWiseResourceMapping" relation-class="UserRole" constrained="True" lazy="False" p1:Guid="d09a58b6-06da-48b6-bcd0-f46ee49ca760">
+        <property name="IdClient" />
+        <property name="Id" />
+      </end1>
+      <end2 multiplicity="Many" name="UserRoleWiseResourceMappings" class="UserRole" relation-class="UserRoleWiseResourceMapping" lazy="False" p1:Guid="1ede645b-144e-44fb-a178-140e4497495d">
+        <property name="IdClient" />
+        <property name="IdUserRole" />
+      </end2>
+    </association>
+    <association name="UserRole_User" cardinality="OneToMany" p1:Guid="1399d6fa-7764-43c9-a93a-5ebf19f7ac11">
+      <end1 multiplicity="One" name="UserRole" class="User" relation-class="UserRole" constrained="True" lazy="False" p1:Guid="aee675e2-2186-423b-bd9c-8e1e10254dd9">
+        <property name="IdClient" />
+        <property name="Id" />
+      </end1>
+      <end2 multiplicity="Many" name="Users" class="UserRole" relation-class="User" lazy="False" p1:Guid="edd3fa52-e553-4925-9882-c5830789a047">
+        <property name="IdClient" />
+        <property name="IdRole" />
+      </end2>
+    </association>
+    <association name="BaseLanguage_User" cardinality="OneToMany" p1:Guid="9618a893-4655-41b3-86fd-8004511ccc74">
+      <end1 multiplicity="One" name="BaseLanguage" class="User" relation-class="BaseLanguage" constrained="True" lazy="False" p1:Guid="b1a0676a-c159-4832-8133-4b609253e23f">
+        <property name="IdClient" />
+        <property name="Id" />
+      </end1>
+      <end2 multiplicity="Many" name="Users" class="BaseLanguage" relation-class="User" lazy="False" p1:Guid="6e18cf75-35d6-4527-86ef-921ac18ba718">
+        <property name="IdClient" />
+        <property name="IdUserLanguage" />
+      </end2>
+    </association>
+    <association name="User_UserWiseGroupMapping" cardinality="OneToMany" p1:Guid="b578e396-3b66-4587-b8c1-1ae77c180862">
+      <end1 multiplicity="One" name="User" class="UserWiseGroupMapping" relation-class="User" constrained="True" lazy="False" p1:Guid="18b79ff5-162f-4c8f-ad6f-788214d20a3c">
+        <property name="IdClient" />
+        <property name="Id" />
+      </end1>
+      <end2 multiplicity="Many" name="UserWiseGroupMappings" class="User" relation-class="UserWiseGroupMapping" lazy="False" p1:Guid="e5ed51ce-d317-401e-9b88-dec61b66e2ab">
+        <property name="IdClient" />
+        <property name="IdUser" />
+      </end2>
+    </association>
+    <association name="UserGroup_UserWiseGroupMapping" cardinality="OneToMany" p1:Guid="7bc7409e-54e9-4e79-b520-d5d4abc89795">
+      <end1 multiplicity="One" name="UserGroup" class="UserWiseGroupMapping" relation-class="UserGroup" constrained="True" lazy="False" p1:Guid="8e8e2f2f-7153-4b3d-8d85-903af6588fca">
+        <property name="IdClient" />
+        <property name="Id" />
+      </end1>
+      <end2 multiplicity="Many" name="UserWiseGroupMappings" class="UserGroup" relation-class="UserWiseGroupMapping" lazy="False" p1:Guid="6d01f486-fead-45bb-8117-76d109e3be00">
+        <property name="IdClient" />
+        <property name="IdUserGroup" />
+      </end2>
+    </association>
+  </associations>
+</efcore>
