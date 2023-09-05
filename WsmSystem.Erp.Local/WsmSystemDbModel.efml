@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="utf-8"?>
+<efcore context-namespace="WsmSystem.Erp.Infrastructure.Data" namespace="WsmSystem.Erp.Core.Entities" p1:name="Storage" p1:Guid="735cd73b-32a5-4753-9235-3acc0e55e66c" xmlns:p1="http://devart.com/schemas/EntityDeveloper/1.0">
+  <class name="ApplicationInfo" entity-set="ApplicationInfos" table="ApplicationInfo" schema="core" p1:Guid="112039a5-9874-439e-8f8d-94074f6a5898">
+    <id name="Id" type="Int32" p1:ValidateRequired="true" p1:Guid="16b16327-69ce-42ec-bc2b-ef4e617305f0">
+      <column name="Id" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </id>
+    <property name="ApplicationName" type="String" p1:ValidateMaxLength="150" p1:ValidateRequired="true" p1:Guid="9af15aaf-f172-42f2-885c-967ddf4f00ad">
+      <column name="ApplicationName" not-null="True" length="150" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="ApplicationKey" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="8dcb9f76-3b90-4eb3-bf08-e77fff95c79b">
+      <column name="ApplicationKey" not-null="False" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="ExpireDate" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="799760a4-9718-4497-a4d5-14314d9bb205">
+      <column name="ExpireDate" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="IsActive" type="Boolean" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="a4c5c648-f5d5-499b-8c95-099136a199c5">
+      <column name="IsActive" default="1" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="IdAuthorizationStatus" type="String" p1:ValidateMaxLength="1" p1:ValidateRequired="true" p1:Guid="cee3f8a7-0d50-4638-bd7a-fbbec53bbef7">
+      <column name="IdAuthorizationStatus" default="'N'" not-null="True" length="1" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="LastAction" type="String" p1:ValidateMaxLength="3" p1:ValidateRequired="true" p1:Guid="47c2ec9e-ff26-460d-b667-ac5a26486370">
+      <column name="LastAction" not-null="True" length="3" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="MakeBy" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="9f47c5db-b5cc-4bad-9f91-31d04da5bee5">
+      <column name="MakeBy" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="MakeDate" type="DateTime" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="d4dd6bd1-8895-4d2d-b0b5-fc77a94e4ffb">
+      <column name="MakeDate" default="getdate()" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="UpdateBy" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="b6e07aaf-3377-4d23-833c-5d14f334bc4f">
+      <column name="UpdateBy" not-null="False" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="UpdateDate" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="d6a9f315-4561-4997-ab5c-a097c073bbf3">
+      <column name="UpdateDate" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="BaseLanguage" entity-set="BaseLanguages" table="BaseLanguage" schema="core" p1:Guid="3171be40-2ab8-4148-a36f-f6ace69966c9">
+    <composite-id>
+      <key-property name="IdClient" type="Int32" p1:ValidateRequired="true" p1:Guid="49f66afe-4db5-4d64-9f2c-8956456afda8">
+        <column name="IdClient" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+      </key-property>
+      <key-property name="Id" type="Int32" value-generated="OnAdd" primary-key-index="1" p1:ValidateRequired="true" p1:Guid="a8dc4f11-0fbd-4b60-a7ae-311ca3c10115">
+        <column name="Id" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+      </key-property>
+    </composite-id>
+    <property name="DescriptionDetail" type="String" p1:nullable="True" p1:ValidateMaxLength="30" p1:ValidateRequired="false" p1:Guid="bbbaaf89-621c-48a4-a4f2-318a4247e067">
+      <column name="DescriptionDetail" not-null="False" length="30" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="DescriptionShort" type="String" p1:nullable="True" p1:ValidateMaxLength="5" p1:ValidateRequired="false" p1:Guid="9c172627-697d-4a04-bb7f-e00df95a3443">
+      <column name="DescriptionShort" not-null="False" length="5" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IsActive" type="Boolean" p1:ValidateRequired="true" p1:Guid="d0b680d4-0278-4547-b8a5-144f5bfd051d">
+      <column name="IsActive" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="IdAuthorizationStatus" type="String" p1:ValidateMaxLength="1" p1:ValidateRequired="true" p1:Guid="b5ef2c6c-5a68-422e-af42-c88b4d236325">
+      <column name="IdAuthorizationStatus" default="'N'" not-null="True" length="1" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="LastAction" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="9873d272-956a-4156-abb7-ddfcb33c8945">
+      <column name="LastAction" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="MakeBy" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="73fc567b-1692-423e-9e9d-3586ef867c4f">
+      <column name="MakeBy" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="MakeDate" type="DateTime" p1:ValidateRequired="true" p1:Guid="1086ac6c-0987-4304-abf8-5e1a8fd3de8f">
+      <column name="MakeDate" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="UpdateBy" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="5e633917-0568-4775-9667-ff856b590cbb">
+      <column name="UpdateBy" not-null="False" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="UpdateDate" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="3dab178b-9c38-42eb-a84c-29f2c2708e7f">
+      <column name="UpdateDate" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="ClientInfo" entity-set="ClientInfos" table="ClientInfo" schema="core" p1:Guid="63082da1-31a8-453f-90cf-b16e4a2431b8">
+    <id name="Id" type="Int32" p1:ValidateRequired="true" p1:Guid="a38d10bc-a9d7-4bbd-9d00-901f1efe450a">
+      <column name="Id" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </id>
+    <property name="IdApplicationInfo" type="Int32" p1:ValidateRequired="true" p1:Guid="50fd379a-0e20-42c5-a547-451e6436a919">
+      <column name="IdApplicationInfo" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="CompanyName" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="694e93d6-5e92-4c86-9f67-2261e2611236">
+      <column name="CompanyName" not-null="False" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="CompanyEmail" type="String" p1:nullable="True" p1:ValidateMaxLength="200" p1:ValidateRequired="false" p1:Guid="043677a5-46c6-4097-bc94-58199cc923fc">
+      <column name="CompanyEmail" not-null="False" length="200" sql-type="varchar" p1:unicode="False" />
+    </property>
+    <property name="CompanyUrl" type="String" p1:nullable="True" p1:ValidateMaxLength="150" p1:ValidateRequired="false" p1:Guid="f678a10d-3eb0-4324-bb41-720ce8a8fe13">
+      <column name="CompanyUrl" not-null="False" length="150" sql-type="varchar" p1:unicode="False" />
+    </property>
+    <property name="CompanyAddress" type="String" p1:nullable="True" p1:ValidateMaxLength="250" p1:ValidateRequired="false" p1:Guid="29d16bfc-73b3-4a49-90c9-0b41d0d4a38a">
+      <column name="CompanyAddress" not-null="False" length="250" sql-type="varchar" p1:unicode="False" />
+    </property>
+    <property name="LogoUrl" type="String" p1:nullable="True" p1:ValidateMaxLength="100" p1:ValidateRequired="false" p1:Guid="5b703981-44bb-49e1-a098-c2c02ea2c189">
+      <column name="LogoUrl" not-null="False" length="100" sql-type="varchar" p1:unicode="False" />
+    </property>
+    <property name="IsActive" type="Boolean" p1:ValidateRequired="true" p1:Guid="ad6f0050-792f-4ab7-8a0b-5df8dd4c2d06">
+      <column name="IsActive" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="IdAuthorizationStatus" type="String" p1:ValidateMaxLength="1" p1:ValidateRequired="true" p1:Guid="9dec02ad-8e9d-4434-84a4-6963562b5665">
+      <column name="IdAuthorizationStatus" default="'N'" not-null="True" length="1" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="LastAction" type="String" p1:ValidateMaxLength="3" p1:ValidateRequired="true" p1:Guid="f481ace2-05d6-4cf8-9635-ff60c112a082">
+      <column name="LastAction" not-null="True" length="3" sql-type="varchar" p1:unicode="False" />
+    </property>
+    <property name="MakeBy" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="e76bc85c-7b51-4501-81ef-c29d4652ddb3">
+      <column name="MakeBy" not-null="True" length="50" sql-type="varchar" p1:unicode="False" />
+    </property>
+    <property name="MakeDate" type="DateTime" p1:ValidateRequired="true" p1:Guid="010d91af-1a35-42c4-b9d7-61c3a5f74246">
+      <column name="MakeDate" not-null="True" sql-type="datetime" p1:unicode="False" />
+    </property>
+    <property name="UpdateBy" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="cc5b8563-c13d-427d-95ab-739a6fea3606">
+      <column name="UpdateBy" not-null="False" length="50" sql-type="varchar" p1:unicode="False" />
+    </property>
+    <property name="UpdateDate" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="05261820-e7b8-4b97-9b6e-54deaff05e5c">
+      <column name="UpdateDate" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="IsDefault" type="Boolean" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="6c12fbbc-24a9-4d37-bc3c-e0a3f23a25da">
+      <column name="IsDefault" not-null="False" sql-type="bit" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="PhraseTag" entity-set="PhraseTags" table="PhraseTag" schema="core" p1:Guid="a4cbe7f7-cc3b-4d3d-8906-36cfa0291887">
+    <composite-id>
+      <key-property name="IdClient" type="Int32" p1:ValidateRequired="true" p1:Guid="20c142b0-906e-445b-92ad-c1dc9e5c7a2c">
+        <column name="IdClient" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+      </key-property>
+      <key-property name="Id" type="Int32" value-generated="OnAdd" primary-key-index="1" p1:ValidateRequired="true" p1:Guid="4cfb5f92-7b27-4ce6-bff0-7fc2d35b6dd2">
+        <column name="Id" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+      </key-property>
+    </composite-id>
+    <property name="PhraseName" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="768c2802-3cdd-4ec2-8f0e-6d0b87461b7a">
+      <column name="PhraseName" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="UsageIn" type="String" p1:nullable="True" p1:ValidateMaxLength="500" p1:ValidateRequired="false" p1:Guid="e0475112-2350-480a-a446-f2f6690e0cdd">
+      <column name="UsageIn" not-null="False" length="500" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IsActive" type="Boolean" p1:ValidateRequired="true" p1:Guid="1de6ebe1-0cb4-46ba-9732-82ca5e4ebb50">
+      <column name="IsActive" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="IdAuthorizationStatus" type="String" p1:ValidateMaxLength="1" p1:ValidateRequired="true" p1:Guid="0af733df-67e7-4ef2-abc1-a50d17861bc0">
+      <column name="IdAuthorizationStatus" default="'N'" not-null="True" length="1" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="LastAction" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="a6c547d1-aa1c-41d1-bb85-a25509190c38">
+      <column name="LastAction" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="MakeBy" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="3ecf7aef-df3a-4571-a1f9-00ca4ce323e2">
+      <column name="MakeBy" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="MakeDate" type="DateTime" p1:ValidateRequired="true" p1:Guid="ff1f4436-58c4-4380-a33f-6350d744190b">
+      <column name="MakeDate" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="UpdateBy" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="4474a686-13e8-46c1-b75e-3b8e02352658">
+      <column name="UpdateBy" not-null="False" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="UpdateDate" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="b568bb84-6752-4f76-abf7-2390ca3d6b57">
+      <column name="UpdateDate" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="PhraseTagTranslation" entity-set="PhraseTagTranslations" table="PhraseTagTranslation" schema="core" p1:Guid="417853ae-45c8-4ede-a0d8-0dfd89477cca">
+    <composite-id>
+      <key-property name="IdClient" type="Int32" p1:ValidateRequired="true" p1:Guid="6af8962a-8284-41da-8ecc-f17115e65947">
+        <column name="IdClient" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+      </key-property>
+      <key-property name="Id" type="Int32" value-generated="OnAdd" primary-key-index="1" p1:ValidateRequired="true" p1:Guid="440d0d52-bd2b-4b18-aaad-ad57a93b074e">
+        <column name="Id" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+      </key-property>
+    </composite-id>
+    <property name="IdPhraseTag" type="Int32" p1:ValidateRequired="true" p1:Guid="2387f8a3-70f4-4fb4-bdbf-41abdc6f0e03">
+      <column name="IdPhraseTag" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="IdLanguage" type="Int32" p1:ValidateRequired="true" p1:Guid="8ad97532-3edd-4887-91d3-baa6265c324e">
+      <column name="IdLanguage" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="Expression" type="String" p1:nullable="True" p1:ValidateMaxLength="250" p1:ValidateRequired="false" p1:Guid="f47fe2b1-2f15-414b-a34e-40cf7989b3c7">
+      <column name="Expression" not-null="False" length="250" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IsActive" type="Boolean" p1:ValidateRequired="true" p1:Guid="d235c317-d6c9-4c8d-93f8-2376f06f263a">
+      <column name="IsActive" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="IdAuthorizationStatus" type="String" p1:ValidateMaxLength="1" p1:ValidateRequired="true" p1:Guid="35464e72-ca1c-4aa9-9ff6-3b7625d08b49">
+      <column name="IdAuthorizationStatus" default="'N'" not-null="True" length="1" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="LastAction" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="d5240d66-4819-42b7-a944-7c34b7614f36">
+      <column name="LastAction" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="MakeBy" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="cef539eb-cef6-4a4f-ab87-a5dbd6c96ab6">
+      <column name="MakeBy" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="MakeDate" type="DateTime" p1:ValidateRequired="true" p1:Guid="135da51c-d392-4ce1-8007-ae6a39711c77">
+      <column name="MakeDate" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="UpdateBy" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="f345152d-760a-4123-a889-1269275b1abe">
+      <column name="UpdateBy" not-null="False" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="UpdateDate" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="5c8850e5-8768-41d6-a5f2-1ae3cf3e8d57">
+      <column name="UpdateDate" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="ItemCategory" entity-set="ItemCategories" table="ItemCategory" schema="productmanagement" query-type="True" p1:Guid="d6bf3ed8-fd25-4a91-a59d-0e6fcf1dfede">
+    <property name="SystemItemCategoryID" type="String" p1:ValidateMaxLength="20" p1:ValidateRequired="true" p1:Guid="8164c5ab-4d62-4653-ac1c-5f8f42544996">
+      <column name="SystemItemCategoryID" not-null="True" length="20" sql-type="varchar" p1:unicode="False" />
+    </property>
+    <property name="ItemProductID" type="String" p1:nullable="True" p1:ValidateMaxLength="20" p1:ValidateRequired="false" p1:Guid="78ca5180-7907-4ef4-b630-32ddfb5f1c43">
+      <column name="ItemProductID" not-null="False" length="20" sql-type="varchar" p1:unicode="False" />
+    </property>
+    <property name="ItemCategoryID" type="String" p1:nullable="True" p1:ValidateMaxLength="20" p1:ValidateRequired="false" p1:Guid="01d24f98-5f53-4bdc-a693-5c066ebce7ff">
+      <column name="ItemCategoryID" not-null="False" length="20" sql-type="varchar" p1:unicode="False" />
+    </property>
+    <property name="EItemCategoryDesc" type="String" p1:nullable="True" p1:ValidateMaxLength="100" p1:ValidateRequired="false" p1:Guid="0d03c761-0dbf-4333-bda6-56f68a42e29f">
+      <column name="EItemCategoryDesc" not-null="False" length="100" sql-type="varchar" p1:unicode="False" />
+    </property>
+    <property name="PItemCategoryDesc" type="String" p1:nullable="True" p1:ValidateMaxLength="100" p1:ValidateRequired="false" p1:Guid="b0a3077a-5d8e-40f7-801e-71fb444625a8">
+      <column name="PItemCategoryDesc" not-null="False" length="100" sql-type="varchar" p1:unicode="False" />
+    </property>
+    <property name="ItemCategoryShortCode" type="String" p1:nullable="True" p1:ValidateMaxLength="20" p1:ValidateRequired="false" p1:Guid="24a1c980-c14a-4623-bcf9-2ca3002e5035">
+      <column name="ItemCategoryShortCode" not-null="False" length="20" sql-type="varchar" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="ItemGroup" entity-set="ItemGroups" table="ItemGroup" schema="productmanagement" p1:Guid="51e00594-a854-4eb5-9157-0bd6ef118de5">
+    <composite-id>
+      <key-property name="IdClient" type="Int32" p1:ValidateRequired="true" p1:Guid="d2f1635d-73b9-4291-bfab-25df74c51be1">
+        <column name="IdClient" default="10001001" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+      </key-property>
+      <key-property name="Id" type="Int32" value-generated="OnAdd" primary-key-index="1" p1:ValidateRequired="true" p1:Guid="d5272ee7-bda5-4c56-b857-e458173da86e">
+        <column name="Id" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+      </key-property>
+    </composite-id>
+    <property name="IsActive" type="Boolean" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="2421d7bd-d4f7-4a07-a899-b4bb198a9baf">
+      <column name="IsActive" default="1" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="IdAuthorizationStatus" type="String" p1:ValidateMaxLength="1" p1:ValidateRequired="true" p1:Guid="f380a329-22ff-4d21-a022-7adee3e20bf7">
+      <column name="IdAuthorizationStatus" default="'N'" not-null="True" length="1" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="LastAction" type="String" p1:ValidateMaxLength="3" p1:ValidateRequired="true" p1:Guid="b4ea4830-35e4-4ac8-9d9f-24b363462da6">
+      <column name="LastAction" default="'ADD'" not-null="True" length="3" sql-type="varchar" p1:unicode="False" />
+    </property>
+    <property name="MakeBy" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="bd6ac8ed-730a-4d31-a70f-d730029b9c12">
+      <column name="MakeBy" default="'admin@hana-ltd.com'" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="MakeDate" type="DateTime" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="53e9930b-0185-4c79-9368-a480adf4a68a">
+      <column name="MakeDate" default="getdate()" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="UpdateBy" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="8255f32d-1b3b-4c89-a4eb-35f4e94bfa05">
+      <column name="UpdateBy" not-null="False" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="UpdateDate" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="1fb31d72-f903-425f-a077-83582257628c">
+      <column name="UpdateDate" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="ItemGroupTranslation" entity-set="ItemGroupTranslations" table="ItemGroupTranslation" schema="productmanagement" p1:Guid="833bb2dd-1b9d-4c20-83e8-2ebaf217ff5e">
+    <composite-id>
+      <key-property name="IdClient" type="Int32" p1:ValidateRequired="true" p1:Guid="31d484b9-30d6-4f66-82d6-b2e9ec69d7e7">
+        <column name="IdClient" default="10001001" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+      </key-property>
+      <key-property name="Id" type="Int32" value-generated="OnAdd" primary-key-index="1" p1:ValidateRequired="true" p1:Guid="277d8c33-a80f-4649-8cd7-9dffbfa620b8">
+        <column name="Id" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+      </key-property>
+    </composite-id>
+    <property name="IdItemGroup" type="Int32" p1:ValidateRequired="true" p1:Guid="969cb9ae-97dd-418c-ac7b-4bbf489fdd05">
+      <column name="IdItemGroup" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="IdLanguage" type="Int32" p1:ValidateRequired="true" p1:Guid="8468c7b8-365a-49cb-87ac-4e1b60e07943">
+      <column name="IdLanguage" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="ItemGroupDesc" type="String" p1:nullable="True" p1:ValidateMaxLength="250" p1:ValidateRequired="false" p1:Guid="d2c0a651-0f63-4ac9-8a22-d84d543e0500">
+      <column name="ItemGroupDesc" not-null="False" length="250" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="ItemGroupShortCode" type="String" p1:nullable="True" p1:ValidateMaxLength="20" p1:ValidateRequired="false" p1:Guid="ac5d3300-5d67-4db8-a76f-5fee5b81b926">
+      <column name="ItemGroupShortCode" not-null="False" length="20" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IsActive" type="Boolean" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="65159950-e3fd-4d49-87a2-3ffd568ea11d">
+      <column name="IsActive" default="1" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="IdAuthorizationStatus" type="String" p1:ValidateMaxLength="1" p1:ValidateRequired="true" p1:Guid="da04dd34-1e74-4542-bdbf-64c3f98ab32b">
+      <column name="IdAuthorizationStatus" default="'N'" not-null="True" length="1" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="LastAction" type="String" p1:ValidateMaxLength="3" p1:ValidateRequired="true" p1:Guid="3e39d165-d0cb-4e50-bfed-593b97a0762b">
+      <column name="LastAction" default="'ADD'" not-null="True" length="3" sql-type="varchar" p1:unicode="False" />
+    </property>
+    <property name="MakeBy" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="5b810958-d6b0-43d5-8454-09f2c6d9bff2">
+      <column name="MakeBy" default="'admin@hana-ltd.com'" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="MakeDate" type="DateTime" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="5092772a-45a4-4596-8176-fc101f224a30">
+      <column name="MakeDate" default="getdate()" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="UpdateBy" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="6a704062-f31c-4aac-a38f-1afaeedabf4c">
+      <column name="UpdateBy" not-null="False" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="UpdateDate" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="4d1683fb-4800-4879-a139-55dd0f41e785">
+      <column name="UpdateDate" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="ItemMaster" entity-set="ItemMasters" table="ItemMaster" schema="productmanagement" query-type="True" p1:Guid="94b2395e-b4b4-4f06-ba1a-87c99ff3ca68">
+    <property name="SystemItemID" type="String" p1:ValidateMaxLength="20" p1:ValidateRequired="true" p1:Guid="9007f790-4f8f-4924-85df-35576c0d53ad">
+      <column name="SystemItemID" not-null="True" length="20" sql-type="varchar" p1:unicode="False" />
+    </property>
+    <property name="NewItemCode" type="String" p1:nullable="True" p1:ValidateMaxLength="20" p1:ValidateRequired="false" p1:Guid="e8703541-1652-48f8-a2d2-c45e57ed6a0d">
+      <column name="NewItemCode" not-null="False" length="20" sql-type="varchar" p1:unicode="False" />
+    </property>
+    <property name="OldItemCode" type="String" p1:nullable="True" p1:ValidateMaxLength="20" p1:ValidateRequired="false" p1:Guid="7738f75c-9d12-489d-a7a9-1ea2f2b4f50b">
+      <column name="OldItemCode" not-null="False" length="20" sql-type="varchar" p1:unicode="False" />
+    </property>
+    <property name="SystemProductGroupID" type="String" p1:nullable="True" p1:ValidateMaxLength="20" p1:ValidateRequired="false" p1:Guid="0e4f60e1-9c85-4217-8700-20a69e411891">
+      <column name="SystemProductGroupID" not-null="False" length="20" sql-type="varchar" p1:unicode="False" />
+    </property>
+    <property name="SystemItemCategoryID" type="String" p1:nullable="True" p1:ValidateMaxLength="20" p1:ValidateRequired="false" p1:Guid="7057441e-5778-44d0-acd8-dad4bc38a215">
+      <column name="SystemItemCategoryID" not-null="False" length="20" sql-type="varchar" p1:unicode="False" />
+    </property>
+    <property name="EItemDescription" type="String" p1:nullable="True" p1:ValidateMaxLength="500" p1:ValidateRequired="false" p1:Guid="c581cbe0-7604-416c-9042-1287a949bf6a">
+      <column name="EItemDescription" not-null="False" length="500" sql-type="varchar" p1:unicode="False" />
+    </property>
+    <property name="PItemDescription" type="String" p1:nullable="True" p1:ValidateMaxLength="500" p1:ValidateRequired="false" p1:Guid="69cfb25c-83e4-4068-8dd0-3d519dd22501">
+      <column name="PItemDescription" not-null="False" length="500" sql-type="varchar" p1:unicode="False" />
+    </property>
+    <property name="EShortItemDescription" type="String" p1:nullable="True" p1:ValidateMaxLength="100" p1:ValidateRequired="false" p1:Guid="4ea43268-519b-4fa5-8545-b3b0df2b03cb">
+      <column name="EShortItemDescription" not-null="False" length="100" sql-type="varchar" p1:unicode="False" />
+    </property>
+    <property name="PShortItemDescription" type="String" p1:nullable="True" p1:ValidateMaxLength="100" p1:ValidateRequired="false" p1:Guid="7241b8b5-f058-4ecb-99bb-5df8718f07b8">
+      <column name="PShortItemDescription" not-null="False" length="100" sql-type="varchar" p1:unicode="False" />
+    </property>
+    <property name="UOM" type="String" p1:nullable="True" p1:ValidateMaxLength="5" p1:ValidateRequired="false" p1:Guid="ad114ae0-e648-4cdc-87ca-67d71458d982">
+      <column name="UOM" not-null="False" length="5" sql-type="varchar" p1:unicode="False" />
+    </property>
+    <property name="QuantityPerPieceUnit" type="Decimal" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="b9f76318-0292-480c-9760-fe469ae077d5">
+      <column name="QuantityPerPieceUnit" not-null="False" precision="18" scale="2" sql-type="numeric" p1:unicode="False" />
+    </property>
+    <property name="PieceUnitID" type="String" p1:nullable="True" p1:ValidateMaxLength="5" p1:ValidateRequired="false" p1:Guid="38e3f4d4-109c-4a0b-9033-2ef51f6bae93">
+      <column name="PieceUnitID" not-null="False" length="5" sql-type="varchar" p1:unicode="False" />
+    </property>
+    <property name="QuantityPerUnit" type="Decimal" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="066b56ed-1ee5-437e-b0fd-97b43176b7ee">
+      <column name="QuantityPerUnit" not-null="False" precision="18" scale="2" sql-type="numeric" p1:unicode="False" />
+    </property>
+    <property name="UnitID" type="String" p1:nullable="True" p1:ValidateMaxLength="5" p1:ValidateRequired="false" p1:Guid="282bef3b-aecb-4034-a255-fe7f70259b31">
+      <column name="UnitID" not-null="False" length="5" sql-type="varchar" p1:unicode="False" />
+    </property>
+    <property name="SKURange" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="426baa58-3786-4a8c-90f5-b4b758b1050e">
+      <column name="SKURange" not-null="False" length="50" sql-type="varchar" p1:unicode="False" />
+    </property>
+    <property name="ItemSubType" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="e6d83b39-2d13-4049-9f32-fc6310211472">
+      <column name="ItemSubType" not-null="False" length="50" sql-type="varchar" p1:unicode="False" />
+    </property>
+    <property name="ReOrderLevel" type="Decimal" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="74801040-7603-44f1-969f-f7698ae2f8dd">
+      <column name="ReOrderLevel" not-null="False" precision="18" scale="2" sql-type="numeric" p1:unicode="False" />
+    </property>
+    <property name="MinSalesPrice" type="Decimal" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="ca78471d-cc4c-4c8d-bc93-9d36a6ad8d64">
+      <column name="MinSalesPrice" not-null="False" precision="18" scale="4" sql-type="numeric" p1:unicode="False" />
+    </property>
+    <property name="MaxSalesPrice" type="Decimal" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="91d66a59-56f1-4585-a3d7-9c7c50cb9ade">
+      <column name="MaxSalesPrice" not-null="False" precision="18" scale="4" sql-type="numeric" p1:unicode="False" />
+    </property>
+    <property name="TotalStockInHand" type="Decimal" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="267bee44-8f8a-433b-9ecb-121d60661d76">
+      <column name="TotalStockInHand" not-null="False" precision="18" scale="2" sql-type="numeric" p1:unicode="False" />
+    </property>
+    <property name="Remarks" type="String" p1:nullable="True" p1:ValidateMaxLength="500" p1:ValidateRequired="false" p1:Guid="49f40cea-e7b3-4654-a110-0b7f62cd0df6">
+      <column name="Remarks" not-null="False" length="500" sql-type="varchar" p1:unicode="False" />
+    </property>
+    <property name="IsMixItem" type="Boolean" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="26c68bc6-0de4-4b5c-8e4b-52f92b4879b0">
+      <column name="IsMixItem" not-null="False" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="StdContFeet" type="String" p1:nullable="True" p1:ValidateMaxLength="10" p1:ValidateRequired="false" p1:Guid="7a2ad604-ba64-4f88-8d93-52f6f5138daa">
+      <column name="StdContFeet" not-null="False" length="10" sql-type="varchar" p1:unicode="False" />
+    </property>
+    <property name="StdContQty" type="Decimal" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="1b257bcc-3a78-4d62-b59f-73c061837908">
+      <column name="StdContQty" not-null="False" precision="18" scale="0" sql-type="numeric" p1:unicode="False" />
+    </property>
+    <property name="CapacityPercent" type="Decimal" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="e84d0745-efb9-4403-9b48-d0f791d09405">
+      <column name="CapacityPercent" not-null="False" precision="18" scale="2" sql-type="numeric" p1:unicode="False" />
+    </property>
+    <property name="ItemImage" type="Blob" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="3604866b-4a22-4dea-be7c-a61ff3c135db">
+      <column name="ItemImage" not-null="False" length="2147483647" sql-type="image" p1:unicode="False" />
+    </property>
+    <property name="SecondarySystemItemID" type="String" p1:nullable="True" p1:ValidateMaxLength="20" p1:ValidateRequired="false" p1:Guid="bb2a23d1-6a47-4134-9dd5-9f95596a74a7">
+      <column name="SecondarySystemItemID" not-null="False" length="20" sql-type="varchar" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="Uom" entity-set="Uoms" table="Uom" schema="productmanagement" p1:Guid="37aa2514-26bb-45ca-9cd7-9a1b335337c7">
+    <composite-id>
+      <key-property name="IdClient" type="Int32" p1:ValidateRequired="true" p1:Guid="0410d8c0-805f-4118-8516-46930a948d58">
+        <column name="IdClient" default="10001001" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+      </key-property>
+      <key-property name="Id" type="Int32" value-generated="OnAdd" primary-key-index="1" p1:ValidateRequired="true" p1:Guid="2a5834bd-b8c5-4db0-b335-51940ce43bc1">
+        <column name="Id" not-null="True" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+      </key-property>
+    </composite-id>
+    <property name="UnitName" type="String" p1:ValidateMaxLength="5" p1:ValidateRequired="true" p1:Guid="f2d0d8b1-09f8-4382-9044-24349a40aa41">
+      <column name="UnitName" not-null="True" length="5" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="UnitDescription" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="7dd8524f-0c22-4779-acaf-bde22865dd90">
+      <column name="UnitDescription" not-null="False" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="IsActive" type="Boolean" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="b4841693-174d-4bbc-8415-9575f9716c56">
+      <column name="IsActive" default="1" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="IdAuthorizationStatus" type="String" p1:ValidateMaxLength="1" p1:ValidateRequired="true" p1:Guid="01e12728-5732-4f2c-a067-f3ff16e6a2db">
+      <column name="IdAuthorizationStatus" default="'N'" not-null="True" length="1" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="LastAction" type="String" p1:ValidateMaxLength="3" p1:ValidateRequired="true" p1:Guid="a7fadc01-84c7-48e8-aa81-620e79f853df">
+      <column name="LastAction" default="'ADD'" not-null="True" length="3" sql-type="varchar" p1:unicode="False" />
+    </property>
+    <property name="MakeBy" type="String" p1:ValidateMaxLength="50" p1:ValidateRequired="true" p1:Guid="9cf8c5f6-da50-41e3-85ff-80a0c04e14fa">
+      <column name="MakeBy" default="'admin@hana-ltd.com'" not-null="True" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="MakeDate" type="DateTime" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="f5dd9717-c598-4f36-bc37-0b194460c125">
+      <column name="MakeDate" default="getdate()" not-null="True" sql-type="datetime2" p1:unicode="False" />
+    </property>
+    <property name="UpdateBy" type="String" p1:nullable="True" p1:ValidateMaxLength="50" p1:ValidateRequired="false" p1:Guid="b1d04a88-9d17-41c5-b561-240bd89a0aa9">
+      <column name="UpdateBy" not-null="False" length="50" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+    <property name="UpdateDate" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="c3a0ead5-a721-4a67-a12a-ff166eed55b5">
+      <column name="UpdateDate" not-null="False" sql-type="datetime2" p1:unicode="False" />
+    </property>
+  </class>
+  <associations>
+    <association name="ApplicationInfo_ClientInfo" cardinality="OneToMany" p1:Guid="07a8ece5-f0f7-4a65-ade4-c128909ae2e6">
+      <end1 multiplicity="One" name="ApplicationInfo" class="ClientInfo" relation-class="ApplicationInfo" constrained="True" lazy="False" p1:Guid="3eba2f28-594a-4673-aee7-85cf9aa2a5d7">
+        <property name="Id" />
+      </end1>
+      <end2 multiplicity="Many" name="ClientInfos" class="ApplicationInfo" relation-class="ClientInfo" lazy="False" p1:Guid="fc8171ed-28cf-4a58-8a86-05cb6805fcd4">
+        <property name="IdApplicationInfo" />
+      </end2>
+    </association>
+    <association name="PhraseTag_PhraseTagTranslation" cardinality="OneToMany" p1:Guid="331957d1-b0d1-4a2b-80b1-37244ed5442e">
+      <end1 multiplicity="One" name="PhraseTag" class="PhraseTagTranslation" relation-class="PhraseTag" constrained="True" lazy="False" p1:Guid="94f99823-54bb-45cc-a05c-c6265eb1e22f">
+        <property name="IdClient" />
+        <property name="Id" />
+      </end1>
+      <end2 multiplicity="Many" name="PhraseTagTranslations" class="PhraseTag" relation-class="PhraseTagTranslation" lazy="False" p1:Guid="9c393b2f-82a4-43f2-a79c-2317b634dc7f">
+        <property name="IdClient" />
+        <property name="IdPhraseTag" />
+      </end2>
+    </association>
+    <association name="BaseLanguage_PhraseTagTranslation" cardinality="OneToMany" p1:Guid="33c7e854-2359-40d7-9fd8-d7f9afcbef7f">
+      <end1 multiplicity="One" name="BaseLanguage" class="PhraseTagTranslation" relation-class="BaseLanguage" constrained="True" lazy="False" p1:Guid="ecd76efb-c43d-4f12-85a9-3ef7688b1183">
+        <property name="IdClient" />
+        <property name="Id" />
+      </end1>
+      <end2 multiplicity="Many" name="PhraseTagTranslations" class="BaseLanguage" relation-class="PhraseTagTranslation" lazy="False" p1:Guid="d946f249-80bd-49cc-b1d8-6751e0612f84">
+        <property name="IdClient" />
+        <property name="IdLanguage" />
+      </end2>
+    </association>
+    <association name="ItemGroup_ItemGroupTranslation" cardinality="OneToMany" p1:Guid="0ce174dc-c8b6-4544-b3ba-c7d3c768f242">
+      <end1 multiplicity="One" name="ItemGroup" class="ItemGroupTranslation" relation-class="ItemGroup" constrained="True" lazy="False" p1:Guid="8a2b4ddc-1ded-4b00-96f3-61b73c82f758">
+        <property name="IdClient" />
+        <property name="Id" />
+      </end1>
+      <end2 multiplicity="Many" name="ItemGroupTranslations" class="ItemGroup" relation-class="ItemGroupTranslation" lazy="False" p1:Guid="d0a363b4-1687-45af-9c58-50160aed0086">
+        <property name="IdClient" />
+        <property name="IdItemGroup" />
+      </end2>
+    </association>
+    <association name="BaseLanguage_ItemGroupTranslation" cardinality="OneToMany" p1:Guid="eb7ae095-c62a-45fa-bb45-75030c0221ab">
+      <end1 multiplicity="One" name="BaseLanguage" class="ItemGroupTranslation" relation-class="BaseLanguage" constrained="True" lazy="False" p1:Guid="797f3201-eb3a-4e32-941b-3bbdec2c9066">
+        <property name="IdClient" />
+        <property name="Id" />
+      </end1>
+      <end2 multiplicity="Many" name="ItemGroupTranslations" class="BaseLanguage" relation-class="ItemGroupTranslation" lazy="False" p1:Guid="fe99bb12-e4c2-45db-b1f7-d1ec0f5a5ec3">
+        <property name="IdClient" />
+        <property name="IdLanguage" />
+      </end2>
+    </association>
+  </associations>
+</efcore>
