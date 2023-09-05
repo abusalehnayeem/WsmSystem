@@ -1,22 +1,10 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
-
-  <ItemGroup>
-    <None Update="CodeGenerator\Database_Access_Generator.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Database_Access_Generator.txt</LastGenOutput>
-    </None>
-    <None Update="CodeGenerator\Database_Access_Generator.txt">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Database_Access_Generator.tt</DependentUpon>
-    </None>
-  </ItemGroup>
 
   <ItemGroup>
     <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />

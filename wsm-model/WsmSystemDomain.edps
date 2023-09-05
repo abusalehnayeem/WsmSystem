@@ -2,7 +2,237 @@
 <EntityDeveloper Version="7.1.151.0">
   <ModelSettings xmlns:ed="http://devart.com/schemas/EntityDeveloper/1.0" ConnectionStringInAppConfig="False" TargetFramework="Net70" DetectTPTInheritance="True" EntityFrameworkCoreVersion="Version7" DetectFunctionBasedColumnDefault="True">
     <Connection ConnectionString="Data Source=.\sqlexpress;Initial Catalog=WsmSystem;Integrated Security=False;Persist Security Info=True;User ID=sa;Password=Sa@123456" Provider="System.Data.SqlClient" />
-    <Generation />
+    <Generation>
+      <GeneratedFiles>
+        <File Name="WsmSystemDomain.WsmSystemModel.cs" />
+        <File Name="WsmSystemDomain.AppClient.cs" />
+        <File Name="WsmSystemDomain.AppClientHistory.cs" />
+        <File Name="WsmSystemDomain.BaseLanguage.cs" />
+        <File Name="WsmSystemDomain.BaseLanguageHistory.cs" />
+        <File Name="WsmSystemDomain.ClientCompany.cs" />
+        <File Name="WsmSystemDomain.ClientCompanyHistory.cs" />
+        <File Name="WsmSystemDomain.EmailTemplate.cs" />
+        <File Name="WsmSystemDomain.EmailTemplateHistory.cs" />
+        <File Name="WsmSystemDomain.HttpMethod.cs" />
+        <File Name="WsmSystemDomain.HttpMethodHistory.cs" />
+        <File Name="WsmSystemDomain.Module.cs" />
+        <File Name="WsmSystemDomain.ModuleHistory.cs" />
+        <File Name="WsmSystemDomain.Notice.cs" />
+        <File Name="WsmSystemDomain.NoticeHistory.cs" />
+        <File Name="WsmSystemDomain.PermissionNamingPolicy.cs" />
+        <File Name="WsmSystemDomain.PermissionNamingPolicyHistory.cs" />
+        <File Name="WsmSystemDomain.PhraseTag.cs" />
+        <File Name="WsmSystemDomain.PhraseTagHistory.cs" />
+        <File Name="WsmSystemDomain.PhraseTagTranslation.cs" />
+        <File Name="WsmSystemDomain.PhraseTagTranslationHistory.cs" />
+        <File Name="WsmSystemDomain.RoleScreenLink.cs" />
+        <File Name="WsmSystemDomain.RoleScreenLinkHistory.cs" />
+        <File Name="WsmSystemDomain.Screen.cs" />
+        <File Name="WsmSystemDomain.ScreenHistory.cs" />
+        <File Name="WsmSystemDomain.Section.cs" />
+        <File Name="WsmSystemDomain.SectionHistory.cs" />
+        <File Name="WsmSystemDomain.SmtpClient.cs" />
+        <File Name="WsmSystemDomain.SmtpClientHistory.cs" />
+        <File Name="WsmSystemDomain.SubModule.cs" />
+        <File Name="WsmSystemDomain.SubModuleHistory.cs" />
+        <File Name="WsmSystemDomain.UserGroup.cs" />
+        <File Name="WsmSystemDomain.UserGroupHistory.cs" />
+        <File Name="WsmSystemDomain.UserGroupWiseRoleMapping.cs" />
+        <File Name="WsmSystemDomain.UserGroupWiseRoleMappingHistory.cs" />
+        <File Name="WsmSystemDomain.UserResource.cs" />
+        <File Name="WsmSystemDomain.UserResourceHistory.cs" />
+        <File Name="WsmSystemDomain.UserRole.cs" />
+        <File Name="WsmSystemDomain.UserRoleHistory.cs" />
+        <File Name="WsmSystemDomain.UserRoleWiseResourceMapping.cs" />
+        <File Name="WsmSystemDomain.UserRoleWiseResourceMappingHistory.cs" />
+        <File Name="WsmSystemDomain.User.cs" />
+        <File Name="WsmSystemDomain.UsersHistory.cs" />
+        <File Name="WsmSystemDomain.UserWiseGroupMapping.cs" />
+        <File Name="WsmSystemDomain.UserWiseGroupMappingHistory.cs" />
+        <File Name="IUnitOfWork.cs" />
+        <File Name="IUnitOfWorkFactory.cs" />
+        <File Name="IRepository.cs" />
+        <File Name="IAppClientRepository.cs" OverwriteMode="None" />
+        <File Name="IAppClientRepository.Generated.cs" />
+        <File Name="IAppClientHistoryRepository.cs" OverwriteMode="None" />
+        <File Name="IAppClientHistoryRepository.Generated.cs" />
+        <File Name="IBaseLanguageRepository.cs" OverwriteMode="None" />
+        <File Name="IBaseLanguageRepository.Generated.cs" />
+        <File Name="IBaseLanguageHistoryRepository.cs" OverwriteMode="None" />
+        <File Name="IBaseLanguageHistoryRepository.Generated.cs" />
+        <File Name="IClientCompanyRepository.cs" OverwriteMode="None" />
+        <File Name="IClientCompanyRepository.Generated.cs" />
+        <File Name="IClientCompanyHistoryRepository.cs" OverwriteMode="None" />
+        <File Name="IClientCompanyHistoryRepository.Generated.cs" />
+        <File Name="IEmailTemplateRepository.cs" OverwriteMode="None" />
+        <File Name="IEmailTemplateRepository.Generated.cs" />
+        <File Name="IEmailTemplateHistoryRepository.cs" OverwriteMode="None" />
+        <File Name="IEmailTemplateHistoryRepository.Generated.cs" />
+        <File Name="IHttpMethodRepository.cs" OverwriteMode="None" />
+        <File Name="IHttpMethodRepository.Generated.cs" />
+        <File Name="IHttpMethodHistoryRepository.cs" OverwriteMode="None" />
+        <File Name="IHttpMethodHistoryRepository.Generated.cs" />
+        <File Name="IModuleRepository.cs" OverwriteMode="None" />
+        <File Name="IModuleRepository.Generated.cs" />
+        <File Name="IModuleHistoryRepository.cs" OverwriteMode="None" />
+        <File Name="IModuleHistoryRepository.Generated.cs" />
+        <File Name="INoticeRepository.cs" OverwriteMode="None" />
+        <File Name="INoticeRepository.Generated.cs" />
+        <File Name="INoticeHistoryRepository.cs" OverwriteMode="None" />
+        <File Name="INoticeHistoryRepository.Generated.cs" />
+        <File Name="IPermissionNamingPolicyRepository.cs" OverwriteMode="None" />
+        <File Name="IPermissionNamingPolicyRepository.Generated.cs" />
+        <File Name="IPermissionNamingPolicyHistoryRepository.cs" OverwriteMode="None" />
+        <File Name="IPermissionNamingPolicyHistoryRepository.Generated.cs" />
+        <File Name="IPhraseTagRepository.cs" OverwriteMode="None" />
+        <File Name="IPhraseTagRepository.Generated.cs" />
+        <File Name="IPhraseTagHistoryRepository.cs" OverwriteMode="None" />
+        <File Name="IPhraseTagHistoryRepository.Generated.cs" />
+        <File Name="IPhraseTagTranslationRepository.cs" OverwriteMode="None" />
+        <File Name="IPhraseTagTranslationRepository.Generated.cs" />
+        <File Name="IPhraseTagTranslationHistoryRepository.cs" OverwriteMode="None" />
+        <File Name="IPhraseTagTranslationHistoryRepository.Generated.cs" />
+        <File Name="IRoleScreenLinkRepository.cs" OverwriteMode="None" />
+        <File Name="IRoleScreenLinkRepository.Generated.cs" />
+        <File Name="IRoleScreenLinkHistoryRepository.cs" OverwriteMode="None" />
+        <File Name="IRoleScreenLinkHistoryRepository.Generated.cs" />
+        <File Name="IScreenRepository.cs" OverwriteMode="None" />
+        <File Name="IScreenRepository.Generated.cs" />
+        <File Name="IScreenHistoryRepository.cs" OverwriteMode="None" />
+        <File Name="IScreenHistoryRepository.Generated.cs" />
+        <File Name="ISectionRepository.cs" OverwriteMode="None" />
+        <File Name="ISectionRepository.Generated.cs" />
+        <File Name="ISectionHistoryRepository.cs" OverwriteMode="None" />
+        <File Name="ISectionHistoryRepository.Generated.cs" />
+        <File Name="ISmtpClientRepository.cs" OverwriteMode="None" />
+        <File Name="ISmtpClientRepository.Generated.cs" />
+        <File Name="ISmtpClientHistoryRepository.cs" OverwriteMode="None" />
+        <File Name="ISmtpClientHistoryRepository.Generated.cs" />
+        <File Name="ISubModuleRepository.cs" OverwriteMode="None" />
+        <File Name="ISubModuleRepository.Generated.cs" />
+        <File Name="ISubModuleHistoryRepository.cs" OverwriteMode="None" />
+        <File Name="ISubModuleHistoryRepository.Generated.cs" />
+        <File Name="IUserGroupRepository.cs" OverwriteMode="None" />
+        <File Name="IUserGroupRepository.Generated.cs" />
+        <File Name="IUserGroupHistoryRepository.cs" OverwriteMode="None" />
+        <File Name="IUserGroupHistoryRepository.Generated.cs" />
+        <File Name="IUserGroupWiseRoleMappingRepository.cs" OverwriteMode="None" />
+        <File Name="IUserGroupWiseRoleMappingRepository.Generated.cs" />
+        <File Name="IUserGroupWiseRoleMappingHistoryRepository.cs" OverwriteMode="None" />
+        <File Name="IUserGroupWiseRoleMappingHistoryRepository.Generated.cs" />
+        <File Name="IUserResourceRepository.cs" OverwriteMode="None" />
+        <File Name="IUserResourceRepository.Generated.cs" />
+        <File Name="IUserResourceHistoryRepository.cs" OverwriteMode="None" />
+        <File Name="IUserResourceHistoryRepository.Generated.cs" />
+        <File Name="IUserRoleRepository.cs" OverwriteMode="None" />
+        <File Name="IUserRoleRepository.Generated.cs" />
+        <File Name="IUserRoleHistoryRepository.cs" OverwriteMode="None" />
+        <File Name="IUserRoleHistoryRepository.Generated.cs" />
+        <File Name="IUserRoleWiseResourceMappingRepository.cs" OverwriteMode="None" />
+        <File Name="IUserRoleWiseResourceMappingRepository.Generated.cs" />
+        <File Name="IUserRoleWiseResourceMappingHistoryRepository.cs" OverwriteMode="None" />
+        <File Name="IUserRoleWiseResourceMappingHistoryRepository.Generated.cs" />
+        <File Name="IUserRepository.cs" OverwriteMode="None" />
+        <File Name="IUserRepository.Generated.cs" />
+        <File Name="IUsersHistoryRepository.cs" OverwriteMode="None" />
+        <File Name="IUsersHistoryRepository.Generated.cs" />
+        <File Name="IUserWiseGroupMappingRepository.cs" OverwriteMode="None" />
+        <File Name="IUserWiseGroupMappingRepository.Generated.cs" />
+        <File Name="IUserWiseGroupMappingHistoryRepository.cs" OverwriteMode="None" />
+        <File Name="IUserWiseGroupMappingHistoryRepository.Generated.cs" />
+        <File Name="EntityFrameworkRepository.cs" />
+        <File Name="EntityFrameworkUnitOfWork.cs" />
+        <File Name="EntityFrameworkUnitOfWorkFactory.cs" />
+        <File Name="WsmSystemDomain.AppClientRepository.cs" OverwriteMode="None" />
+        <File Name="WsmSystemDomain.AppClientRepository.Generated.cs" />
+        <File Name="WsmSystemDomain.AppClientHistoryRepository.cs" OverwriteMode="None" />
+        <File Name="WsmSystemDomain.AppClientHistoryRepository.Generated.cs" />
+        <File Name="WsmSystemDomain.BaseLanguageRepository.cs" OverwriteMode="None" />
+        <File Name="WsmSystemDomain.BaseLanguageRepository.Generated.cs" />
+        <File Name="WsmSystemDomain.BaseLanguageHistoryRepository.cs" OverwriteMode="None" />
+        <File Name="WsmSystemDomain.BaseLanguageHistoryRepository.Generated.cs" />
+        <File Name="WsmSystemDomain.ClientCompanyRepository.cs" OverwriteMode="None" />
+        <File Name="WsmSystemDomain.ClientCompanyRepository.Generated.cs" />
+        <File Name="WsmSystemDomain.ClientCompanyHistoryRepository.cs" OverwriteMode="None" />
+        <File Name="WsmSystemDomain.ClientCompanyHistoryRepository.Generated.cs" />
+        <File Name="WsmSystemDomain.EmailTemplateRepository.cs" OverwriteMode="None" />
+        <File Name="WsmSystemDomain.EmailTemplateRepository.Generated.cs" />
+        <File Name="WsmSystemDomain.EmailTemplateHistoryRepository.cs" OverwriteMode="None" />
+        <File Name="WsmSystemDomain.EmailTemplateHistoryRepository.Generated.cs" />
+        <File Name="WsmSystemDomain.HttpMethodRepository.cs" OverwriteMode="None" />
+        <File Name="WsmSystemDomain.HttpMethodRepository.Generated.cs" />
+        <File Name="WsmSystemDomain.HttpMethodHistoryRepository.cs" OverwriteMode="None" />
+        <File Name="WsmSystemDomain.HttpMethodHistoryRepository.Generated.cs" />
+        <File Name="WsmSystemDomain.ModuleRepository.cs" OverwriteMode="None" />
+        <File Name="WsmSystemDomain.ModuleRepository.Generated.cs" />
+        <File Name="WsmSystemDomain.ModuleHistoryRepository.cs" OverwriteMode="None" />
+        <File Name="WsmSystemDomain.ModuleHistoryRepository.Generated.cs" />
+        <File Name="WsmSystemDomain.NoticeRepository.cs" OverwriteMode="None" />
+        <File Name="WsmSystemDomain.NoticeRepository.Generated.cs" />
+        <File Name="WsmSystemDomain.NoticeHistoryRepository.cs" OverwriteMode="None" />
+        <File Name="WsmSystemDomain.NoticeHistoryRepository.Generated.cs" />
+        <File Name="WsmSystemDomain.PermissionNamingPolicyRepository.cs" OverwriteMode="None" />
+        <File Name="WsmSystemDomain.PermissionNamingPolicyRepository.Generated.cs" />
+        <File Name="WsmSystemDomain.PermissionNamingPolicyHistoryRepository.cs" OverwriteMode="None" />
+        <File Name="WsmSystemDomain.PermissionNamingPolicyHistoryRepository.Generated.cs" />
+        <File Name="WsmSystemDomain.PhraseTagRepository.cs" OverwriteMode="None" />
+        <File Name="WsmSystemDomain.PhraseTagRepository.Generated.cs" />
+        <File Name="WsmSystemDomain.PhraseTagHistoryRepository.cs" OverwriteMode="None" />
+        <File Name="WsmSystemDomain.PhraseTagHistoryRepository.Generated.cs" />
+        <File Name="WsmSystemDomain.PhraseTagTranslationRepository.cs" OverwriteMode="None" />
+        <File Name="WsmSystemDomain.PhraseTagTranslationRepository.Generated.cs" />
+        <File Name="WsmSystemDomain.PhraseTagTranslationHistoryRepository.cs" OverwriteMode="None" />
+        <File Name="WsmSystemDomain.PhraseTagTranslationHistoryRepository.Generated.cs" />
+        <File Name="WsmSystemDomain.RoleScreenLinkRepository.cs" OverwriteMode="None" />
+        <File Name="WsmSystemDomain.RoleScreenLinkRepository.Generated.cs" />
+        <File Name="WsmSystemDomain.RoleScreenLinkHistoryRepository.cs" OverwriteMode="None" />
+        <File Name="WsmSystemDomain.RoleScreenLinkHistoryRepository.Generated.cs" />
+        <File Name="WsmSystemDomain.ScreenRepository.cs" OverwriteMode="None" />
+        <File Name="WsmSystemDomain.ScreenRepository.Generated.cs" />
+        <File Name="WsmSystemDomain.ScreenHistoryRepository.cs" OverwriteMode="None" />
+        <File Name="WsmSystemDomain.ScreenHistoryRepository.Generated.cs" />
+        <File Name="WsmSystemDomain.SectionRepository.cs" OverwriteMode="None" />
+        <File Name="WsmSystemDomain.SectionRepository.Generated.cs" />
+        <File Name="WsmSystemDomain.SectionHistoryRepository.cs" OverwriteMode="None" />
+        <File Name="WsmSystemDomain.SectionHistoryRepository.Generated.cs" />
+        <File Name="WsmSystemDomain.SmtpClientRepository.cs" OverwriteMode="None" />
+        <File Name="WsmSystemDomain.SmtpClientRepository.Generated.cs" />
+        <File Name="WsmSystemDomain.SmtpClientHistoryRepository.cs" OverwriteMode="None" />
+        <File Name="WsmSystemDomain.SmtpClientHistoryRepository.Generated.cs" />
+        <File Name="WsmSystemDomain.SubModuleRepository.cs" OverwriteMode="None" />
+        <File Name="WsmSystemDomain.SubModuleRepository.Generated.cs" />
+        <File Name="WsmSystemDomain.SubModuleHistoryRepository.cs" OverwriteMode="None" />
+        <File Name="WsmSystemDomain.SubModuleHistoryRepository.Generated.cs" />
+        <File Name="WsmSystemDomain.UserGroupRepository.cs" OverwriteMode="None" />
+        <File Name="WsmSystemDomain.UserGroupRepository.Generated.cs" />
+        <File Name="WsmSystemDomain.UserGroupHistoryRepository.cs" OverwriteMode="None" />
+        <File Name="WsmSystemDomain.UserGroupHistoryRepository.Generated.cs" />
+        <File Name="WsmSystemDomain.UserGroupWiseRoleMappingRepository.cs" OverwriteMode="None" />
+        <File Name="WsmSystemDomain.UserGroupWiseRoleMappingRepository.Generated.cs" />
+        <File Name="WsmSystemDomain.UserGroupWiseRoleMappingHistoryRepository.cs" OverwriteMode="None" />
+        <File Name="WsmSystemDomain.UserGroupWiseRoleMappingHistoryRepository.Generated.cs" />
+        <File Name="WsmSystemDomain.UserResourceRepository.cs" OverwriteMode="None" />
+        <File Name="WsmSystemDomain.UserResourceRepository.Generated.cs" />
+        <File Name="WsmSystemDomain.UserResourceHistoryRepository.cs" OverwriteMode="None" />
+        <File Name="WsmSystemDomain.UserResourceHistoryRepository.Generated.cs" />
+        <File Name="WsmSystemDomain.UserRoleRepository.cs" OverwriteMode="None" />
+        <File Name="WsmSystemDomain.UserRoleRepository.Generated.cs" />
+        <File Name="WsmSystemDomain.UserRoleHistoryRepository.cs" OverwriteMode="None" />
+        <File Name="WsmSystemDomain.UserRoleHistoryRepository.Generated.cs" />
+        <File Name="WsmSystemDomain.UserRoleWiseResourceMappingRepository.cs" OverwriteMode="None" />
+        <File Name="WsmSystemDomain.UserRoleWiseResourceMappingRepository.Generated.cs" />
+        <File Name="WsmSystemDomain.UserRoleWiseResourceMappingHistoryRepository.cs" OverwriteMode="None" />
+        <File Name="WsmSystemDomain.UserRoleWiseResourceMappingHistoryRepository.Generated.cs" />
+        <File Name="WsmSystemDomain.UserRepository.cs" OverwriteMode="None" />
+        <File Name="WsmSystemDomain.UserRepository.Generated.cs" />
+        <File Name="WsmSystemDomain.UsersHistoryRepository.cs" OverwriteMode="None" />
+        <File Name="WsmSystemDomain.UsersHistoryRepository.Generated.cs" />
+        <File Name="WsmSystemDomain.UserWiseGroupMappingRepository.cs" OverwriteMode="None" />
+        <File Name="WsmSystemDomain.UserWiseGroupMappingRepository.Generated.cs" />
+        <File Name="WsmSystemDomain.UserWiseGroupMappingHistoryRepository.cs" OverwriteMode="None" />
+        <File Name="WsmSystemDomain.UserWiseGroupMappingHistoryRepository.Generated.cs" />
+      </GeneratedFiles>
+    </Generation>
     <DatabaseFirstNamingRules>
       <EntitySet PluralizationName="Pluralize" />
       <Class UseSchemaAsPrefix="False" PluralizeCollectionNavigationPropertyName="True" AddConstraintColumnsToNavigationPropertyName="False" RemoveUnderscores="True" AddUnderscores="False" RemoveInvalidCharacters="True" CodeCase="FirstLetterUppercase" AddPrefix="" AddSuffix="" RemovePrefixes="" RemoveSuffixes="" PluralizationName="Singularize" />
@@ -122,6 +352,46 @@
         </ed:Property>
         <ed:Property Name="GenerateDataContracts" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <boolean>false</boolean>
+        </ed:Property>
+      </Template>
+      <Template Name="Repository And Unit of Work" Description="Use this template to generate Repositories and a Unit of Work for an Entity Framework Core model." Enabled="True" PredefinedTemplateName="Repository And Unit of Work C#">
+        <ed:Property Name="InterfaceLayerOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=7.1.151.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+          <OutputInfo xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <Project />
+            <ProjectFolder />
+            <DestinationFolder />
+          </OutputInfo>
+        </ed:Property>
+        <ed:Property Name="DataAccessLayerOutput" Type="EntityDeveloper.TemplateEngine.OutputInfo, EntityDeveloper.Common, Version=7.1.151.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+          <OutputInfo xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <Project />
+            <ProjectFolder />
+            <DestinationFolder />
+          </OutputInfo>
+        </ed:Property>
+        <ed:Property Name="ModelNameAsFilesPrefix" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <boolean>true</boolean>
+        </ed:Property>
+        <ed:Property Name="GeneratePartial" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <boolean>true</boolean>
+        </ed:Property>
+        <ed:Property Name="InterfaceLayerNamespace" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
+        </ed:Property>
+        <ed:Property Name="DataAccessLayerNamespace" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
+        </ed:Property>
+        <ed:Property Name="HeaderTimestampVersionControlTag" Type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <string d6p1:nil="true" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance" />
+        </ed:Property>
+        <ed:Property Name="GenerateMemoryRepository" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <boolean>false</boolean>
+        </ed:Property>
+        <ed:Property Name="GenericRepositoryPattern" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <boolean>false</boolean>
+        </ed:Property>
+        <ed:Property Name="GenerateUnitOfWorkRepositoryProperties" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <boolean>true</boolean>
         </ed:Property>
       </Template>
     </Templates>
