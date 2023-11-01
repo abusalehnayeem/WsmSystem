@@ -7,21 +7,22 @@
 // Changes to this file may cause incorrect behavior and will be lost if
 // the code is regenerated.
 //------------------------------------------------------------------------------
-using System;
-using Microsoft.EntityFrameworkCore;
 
-namespace WsmSystem.Erp.Core.Entities
+using WsmSystem.Erp.Local.DbContext;
+using WsmSystem.Erp.Local.RepositoryInterfaces;
+
+namespace WsmSystem.Erp.Local.RepositoryClasses
 {
     public partial class EntityFrameworkUnitOfWorkFactory : IUnitOfWorkFactory
     {
-        protected DbContext context = null;
+        protected Microsoft.EntityFrameworkCore.DbContext context = null;
 
         public EntityFrameworkUnitOfWorkFactory()
-            : this(new WsmSystem.Erp.Infrastructure.Data.Storage())
+            : this(new Storage())
         {
         }
 
-        public EntityFrameworkUnitOfWorkFactory(DbContext context)
+        public EntityFrameworkUnitOfWorkFactory(Microsoft.EntityFrameworkCore.DbContext context)
         {
             if (context == null)
             {

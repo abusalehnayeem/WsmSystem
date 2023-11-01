@@ -7,19 +7,18 @@
 // Changes to this file may cause incorrect behavior and will be lost if
 // the code is regenerated.
 //------------------------------------------------------------------------------
-using System;
-using System.Collections.Generic;
-using Microsoft.EntityFrameworkCore;
-using System.Linq;
 
-namespace WsmSystem.Erp.Core.Entities
+using Microsoft.EntityFrameworkCore;
+using WsmSystem.Erp.Local.RepositoryInterfaces;
+
+namespace WsmSystem.Erp.Local.RepositoryClasses
 {
     public partial class EntityFrameworkRepository<T> : IRepository<T> where T : class
     {
-        private DbContext context;
+        private Microsoft.EntityFrameworkCore.DbContext context;
         protected DbSet<T> objectSet;
 
-        public EntityFrameworkRepository(DbContext context)
+        public EntityFrameworkRepository(Microsoft.EntityFrameworkCore.DbContext context)
         {
 
             if (context == null)
@@ -57,7 +56,7 @@ namespace WsmSystem.Erp.Core.Entities
             objectSet.Remove(entity);
         }
 
-        public DbContext Context 
+        public Microsoft.EntityFrameworkCore.DbContext Context 
         {
             get
             {

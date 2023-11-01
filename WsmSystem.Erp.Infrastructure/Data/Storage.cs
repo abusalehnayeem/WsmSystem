@@ -1,9 +1,6 @@
-﻿using WsmSystem.Erp.Core.Interfaces.Infrastructures;
-
-namespace WsmSystem.Erp.Infrastructure.Data
+﻿namespace WsmSystem.Erp.Infrastructure.Persistence.Data
 {
-    public partial class Storage : DbContext, IStorage
+    public partial class Storage : DbContext
     {
-        public DbContext Instance => this;
     }
 }

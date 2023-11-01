@@ -7,10 +7,8 @@
 // Changes to this file may cause incorrect behavior and will be lost if
 // the code is regenerated.
 //------------------------------------------------------------------------------
-using System;
-using System.Collections.Generic;
 
-namespace WsmSystem.Erp.Core.Entities
+namespace WsmSystem.Erp.Local.RepositoryInterfaces
 {
     public partial interface IRepository<T>
     {

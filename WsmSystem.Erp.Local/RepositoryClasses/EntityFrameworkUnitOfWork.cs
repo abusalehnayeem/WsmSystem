@@ -7,15 +7,16 @@
 // Changes to this file may cause incorrect behavior and will be lost if
 // the code is regenerated.
 //------------------------------------------------------------------------------
-using System;
-using System.Collections.Generic;
-using Microsoft.EntityFrameworkCore;
 
-namespace WsmSystem.Erp.Core.Entities
+using WsmSystem.Erp.Local.DbContext;
+using WsmSystem.Erp.Local.Entities;
+using WsmSystem.Erp.Local.RepositoryInterfaces;
+
+namespace WsmSystem.Erp.Local.RepositoryClasses
 {
     public partial class EntityFrameworkUnitOfWork : IUnitOfWork
     {
-        protected DbContext context = null;
+        protected Microsoft.EntityFrameworkCore.DbContext context = null;
 
         IRepository<ApplicationInfo> _ApplicationInfos;
 
@@ -38,11 +39,11 @@ namespace WsmSystem.Erp.Core.Entities
         IRepository<Uom> _Uoms;
 
         public EntityFrameworkUnitOfWork()
-            : this(new WsmSystem.Erp.Infrastructure.Data.Storage())
+            : this(new Storage())
         {
         }
 
-        public EntityFrameworkUnitOfWork(DbContext context)
+        public EntityFrameworkUnitOfWork(Microsoft.EntityFrameworkCore.DbContext context)
         {
             if (context == null)
             {
@@ -51,7 +52,7 @@ namespace WsmSystem.Erp.Core.Entities
             this.context = context;
         }
 
-        public DbContext Context
+        public Microsoft.EntityFrameworkCore.DbContext Context
         {
             get
             {

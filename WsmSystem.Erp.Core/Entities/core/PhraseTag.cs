@@ -8,17 +8,9 @@
 // the code is regenerated.
 //------------------------------------------------------------------------------
 
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.Common;
-using System.Linq;
-using System.Linq.Expressions;
-
-namespace WsmSystem.Erp.Core.Entities
+namespace WsmSystem.Erp.Core.Entities.Core
 {
-    public partial class PhraseTag {
+    public sealed partial class PhraseTag {
 
         public PhraseTag()
         {
@@ -49,7 +41,7 @@ namespace WsmSystem.Erp.Core.Entities
 
         public DateTime? UpdateDate { get; set; }
 
-        public virtual IList<PhraseTagTranslation> PhraseTagTranslations { get; set; }
+        public IList<PhraseTagTranslation> PhraseTagTranslations { get; set; }
 
         #region Extensibility Method Definitions
 

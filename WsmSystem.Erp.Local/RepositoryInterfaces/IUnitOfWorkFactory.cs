@@ -7,7 +7,7 @@
 // Changes to this file may cause incorrect behavior and will be lost if
 // the code is regenerated.
 //------------------------------------------------------------------------------
-namespace WsmSystem.Erp.Core.Entities
+namespace WsmSystem.Erp.Local.RepositoryInterfaces
 {
     public partial interface IUnitOfWorkFactory
     {

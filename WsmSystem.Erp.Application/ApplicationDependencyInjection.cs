@@ -1,5 +1,6 @@
 ﻿namespace WsmSystem.Erp.Application;
 
-public class ApplicationDependencyInjection
+public static class ApplicationDependencyInjection
 {
+
 }

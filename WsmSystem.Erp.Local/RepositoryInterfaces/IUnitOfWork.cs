@@ -7,9 +7,10 @@
 // Changes to this file may cause incorrect behavior and will be lost if
 // the code is regenerated.
 //------------------------------------------------------------------------------
-using System;
 
-namespace WsmSystem.Erp.Core.Entities
+using WsmSystem.Erp.Local.Entities;
+
+namespace WsmSystem.Erp.Local.RepositoryInterfaces
 {
     public partial interface IUnitOfWork : IDisposable
     {
